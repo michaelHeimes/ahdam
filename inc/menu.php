@@ -18,7 +18,7 @@ function trailhead_top_nav() {
 		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion tablet-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
 		'theme_location'	=> 'main-nav',					// Where it's located in the theme
-		'depth'				=> 5,							// Limit the depth of the nav
+		'depth'				=> 1,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'walker'			=> new Topbar_Menu_Walker(),
 		'link_before'    => '<span>',
@@ -42,7 +42,7 @@ function trailhead_off_canvas_nav() {
 		'menu_class'		=> 'vertical menu accordion-menu',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 		'theme_location'	=> 'offcanvas-nav',					// Where it's located in the theme
-		'depth'				=> 5,								// Limit the depth of the nav
+		'depth'				=> 1,								// Limit the depth of the nav
 		'fallback_cb'		=> false,							// Fallback function (see below)
 		'walker'			=> new Off_Canvas_Menu_Walker()
 	));

@@ -4,6 +4,7 @@
  *
  * For more info: https://jointswp.com/docs/off-canvas-menu/
  */
+ $header_logo = get_field('header_logo', 'option') ?? null;
 ?>
 
 <div class="top-bar-wrap grid-container fluid">
@@ -29,16 +30,16 @@
 					<p class="site-description"><?php echo $trailhead_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
-		
-			<ul class="menu">
-				<li class="logo"><a href="<?php echo home_url(); ?>">
-					<?php 
-					$image = get_field('header_logo', 'option');
-					if( !empty( $image ) ): ?>
-					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-					<?php endif; ?>
-				</a></li>
-			</ul>
+			
+			<?php if( $header_logo ):?>
+				<ul class="menu">
+					<li class="logo">
+						<a href="<?php echo home_url(); ?>" rel="home">
+							<?=wp_get_attachment_image(  $header_logo['id'], 'full');?>
+						</a>
+					</li>
+				</ul>
+			<?php endif;?>
 						
 		</div>
 		<div class="top-bar-right show-for-tablet">

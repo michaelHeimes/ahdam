@@ -1,9 +1,11 @@
 header.site-header {
-	transition: transform .5s ease;
+	background-color: $white;
+	box-shadow: 0px 4px 15px 10px rgba(0,0,0,0.15);
 	
 	#top-bar-menu {
 		
 		li.logo {
+			max-width: 382px;
 			@include breakpoint(medium) {
 
 			}
@@ -21,15 +23,16 @@ header.site-header {
 				margin: 0 .3rem 0rem;
 				
 				> a {
-					font-size: rem-calc(21);
+					color: $black;
+					font-size: rem-calc(16);
 					text-transform: uppercase;
-					letter-spacing: 2.1px;
-					padding: 1.78rem 0.5rem 1.78rem;
+					font-weight: 700;
+					padding: .2em;
 					position: relative;
 					
-					@include breakpoint(tablet) {
-						font-size: rem-calc(14);
-						letter-spacing: 1.4px;
+					&:hover,
+					&:focus {
+						color: $primary-color;
 					}
 					
 					span {

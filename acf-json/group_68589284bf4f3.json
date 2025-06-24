@@ -1,11 +1,11 @@
 {
-    "key": "group_62df104dacaa3",
-    "title": "GLOBAL: Header Settings",
+    "key": "group_68589284bf4f3",
+    "title": "GLOBAL: Footer Settings",
     "fields": [
         {
-            "key": "field_62df105579a2f",
-            "label": "Header Logo",
-            "name": "header_logo",
+            "key": "field_68589284c10ea",
+            "label": "Footer Logo",
+            "name": "footer_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -17,7 +17,6 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -25,7 +24,9 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -33,7 +34,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-header"
+                "value": "acf-options-footer"
             }
         ]
     ],
@@ -46,5 +47,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750635135
+    "modified": 1750635259
 }

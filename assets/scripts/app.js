@@ -68,7 +68,7 @@
 //@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
 
 // Sticky Elements
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.sticky.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.sticky.js
 
 // On/Off UI Switching
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.toggler.js

@@ -192,6 +192,24 @@ wp_enqueue_style(
 	 return $html;
  }
  add_filter( 'style_loader_tag', 'google_font_loader_tag_filter', 10, 2 );
+ 
+ 
+ // Adding Adobe Fonts
+ wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/zqu5vmn.css', array(), time(), false );
+  
+  function adobe_font_loader_tag_filter( $html, $handle ) {
+	  if ( $handle === 'dmc-' ) {
+		  $rel_preconnect = "rel='stylesheet preconnect'";
+  
+		  return str_replace(
+			  "rel='stylesheet'",
+			  $rel_preconnect,
+			  $html
+		  );
+	  }
+	  return $html;
+  }
+  add_filter( 'style_loader_tag', 'adobe_font_loader_tag_filter', 10, 2 );
 
 
 // Disable Tabelpress Stylesheet

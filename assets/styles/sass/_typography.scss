@@ -1,0 +1,15 @@
+p,
+.p,
+.p p,
+.p ul,
+.p ol {
+	&.p-2 {
+		font-size: rem-calc(13);
+	}
+	&.p-3 {
+		font-size: rem-calc(20);
+	}
+}
+.color-white {
+	color: $white;
+}
