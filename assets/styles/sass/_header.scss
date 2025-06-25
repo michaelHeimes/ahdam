@@ -1,6 +1,17 @@
 header.site-header {
+	position: relative;
+	z-index: 55555;
 	background-color: $white;
 	box-shadow: 0px 4px 15px 10px rgba(0,0,0,0.15);
+	
+	.ask-experts-cta {
+		position: absolute;
+		top: 100%;
+		right: calc($smallGutter * .5);
+		@include breakpoint(medium) {
+			right: calc($mediumGutter * .5);
+		}
+	}
 	
 	#top-bar-menu {
 		
@@ -21,6 +32,12 @@ header.site-header {
 			align-items: center;
 			>li {
 				margin: 0 .3rem 0rem;
+				&:last-child {
+					margin-right: 0;
+					> a {
+						padding-right: 0;
+					}
+				}
 				
 				> a {
 					color: $black;

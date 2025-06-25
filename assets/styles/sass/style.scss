@@ -53,9 +53,9 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 // Menu-based containers
 @include foundation-menu;
 //@include foundation-menu-icon;
-// @include foundation-accordion-menu;
-// @include foundation-drilldown-menu;
-// @include foundation-dropdown-menu;
+@include foundation-accordion-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
 
 // Layout components
 @include foundation-off-canvas;
@@ -81,6 +81,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 --------------------------------------------------------------*/
 @import "global";
 @import "typography";
+@import "helpers";
 @import "header";
 @import "footer";
 

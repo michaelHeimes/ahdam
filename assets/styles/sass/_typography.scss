@@ -3,6 +3,7 @@ p,
 .p p,
 .p ul,
 .p ol {
+	line-height: 1.25;
 	&.p-2 {
 		font-size: rem-calc(13);
 	}
@@ -12,4 +13,7 @@ p,
 }
 .color-white {
 	color: $white;
+}
+.uppercase {
+	text-transform: uppercase;
 }

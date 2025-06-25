@@ -2,10 +2,15 @@
 	gap: rem-calc(15);
 }
 .button {
-	display: inline-block;
 	text-transform: uppercase;
 	transition: all .25s ease;
+	.inline-icon-wrap {
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;;
+	}
 	svg {
+		margin-left: 8px;
 		path {
 			transition: all .25s ease;
 		}
@@ -66,15 +71,15 @@
 		}
 	}
 	&.pink {
-		background-color: $pink;
-		border-color: $pink;
+		background-color: $color-pink;
+		border-color: $color-pink;
 	}
 	&.seafoam {
-		background-color: $seafoam;
-		border-color: $seafoam;
+		background-color: $color-seafoam;
+		border-color: $color-seafoam;
 	}
 	&.sky-blue {
-		background-color: $skyblue;
-		border-color: $skyblue;
+		background-color: $color-skyblue;
+		border-color: $color-skyblue;
 	}
 }
