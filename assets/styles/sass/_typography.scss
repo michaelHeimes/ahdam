@@ -4,12 +4,16 @@ p,
 .p ul,
 .p ol {
 	line-height: 1.25;
+	font-size: rem-calc(16);
 	&.p-2 {
-		font-size: rem-calc(13);
+		font-size: rem-calc(18);
 	}
 	&.p-3 {
 		font-size: rem-calc(20);
 	}
+}
+.color-black {
+	color: $black;
 }
 .color-white {
 	color: $white;

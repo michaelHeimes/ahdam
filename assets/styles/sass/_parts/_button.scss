@@ -70,16 +70,55 @@
 			
 		}
 	}
+	&.violet {
+		background-color: $color-violet;
+		border-color: $color-violet;
+		&:hover,
+		&:focus {
+			color: $white;
+			background-color: #473EB8;
+			border-color: #473EB8;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
+		}
+	}
 	&.pink {
 		background-color: $color-pink;
 		border-color: $color-pink;
+		&:hover,
+		&:focus {
+			background-color: #913BB7;
+			border-color: #913BB7;
+		}
 	}
 	&.seafoam {
 		background-color: $color-seafoam;
 		border-color: $color-seafoam;
+		&:hover,
+		&:focus {
+			background-color: #00827F;
+			border-color: #00827F;
+		}
 	}
 	&.sky-blue {
 		background-color: $color-skyblue;
 		border-color: $color-skyblue;
+		&:hover,
+		&:focus {
+			background-color: #057DAE;
+			border-color: #057DAE;
+		}
+	}
+	&.black {
+		background-color: $black;
+		border-color: $black;
+		&:hover,
+		&:focus {
+			background-color: #3C3D82;
+			border-color: #3C3D82;
+		}
 	}
 }

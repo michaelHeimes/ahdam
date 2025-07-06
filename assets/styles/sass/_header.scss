@@ -6,15 +6,29 @@ header.site-header {
 	
 	.ask-experts-cta {
 		position: absolute;
+		z-index: 55556;
 		top: 100%;
 		right: calc($smallGutter * .5);
+		padding: .44rem 1.05rem .44rem;
+		border-radius: 0 0 8px 8px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+		transition: background-color 0.25s ease;
 		@include breakpoint(medium) {
 			right: calc($mediumGutter * .5);
+		}
+		img {
+			margin-right: rem-calc(18);
+		}
+		&:hover,
+		&:focus {
+			color: $white;
+			background-color: #473EB8;
+			border-color: #473EB8;
 		}
 	}
 	
 	#top-bar-menu {
-		
+		min-height: $desktop_header_height;
 		li.logo {
 			max-width: 382px;
 			@include breakpoint(medium) {
@@ -31,17 +45,45 @@ header.site-header {
 		#main-nav {
 			align-items: center;
 			>li {
-				margin: 0 .3rem 0rem;
+				margin: 0 .4rem 0rem;
 				&:last-child {
 					margin-right: 0;
 					> a {
 						padding-right: 0;
 					}
 				}
+				&.button {
+					padding: 0;
+					a {
+						padding: .6831em 1em;
+					}
+					&.black-outline a {
+						color: $black;
+						&:hover,
+						&:focus {
+							background-color: $black;
+							color: $white;
+							svg {
+								path {
+									fill: $white;
+								}
+							}
+						}
+					}
+					&.arrow {
+						a {
+							background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 8 8" fill="none"><path fill="white" d="M0 4a.4.4 0 0 0 .4.4h5.6L4.1 7.2a.4.4 0 1 0 .6.6l3.2-3.5a.4.4 0 0 0 0-.6L4.7.2a.4.4 0 0 0-.6.6l1.9 2.8H.4A.4.4 0 0 0 0 4z"/></svg>');
+							background-repeat: no-repeat;
+							background-position: calc(100% - 16px) 50%; 
+							padding-right: 2.2em;
+						}
+						
+					}
+				}
 				
 				> a {
 					color: $black;
-					font-size: rem-calc(16);
+					font-size: rem-calc(15);
 					text-transform: uppercase;
 					font-weight: 700;
 					padding: .2em;
@@ -62,6 +104,7 @@ header.site-header {
 							background-color: transparent;
 						}
 					}
+					
 					
 				&:hover {
 

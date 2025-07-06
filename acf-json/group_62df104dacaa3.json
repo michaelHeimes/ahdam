@@ -30,7 +30,7 @@
         {
             "key": "field_685ad29c73a02",
             "label": "Ask The Experts",
-            "name": "ask_the_experts",
+            "name": "header_ask_the_experts",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -87,6 +87,57 @@
                     "allow_in_bindings": 0
                 }
             ]
+        },
+        {
+            "key": "field_68687ac26edce",
+            "label": "Login",
+            "name": "header_login",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_68687ea16edcf",
+            "label": "Join",
+            "name": "header_join",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_68687eac6edd0",
+            "label": "Training Center",
+            "name": "header_training_center",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -107,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750782662
+    "modified": 1751678654
 }

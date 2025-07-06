@@ -5,7 +5,10 @@
  * For more info: https://jointswp.com/docs/off-canvas-menu/
  */
  $header_logo = get_field('header_logo', 'option') ?? null;
- $ask_the_experts = get_field('ask_the_experts', 'option') ?? null;
+ $ask_the_experts = get_field('header_ask_the_experts', 'option') ?? null;
+ $login = get_field('header_login', 'option') ?? null;
+ $join = get_field('header_join', 'option') ?? null;
+ $training_center = get_field('header_training_center', 'option') ?? null;
 ?>
 
 <div class="top-bar-wrap grid-container relative">
@@ -46,7 +49,25 @@
 		<div class="top-bar-right show-for-tablet">
 			<div class="grid-x align-right">
 				<div class="cell shrink">
-					<?php trailhead_top_nav();?>
+					<div class="grid-x grid-padding-x align-middle">
+						<div class="cell auto">
+							<?php trailhead_top_nav();?>
+						</div>
+						<?php if( $login || $join || $login ):?>
+							<div class="cell shrink">
+								<?php if( $login  || $join ) {
+									get_template_part('template-parts/part', 'btn-group',
+										array(
+											'btn1' => $login,
+											'btn1-classes' => 'black-outline',
+											'btn2' => $join,
+											'btn2-classes' => 'violet',
+										),
+									);
+								};?>
+							</div>
+						<?php endif;?>
+					</div>
 				</div>
 			</div>
 		</div>
