@@ -17,6 +17,7 @@
  $footer_address = get_field('footer_address', 'option') ?? null;
  $footer_directions = get_field('footer_directions', 'option') ?? null;
  $footer_information_links = get_field('footer_information_links', 'option') ?? null; 
+ $footer_hours = get_field('footer_hours', 'option') ?? null;
 ?>
 	<div class="reveal large" id="gated-content-alert" data-reveal>
 		<?php get_template_part('template-parts/part', 'members-only-content');?>
