@@ -103,7 +103,7 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 	
 	
 	
-// 1. Add the new column to each post type admin list
+	// 1. Add the new column to each post type admin list
 	add_filter( 'manage_webinar_posts_columns', 'add_date_column' );
 	add_filter( 'manage_event_posts_columns', 'add_date_column' );
 	add_filter( 'manage_podcast_posts_columns', 'add_date_column' );
@@ -153,7 +153,7 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 		return $columns;
 	}
 	
-	// 4. Handle the sorting by using the right meta key
+	// 4. Handle sorting by date as a number
 	add_action( 'pre_get_posts', 'date_column_orderby' );
 	function date_column_orderby( $query ) {
 		if ( ! is_admin() || ! $query->is_main_query() ) {
@@ -174,7 +174,48 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 	
 			if ( $meta_key ) {
 				$query->set( 'meta_key', $meta_key );
-				$query->set( 'orderby', 'meta_value' );
+				$query->set( 'orderby', 'meta_value_num' ); // THIS LINE ensures numeric sorting
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	// 1. Add the "Gated Post" column to multiple post types
+	add_filter( 'manage_post_posts_columns', 'add_gated_column' );
+	add_filter( 'manage_appeal-writing-worship_posts_columns', 'add_gated_column' );
+	add_filter( 'manage_newsletter_posts_columns', 'add_gated_column' );
+	add_filter( 'manage_whitepaper_posts_columns', 'add_gated_column' );
+	add_filter( 'manage_webinar_posts_columns', 'add_gated_column' );
+	add_filter( 'manage_news_posts_columns', 'add_gated_column' );
+	add_filter( 'manage_interview_posts_columns', 'add_gated_column' );
+	
+	function add_gated_column( $columns ) {
+		$columns['gated_post'] = 'Gated Post';
+		return $columns;
+	}
+	
+	// 2. Display "Gated" if the ACF checkbox is checked
+	add_action( 'manage_post_posts_custom_column', 'show_gated_column', 10, 2 );
+	add_action( 'manage_appeal-writing-worship_posts_custom_column', 'show_gated_column', 10, 2 );
+	add_action( 'manage_newsletter_posts_custom_column', 'show_gated_column', 10, 2 );
+	add_action( 'manage_whitepaper_posts_custom_column', 'show_gated_column', 10, 2 );
+	add_action( 'manage_webinar_posts_custom_column', 'show_gated_column', 10, 2 );
+	add_action( 'manage_news_posts_custom_column', 'show_gated_column', 10, 2 );
+	add_action( 'manage_interview_posts_custom_column', 'show_gated_column', 10, 2 );
+	
+	function show_gated_column( $column, $post_id ) {
+		if ( $column === 'gated_post' ) {
+			$gated = get_field('gated', $post_id);
+			// ACF checkbox returns array or boolean, handle both
+			if ( is_array($gated) && !empty($gated) ) {
+				echo 'Gated';
+			} elseif ( $gated ) {
+				echo 'Gated';
+			} else {
+				echo '—';
 			}
 		}
 	}

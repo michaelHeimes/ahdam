@@ -31,6 +31,26 @@ svg {
 	position: relative;
 }
 
+.part-gated-content-alert {
+	.bg-light-gray {
+		padding: clamp(3.938rem, 3.343rem + 2.535vw, 5.625rem) 20px clamp(3.5rem, 2.972rem + 2.254vw, 5rem);
+		h2 {
+			line-height: 1.41;
+			margin: 0;
+		}
+		.link-wrap {
+			padding-top: clamp(1.688rem, 1.445rem + 1.033vw, 2.375rem);
+		}
+	}
+}
+
+.page-template-page-members-only {
+	.part-gated-content-alert {
+		margin-top: clamp(3.938rem, 3.343rem + 2.535vw, 5.625rem);
+		margin-bottom: clamp(3.938rem, 3.343rem + 2.535vw, 5.625rem);
+	}
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -43,15 +63,19 @@ POSTS & CONTENT STYLES
 	}
 }
 
-// Post meta  
-.byline {
-	color: #999;
-	time {}
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+	@extend .responsive-embed;
+	@extend .widescreen;
 }
+
 
 // Entry content  
 .entry-content {
-	
+	p,
+	ul,
+	ol {
+		font-size: clamp(1rem, 0.956rem + 0.188vw, 1.125rem);
+	}
 	img {
 		max-width: 100%;
 		height: auto;
@@ -83,7 +107,51 @@ POSTS & CONTENT STYLES
 		background: #eee;
 		border: 1px solid #cecece;
 		padding: 10px;
+	}
+	
+	iframe {
+		width: 100%;
+	}
+	[class^="wp-block-"]:not(.wp-block-image):not(.wp-block-column):not(.wp-block-heading):not(.wp-block-embed__wrapper),
+	.module.block,
+	blockquote {
+		margin-top:clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
+		margin-bottom: clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
+		&.wp-block-heading:not(h4) {
+			margin-bottom: .7rem;
 		}
+		&.button-group {
+			margin-bottom: 0;
+		}
+		&.wp-block-image {
+			margin-top: 1.75rem;
+		}
+		&.is-layout-flow {
+			figure {
+				margin-bottom: 2.5rem;
+			}
+			.wp-block-heading {
+				@media (min-width: 782px) {
+					margin-top: 0;
+				}
+			}
+		}
+		&.wp-block-column {
+			.button-group .button:last-child:only-child {
+				margin-bottom: 0;
+			}
+		}
+		&.block-tabbed-content,
+		&.accordion-block,
+		&.testimonial-slider {
+			margin-top: 3.5rem;
+			margin-bottom: 3.5rem;
+			@include breakpoint(tablet) {
+				margin-top: 5rem;
+				margin-bottom: 5rem;
+			}
+		}
+	}
 
 } 
 

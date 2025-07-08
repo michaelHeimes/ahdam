@@ -59,7 +59,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.orbit.js
 
 // Modals
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.reveal.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.reveal.js
 
 // Form UI element
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.slider.js

@@ -1,4 +1,9 @@
 .page-template-custom-page-home {
+	@include breakpoint(medium) {
+		.medium-no-pad-right {
+			padding-right: 0;
+		}
+	}
 	.home-banner {
 		background-image: linear-gradient(34.61deg, #5354B5 38.9%, #2891D2 75%, #05B1C5 100%);
 		background-image: linear-gradient(34.61deg, #5354B5 9%, #2891D2 75%, #05B1C5 100%);
@@ -54,12 +59,13 @@
 		}
 	}
 	.home-cpt-row {
+		// padding-bottom: 0.9rem;
 		.header {
-			margin-bottom: 12px;
+			margin-bottom: rem-calc(14);
 			.title-wrap {
 				h2 {
 					border: 2px solid $black;
-					padding: 0.1em .7em;
+					padding: 0.1em 0.7em 0.15em 0.7em;
 					border-radius: 2rem;
 				}
 			}
@@ -71,9 +77,34 @@
 			.title.h6 {
 				text-transform: uppercase;
 				letter-spacing: .1em;
+				margin-bottom: 19px;
 			}
 			.month.h6 {
 				margin-bottom: 0;
+			}
+			.absolute-link-trigger {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				&.reveal-trigger {
+					cursor: pointer;
+				}
+			}
+			.reveal-trigger-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba( $black, .8 );
+			}
+			.archive-link-wrap {
+				padding-top: clamp(1.5rem, 1.28rem + 0.939vw, 2.125rem);
+				svg {
+					margin-left: rem-calc(7);
+				}
 			}
 			.home-cpt-sidebar {
 				> .title.h6 {
@@ -94,7 +125,6 @@
 						padding: 1rem 1.4rem;
 					}
 					h3.h6 {
-						font-weight: 400;
 						line-height: 1.3846;
 					}
 				}
@@ -104,16 +134,22 @@
 					margin-left: rem-calc(-11);
 					margin-right: rem-calc(-11);
 					> .cell {
-						padding: rem-calc(11);
+						padding-left: rem-calc(11);
+						padding-right: rem-calc(11);
 					}
+				}
+				.pad-right {
+					padding-right: 7%;
 				}
 				article {
 					.has-object-fit-img {
 						min-height: 130px;
 					}
-					.thumb-date-wrap {
+					.thumb-date-wrap,
+					.thumb-wrap {
 						border-radius: 10px;
 						margin-bottom: 1rem;
+						overflow: hidden;
 						&:before {
 							content: '';
 							display: block;
@@ -124,6 +160,8 @@
 							height: 100%;
 							background: linear-gradient(0deg, #C84DFF 0%, rgba(200, 77, 255, 0) 100%);
 							  mix-blend-mode: hard-light;
+						}
+						.abolute-link-trigger {
 						}
 						.date-live-wrap {
 							position: absolute;
@@ -143,6 +181,9 @@
 									font-weight: 700;		
 								}
 							}
+							.pod-icon {
+								flex: 0 0 31px;
+							}
 						}
 					}
 					.title {
@@ -153,11 +194,28 @@
 					}
 				}
 				&.news-row {
-					.stacked {
+					.featured {
 						.thumb-wrap {
-							flex: 0 0 84px;
+							height: 100%;
+						}
+						.left {
+							width: 40%;
 						}
 					}
+					.date {
+						color: #C0BFBF;
+						margin-bottom: .36rem;
+					}
+					.excerpt {
+						font-size: rem-calc(14);
+						padding-top: 1rem;
+					}
+					.stacked {
+						.thumb-wrap {
+							min-height: 0;
+							width: 100%;
+							aspect-ratio: 1/1;
+						}					}
 				}
 			}
 		}

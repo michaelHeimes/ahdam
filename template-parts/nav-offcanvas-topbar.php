@@ -53,7 +53,7 @@
 						<div class="cell auto">
 							<?php trailhead_top_nav();?>
 						</div>
-						<?php if( $login || $join || $login ):?>
+						<?php if( $login || $join ):?>
 							<div class="cell shrink">
 								<?php if( $login  || $join ) {
 									get_template_part('template-parts/part', 'btn-group',

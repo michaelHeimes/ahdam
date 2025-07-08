@@ -73,6 +73,13 @@
                 "operator": "==",
                 "value": "interview"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "podcast"
+            }
         ]
     ],
     "menu_order": 0,
@@ -84,5 +91,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751823322
+    "modified": 1751916632
 }

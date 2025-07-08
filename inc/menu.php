@@ -4,7 +4,7 @@ register_nav_menus(
 	array(
 		'main-nav'		=> __( 'The Main Menu', 'trailhead' ),		// Main nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'trailhead' ),	// Off-Canvas nav
-		'footer-links'	=> __( 'Footer Links', 'trailhead' ),		// Secondary nav in footer
+		'footer-navigation'	=> __( 'Footer Navigation', 'trailhead' ),		// Secondary nav in footer
 		'social-links'	=> __( 'Social Links', 'trailhead' ),		// Social Nav
 	)
 );
@@ -56,12 +56,12 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 }
 
 // The Footer Menu
-function trailhead_footer_links() {
+function trailhead_footer_navigation() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-links',		// Adding custom nav id
+		'menu_id'			=> 'footer-navigation',		// Adding custom nav id
 		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-links',		// Where it's located in the theme
+		'theme_location'	=> 'footer-navigation',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
 	));
@@ -93,7 +93,7 @@ function trailhead_main_nav_fallback() {
 }
 
 // Footer Fallback Menu
-function trailhead_footer_links_fallback() {
+function trailhead_footer_navigation_fallback() {
 	/* You can put a default here if you like */
 }
 

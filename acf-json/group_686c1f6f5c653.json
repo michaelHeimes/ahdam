@@ -1,11 +1,11 @@
 {
-    "key": "group_686ab2bcace25",
-    "title": "CPT: Webinar",
+    "key": "group_686c1f6f5c653",
+    "title": "CPT: Podcast",
     "fields": [
         {
-            "key": "field_686ab2bd9674e",
+            "key": "field_686c1f6f5e21e",
             "label": "Date",
-            "name": "webinar_date",
+            "name": "podcast_date",
             "aria-label": "",
             "type": "date_picker",
             "instructions": "",
@@ -27,7 +27,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "webinar"
+                "value": "podcast"
             }
         ]
     ],
@@ -40,5 +40,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751926180
+    "modified": 1751926175
 }

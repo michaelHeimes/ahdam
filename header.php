@@ -8,7 +8,11 @@
  *
  * @package trailhead
  */
-
+$gated = get_field('gated');
+if( $gated && !is_user_logged_in() ) {
+	wp_redirect( site_url( '/members-only-content/' ) );
+	exit;
+}
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
