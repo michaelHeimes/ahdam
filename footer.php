@@ -24,6 +24,7 @@
 	</div>
 
 				<footer id="colophon" class="site-footer bg-black">
+					<div class="footer-border"></div>
 					<div class="site-info">
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-center">

@@ -9417,6 +9417,10 @@ header.site-header #top-bar-menu .menu-toggle-wrap a#menu-toggle.clicked span:nt
           transform: translate(0px, -12px) rotate(45deg);
 }
 
+footer#colophon .footer-border {
+  height: clamp(0.938rem, 0.805rem + 0.563vw, 1.313rem);
+  background: linear-gradient(5deg, #C84DFF 0%, #5354B5 38.9%, #2891D2 75%, #05B1C5 100%);
+}
 @media print, screen and (max-width: 56.24875em) {
   footer#colophon .left .bottom {
     padding-bottom: 4.1rem;

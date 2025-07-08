@@ -1,5 +1,15 @@
 footer#colophon {
-
+	.footer-border {
+		height: clamp(0.938rem, 0.805rem + 0.563vw, 1.313rem);
+		background: linear-gradient(
+		  5deg,
+		  #C84DFF 0%,
+		  #5354B5 38.9%,
+		  #2891D2 75%,
+		  #05B1C5 100%
+		);
+		
+	}
 	.site-info {
 
 	}
