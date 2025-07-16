@@ -41,7 +41,7 @@ $latest_webinar_args = array(
 	'posts_per_page' => 4,
 	'meta_key'       => 'webinar_date',
 	'orderby'        => 'meta_value',
-	'order'          => 'ASC',
+	'order'          => 'DESC',
 	'meta_query'     => array(
 		array(
 			'key'     => 'webinar_date',
@@ -114,6 +114,12 @@ $global_webinars_page = get_field('global_webinars_page', 'option') ?? null;
 $global_events_page = get_field('global_events_page', 'option') ?? null;
 $global_news_page = get_field('global_news_page', 'option') ?? null;
 $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
+
+$member_spotlight_posts = get_field('member_spotlight_posts') ?? null;
+
+$partnerships = get_field('partnerships') ?? null;
+$partnerships_page_link = get_field('partnerships_page_link') ?? null;
+
 ?>
 	<div class="content">
 		<div class="inner-content">
@@ -212,11 +218,11 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 							</div>
 						</header><!-- .entry-header -->
 					<?php endif;?>
-					<section class="entry-content" itemprop="text">
+					<section class="body" itemprop="text">
 						<?php if ( $upcoming_webinar_query->have_posts() || $latest_webinar_query->have_posts() ) :?>
 							<section class="webinars home-cpt-row">
 								<div class="grid-container">
-									<div class="header grid-x grid-padding-x">
+									<div class="section-header grid-x grid-padding-x">
 										<div class="cell shrink title-wrap">
 											<h2 class="m-0 h5">Webinars</h2>
 										</div>
@@ -281,17 +287,15 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
 														}
 														$thumbnail_id = get_post_thumbnail_id();
+														$host_images = get_field('host_images') ?? null;
 														$gated = get_field('gated');
 													?>
 														<div class="cell">
 															<article id="post-<?php the_ID(); ?>" <?php post_class('relative'); ?> role="article">
-																<?php if( $thumbnail_id || $webinar_date ):?>
-																	<div class="thumb-date-wrap has-object-fit-img bg-black">
-																		<?php if( $thumbnail_id ) {
-																			echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
-																		};?>
-																		<div class="date-live-wrap grid-x z-1">
-																			<div class="date cell shrink text-center">
+																<?php if( $host_images || $webinar_date ):?>
+																	<div class="thumb-date-wrap grid-x align-justify bg-black relative z-1">
+																		<div class="date-wrap cell shrink grid-x relative z-1">
+																			<div class="date text-center">
 																				<div class="month h6 uppercase">
 																					<?=$date->format( 'M' ); ?>
 																				</div>
@@ -299,10 +303,16 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 																					<?=$date->format( 'd' ); ?>
 																				</div>
 																			</div>
-																			<div class="live uppercase cell auto text-right">
-																				<span class="bg-pink">Live</span>
-																			</div>
 																		</div>
+																		<?php if( $host_images ):?>
+																			<div class="host-images cell auto relative z-1<?php if( count($host_images) > 1 ):?> grid<?php endif;?>">
+																				<?php foreach( $host_images as $image_id ): ?>
+																					<div class="image-wrap cell overflow-hidden">
+																						<?=wp_get_attachment_image( $image_id, 'medium' ); ?>
+																					</div>
+																				<?php endforeach;?>
+																			</div>
+																		<?php endif;?>
 																		<?php if( $gated && !is_user_logged_in() ) {
 																			get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
 																		};?>
@@ -350,7 +360,7 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 									<div class="body grid-x grid-padding-x">
 										<?php if ( $events_query->have_posts() ) :?>
 											<div class="home-cpt-sidebar cell small-12 medium-3">
-												<div class="header grid-x grid-padding-x">
+												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">Events</h2>
 													</div>
@@ -417,7 +427,7 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 										<?php endif;?>
 										<?php if ( $news_query->have_posts() ) :?>
 											<div class="home-cpt-main news-row cell small-12 medium-9">
-												<div class="header grid-x grid-padding-x">
+												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">News</h2>
 													</div>
@@ -529,7 +539,7 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 						<?php if ( $upcoming_podcast_query->have_posts() || $latest_podcast_query->have_posts() ) :?>
 							<section class="webinars home-cpt-row">
 								<div class="grid-container">
-									<div class="header grid-x grid-padding-x">
+									<div class="section-header grid-x grid-padding-x">
 										<div class="cell shrink title-wrap">
 											<h2 class="m-0 h5">Podcasts</h2>
 										</div>
@@ -646,8 +656,190 @@ $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 							</section>
 						<?php endif;?>
 						
+						<?php if($member_spotlight_posts):?>
+							<section class="member-spotlights color-white relative">
+								<div class="grid-container">
+									<div class="grid-x grid-padding-x align-center">
+										<div class="cell small-12 xlarge-10">
+											<header class="section-header grid-x grid-padding-x align-middle">
+												<div class="cell shrink title-wrap">
+													<div class="title h6 uppercase">
+														Member Spotlight
+													</div>
+												</div>
+												<div class="cell auto hr-wrap">
+													<hr>
+												</div>
+											</header>
+											<div class="section-body overflow-hidden">
+												<div class="member-spotlight-slider">
+													<div class="swiper-wrapper">
+														<?php foreach($member_spotlight_posts as $post):
+															setup_postdata($post);
+															$featured_image_ID = get_post_thumbnail_id() ?? null;
+															$title = get_the_title();	
+															$homepage_slider_fields = get_field('homepage_slider_fields') ?? null;
+															if($homepage_slider_fields) {
+																$large_text = $homepage_slider_fields['large_text'] ?? null;
+																$text = $homepage_slider_fields['text'] ?? null;
+															}
+														?>
+															<div class="swiper-slide">
+																<div class="grid-x grid-margin-x align-middle">
+																	<?php if($featured_image_ID):?>
+																		<div class="left cell small-12 medium-5">
+																			<div class="img-wrap">
+																				<?=wp_get_attachment_image( $featured_image_ID, 'large' );?>
+																			</div>
+																		</div>
+																	<?php endif;?>
+																	<div class="right cell small-12 medium-7">
+																		<div class="inner">
+																			<h3><?=wp_kses_post($title);?></h3>
+																			<?php if($large_text):?>
+																				<p class="p-3">
+																					<?=wp_kses_post($large_text);?>
+																				</p>
+																			<?php endif;?>
+																			<?php if($text):?>
+																				<p>
+																					<?=wp_kses_post($text);?>
+																				</p>
+																			<?php endif;?>
+																			<div class="btn-wrap">
+																				<?php get_template_part('template-parts/part', 'btn-link',
+																					array(
+																						'link' => get_the_permalink(),
+																						'classes' => 'black',
+																						'attrs' => 'rel="bookmark"',
+																						'is-permalink' => 'true',
+																						'link-title' => 'Read More',
+																					),
+																				);?>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														<?php endforeach;?>
+													</div>
+													<?php if( count($member_spotlight_posts) > 1 ):?>
+														<div class="nav grid-x grid-padding-x small-up-2 tablet-up-4 relative z-1">
+															<?php $i = 0; foreach($member_spotlight_posts as $post):
+															setup_postdata($post);
+																$homepage_slider_fields = get_field('homepage_slider_fields') ?? null;
+																if($homepage_slider_fields) {
+																	$member_detail = $homepage_slider_fields['member_detail'] ?? null;
+																}
+															?>
+																<div class="cell">
+																	<div class="swiper-page relative text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
+																		<?php if($member_detail):?>
+																			<div class="title h6">
+																				<?=wp_kses_post($member_detail);?>
+																			</div>
+																		<?php endif;?>
+																		<div class="h5"><b><?php the_title();?></b></div>
+																	</div>
+																</div>
+															<?php $i++; endforeach;?>
+														</div>
+													<?php endif;?>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						<?php endif;?>
 						
-						
+						<?php if( $partnerships || $partnerships_page_link ):?>
+							<section class="partnerships">
+								<div class="grid-container">
+									<div class="grid-x grid-padding-x align-center">
+										<div class="cell small-12 xlarge-10">
+											<header class="section-header grid-x grid-padding-x align-middle">
+												<div class="cell shrink title-wrap">
+													<div class="title h6 uppercase">
+														AHDAM Partnerships
+													</div>
+												</div>
+												<div class="cell auto hr-wrap">
+													<hr>
+												</div>
+											</header>
+											<?php if($partnerships):?>
+												<div class="section-body overflow-hidden">
+													<div class="grid-x grid-padding-x">
+														<div class="cell small-12 medium-6">
+															<div class="partnerships-slider overflow-hidden">
+																<div class="swiper-wrapper">
+																	<?php foreach($partnerships as $partnership):
+																		$dark_logo = $partnership['dark_logo'] ?? null;	
+																		$partner_name = $partnership['partner_name'] ?? null;
+																		$large_text = $partnership['large_text'] ?? null;	
+																		$text = $partnership['text'] ?? null;	
+																	?>
+																		<div class="swiper-slide">
+																			<?php if($dark_logo):?>
+																				<div class="logo-wrap">
+																					<?=wp_get_attachment_image( $dark_logo['id'], 'full' );?>
+																				</div>
+																			<?php endif;?>
+																			<?php if($large_text):?>
+																				<p class="p-3">
+																					<?=wp_kses_post($large_text);?>
+																				</p>
+																			<?php endif;?>
+																			<?php if($text):?>
+																				<p>
+																					<?=wp_kses_post($text);?>
+																				</p>
+																			<?php endif;?>
+																			<?php if( $partnerships_page_link ):?>
+																				<div class="btn-wrap">
+																					<?php get_template_part('template-parts/part', 'btn-link',
+																						array(
+																							'link' => $partnerships_page_link ,
+																							'classes' => 'violet',
+																						),
+																					);?>
+																				</div>
+																			<?php endif;?>
+																		</div>
+																	<?php endforeach;?>
+																</div>
+															</div>
+														</div>
+														<?php if( count($partnerships) > 1 ):?>
+															<div class="cell small-12 medium-6">
+																<div class="nav grid-x grid-padding-x h-100 small-up-1 medium-up-2 relative z-1">
+																	<?php $i = 0; foreach($partnerships as $partnership):
+																		$partner_name = $partnership['partner_name'] ?? null;
+																		$light_logo = $partnership['light_logo'] ?? null;	
+																	?>
+																		<div class="cell h-100">
+																			<div class="swiper-page h-100 bg-black relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
+																				<div class="show-for-sr">
+																					Slides to <?=esc_html($partner_name);?>
+																				</div>
+																				<div class="logo-wrap">
+																					<?=wp_get_attachment_image( $light_logo['id'], 'full' );?>
+																				</div>
+																			</div>
+																		</div>
+																	<?php $i++; endforeach;?>
+																</div>
+															</div>
+														<?php endif;?>
+													</div>
+												</div>
+											<?php endif;?>
+										</div>
+									</div>
+								</div>
+							</section>
+						<?php endif;?>
 						
 					</section> <!-- end article section -->
 							

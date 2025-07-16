@@ -12,6 +12,26 @@ p,
 		font-size: rem-calc(20);
 	}
 }
+h1,
+.h1 {
+	font-size: clamp(1.969rem, 1.672rem + 1.268vw, 2.813rem);
+}
+h2,
+.h2 {
+	font-size: clamp(1.269rem, 1.033rem + 1.005vw, 1.938rem);
+}
+h3,
+.h3 {
+	font-size: clamp(1.188rem, 0.967rem + 0.939vw, 1.813rem);
+}
+h4,
+.h4 {
+	font-size: clamp(1.125rem, 0.971rem + 0.657vw, 1.563rem);
+}
+h5,
+.h5 {
+	font-size: clamp(1.063rem, 0.996rem + 0.282vw, 1.25rem);
+}
 .color-black {
 	color: $black;
 }

@@ -1,25 +1,27 @@
 {
-    "key": "group_686ab2bcace25",
-    "title": "CPT: Webinar Date",
+    "key": "group_6876cb1409645",
+    "title": "CPT: News Author",
     "fields": [
         {
-            "key": "field_686ab2bd9674e",
-            "label": "Date",
-            "name": "webinar_date",
+            "key": "field_6876cb14223f8",
+            "label": "Author",
+            "name": "news_author",
             "aria-label": "",
-            "type": "date_picker",
+            "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "display_format": "F j, Y",
-            "return_format": "Ymd",
-            "first_day": 1,
-            "allow_in_bindings": 0
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -27,7 +29,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "webinar"
+                "value": "news"
             }
         ]
     ],
@@ -40,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752695314
+    "modified": 1752615728
 }

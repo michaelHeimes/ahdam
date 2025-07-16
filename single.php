@@ -25,7 +25,7 @@ if( $post_type === 'event' ) {
 if( $post_type === 'news' ) {
 	$post_type_tag = 'News';
 	$date = get_the_date('m.d.Y');
-	$author_name = get_the_author();
+	$author_name = get_field('news_author') ?? null;
 }
 
 if( $post_type === 'podcast' ) {
@@ -75,9 +75,9 @@ $thumbnail_id = get_post_thumbnail_id();
 											<?=$date;?>
 										</div>
 										<h1><?php the_title();?></h1>
-										<?php if( $post_type === 'news' ):?>
+										<?php if( $post_type === 'news' && $author_name ):?>
 											<div class="h3">
-												By <?=esc_html( get_the_author() );?>
+												<?=wp_kses_post($author_name);?>
 											</div>
 										<?php endif;?>
 									</div>

@@ -41,12 +41,12 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 //@include foundation-breadcrumbs;
 //@include foundation-callout;
 //@include foundation-card;
-// @include foundation-dropdown;
+@include foundation-dropdown;
 //@include foundation-pagination;
 //@include foundation-tooltip;
 
 // Containers
-// @include foundation-accordion;
+@include foundation-accordion;
 //@include foundation-media-object;
 //@include foundation-orbit;
 @include foundation-responsive-embed;
@@ -60,7 +60,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 @include foundation-dropdown-menu;
 
 // Layout components
-@include foundation-off-canvas;
+// @include foundation-off-canvas;
 @include foundation-reveal;
 @include foundation-sticky;
 //@include foundation-title-bar;

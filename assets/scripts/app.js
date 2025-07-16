@@ -32,15 +32,15 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
 
 // Accordian
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.accordion.js
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.accordionMenu.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.accordion.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.accordionMenu.js
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.responsiveAccordionTabs.js
 
 // Menu enhancements
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.drilldown.js
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.dropdown.js
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.dropdownMenu.js
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.responsiveMenu.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.drilldown.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.dropdown.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.dropdownMenu.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.responsiveMenu.js
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.responsiveToggle.js
 
 // Equalize heights
@@ -124,22 +124,92 @@
         $('.display-on-load').css('visibility', 'visible');
     }
     
+    _app.member_spotlight_slider = function() {
+        const slider = document.querySelector('.member-spotlights .member-spotlight-slider');
+        
+        if( !slider ) return;
+        
+        // Initialize Swiper with fade effect
+        const memberSwiper = new Swiper(slider, {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 600,
+            loop: false,
+            pagination: false,
+            navigation: false
+        });
+        
+        // Click .swiper-page to go to slide
+        $(slider).find('.swiper-page').on('click', function() {
+            const index = parseInt($(this).attr('data-slide'), 10);
+            if (!isNaN(index)) {
+                memberSwiper.slideTo(index);
+            }
+        });
+        
+        memberSwiper.on('slideChange', function () {
+            const activeIndex = memberSwiper.realIndex;
+            $(slider).find('.swiper-page').removeClass('active');
+            $(slider).find('.swiper-page[data-slide="'+activeIndex+'"]').addClass('active');
+        });
+        
+    }
+    
+    _app.partnerships_slider = function() {
+        const slider = document.querySelector('.partnerships .partnerships-slider');
+        
+        if( !slider ) return;
+        
+        // Initialize Swiper with fade effect
+        const memberSwiper = new Swiper(slider, {
+            speed: 600,
+            loop: false,
+            pagination: false,
+            navigation: false
+        });
+
+        // Click .swiper-page to go to slide
+        $(slider).parent().parent().find('.swiper-page').on('click', function() {
+            const index = parseInt($(this).attr('data-slide'), 10);
+            if (!isNaN(index)) {
+                memberSwiper.slideTo(index);
+            }
+        });
+        
+        memberSwiper.on('slideChange', function () {
+            const activeIndex = memberSwiper.realIndex;
+            $(slider).parent().parent().find('.swiper-page').removeClass('active');
+            $(slider).parent().parent().find('.swiper-page[data-slide="'+activeIndex+'"]').addClass('active');
+        });
+        
+    }
+    
     // Custom Functions
     
     _app.mobile_takover_nav = function() {
+        const offCanvas = $('.off-canvas');
+        $(offCanvas).fadeOut(0);
+    
+        const closeMobileNav = function() {
+            $('a#menu-toggle').removeClass('clicked');
+            $(offCanvas).fadeOut(200);
+        }
+    
         $(document).on('click', 'a#menu-toggle', function(){
-            
-            if ( $(this).hasClass('clicked') ) {
-                $(this).removeClass('clicked');
-                $('#off-canvas').fadeOut(200);
-            
+            if ($(this).hasClass('clicked')) {
+                closeMobileNav();
             } else {
-            
                 $(this).addClass('clicked');
-                $('#off-canvas').fadeIn(200);
-            
+                $(offCanvas).fadeIn(200);
             }
-            
+        });
+    
+        $(window).on('resize', function() {
+            if ($(window).width() > 1023) {
+                closeMobileNav();
+            }
         });
     }
             
@@ -152,7 +222,9 @@
         _app.display_on_load();
         
         // Custom Functions
-        //_app.mobile_takover_nav();
+        _app.mobile_takover_nav();
+        _app.member_spotlight_slider();
+        _app.partnerships_slider();
     }
     
     

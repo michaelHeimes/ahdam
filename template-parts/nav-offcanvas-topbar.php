@@ -46,12 +46,12 @@
 			<?php endif;?>
 						
 		</div>
-		<div class="top-bar-right show-for-tablet">
+		<div class="top-bar-right show-for-large">
 			<div class="grid-x align-right">
 				<div class="cell shrink">
 					<div class="grid-x grid-padding-x align-middle">
 						<div class="cell auto">
-							<?php trailhead_top_nav();?>
+							<?php trailhead_top_nav_non_member();?>
 						</div>
 						<?php if( $login || $join ):?>
 							<div class="cell shrink">
@@ -71,7 +71,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="menu-toggle-wrap top-bar-right float-right hide-for-tablet">
+		<div class="menu-toggle-wrap top-bar-right float-right hide-for-large">
 			<ul class="menu">
 				<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
 				<li><a id="menu-toggle" data-toggle="off-canvas"><span></span><span></span><span></span></a></li>
@@ -86,7 +86,7 @@
 			$link_title = $link['title'];
 			$link_target = $link['target'] ? $link['target'] : '_self';
 	?>
-		<a class="ask-experts-cta uppercase bg-violet color-white" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+		<a class="ask-experts-cta uppercase bg-violet color-white show-for-large" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 			<?php if($icon) {
 				echo wp_get_attachment_image( $icon['id'], 'full' );
 			};?>

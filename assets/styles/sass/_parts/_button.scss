@@ -4,6 +4,7 @@
 .button {
 	text-transform: uppercase;
 	transition: all .25s ease;
+	display: inline-block;
 	.inline-icon-wrap {
 		display: inline-flex;
 		align-items: center;
@@ -59,7 +60,7 @@
 			}
 		}
 	}
-	&.color-black{
+	&.color-black {
 		color: $black;
 		svg {
 			path {
@@ -120,6 +121,12 @@
 		&:focus {
 			background-color: #3C3D82;
 			border-color: #3C3D82;
+			color: $white;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
 		}
 	}
 }
