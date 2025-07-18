@@ -93,6 +93,8 @@
 		margin-top: clamp(2.494rem, 2.234rem + 1.107vw, 3.563rem);
 		margin-bottom: clamp(3.544rem, 3.175rem + 1.573vw, 5.063rem);
 		.inner.bg-light-gray {
+			border-radius: 10px;
+			overflow: hidden;
 			padding: clamp(1.925rem, 1.725rem + 0.854vw, 2.75rem) clamp(2.45rem, 2.195rem + 1.087vw, 3.5rem) 0;
 			@include breakpoint(medium down) {
 				padding-left: 1rem;
@@ -212,17 +214,27 @@
 					margin-left: rem-calc(7);
 				}
 			}
+			.card-grid {
+				margin-left: rem-calc(-11);
+				margin-right: rem-calc(-11);
+				> .cell {
+					padding-left: rem-calc(11);
+					padding-right: rem-calc(11);
+				}
+			}
 			.home-cpt-sidebar {
 				> .title.h6 {
 					margin-bottom: 19px;
 				}
 				article {
-					border-radius: 10px;
-					overflow: hidden;
 					margin-bottom: 15px;
+					.bg-light-gray {
+						border-radius: 10px;
+						overflow: hidden;
+					}
 					.date {
 						flex: 0 0 72px;
-						padding: rem-calc(10);
+						padding: rem-calc(18) rem-calc(10);
 						.month {
 							
 						}
@@ -236,16 +248,8 @@
 				}
 			}
 			.home-cpt-main {
-				.card-grid {
-					margin-left: rem-calc(-11);
-					margin-right: rem-calc(-11);
-					> .cell {
-						padding-left: rem-calc(11);
-						padding-right: rem-calc(11);
-					}
-				}
 				.pad-right {
-					@include breakpoint(medium) {
+					@include breakpoint(large) {
 						padding-right: 7%;
 					}
 				}
@@ -273,9 +277,6 @@
 								padding: clamp(0.438rem, 0.371rem + 0.282vw, 0.625rem) clamp(0.438rem, 0.371rem + 0.282vw, 0.625rem) 0 clamp(0.787rem, 0.669rem + 0.507vw, 1.125rem);
 								.date {
 									padding-top: 2px;
-								}
-								.pod-icon {
-									flex: 0 0 31px;
 								}
 							}
 						}
@@ -328,12 +329,20 @@
 				}
 				&.news-row {
 					article {
-						margin-bottom: 15px;
+						margin-bottom: 30px;
+						@include breakpoint(medium) {
+							margin-bottom: 20px;
+						}
+						@include breakpoint(large) {
+							margin-bottom: 15px;
+						}
 					}
 					.featured {
 						.thumb-wrap {
-							aspect-ratio: 1/1;
 							height: 100%;
+							@include breakpoint(large down) {
+								aspect-ratio: 1/1;
+							}
 						}
 						.left {
 							width: 40%;
@@ -349,20 +358,40 @@
 					}
 					.thumb-wrap {
 						border-radius: 10px;
-						overflow: overflow-hidden;
+						overflow: hidden;
 					}
 					.stacked {
 						.thumb-wrap {
 							min-height: 0;
 							width: 100%;
 							aspect-ratio: 1/1;
+							@include breakpoint(large down) {
+								margin-bottom: 12px;
+								max-width: 150px;
+							}
 						}					
 					}
 				}
 			}
 		}
 		&.webinars {
-			
+			padding-bottom: clamp(1.269rem, 1.077rem + 0.817vw, 1.813rem);
+			article {
+				margin-bottom: clamp(1.5rem, 1.28rem + 0.939vw, 2.125rem);
+			}
+			.thumb-icon-wrap {
+				aspect-ratio: 5 / 3;
+				border-radius: 10px;
+				overflow: hidden;
+				margin-bottom: clamp(0.656rem, 0.557rem + 0.423vw, 0.938rem);
+				.pod-icon {
+					flex: 0 0 31px;
+					position: absolute;
+				}
+			}
+			.body .archive-link-wrap {
+				padding-top: 0;
+			}
 		}
 	}
 	.member-spotlights {

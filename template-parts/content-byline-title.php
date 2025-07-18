@@ -12,7 +12,7 @@
 			<b><?=$date;?></b>
 		</div>
 	<?php endif;?>
-	<h3 class="h6 weight-400">
+	<h3 class="p p-2 weight-400">
 		<?php the_title();?>
 	</h3>
 	<?php if( $author_name ):?>

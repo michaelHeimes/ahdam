@@ -144,12 +144,12 @@ $first_name = explode(' ', $current_user_name)[0];
 											<div>
 												<div class="grid-x align-center">
 													<?php if( $nm_banner_heading ):?>
-														<h1 class="color-white small-11 medium-12">
+														<h1 class="color-white small-12 medium-11 medium-12">
 															<?=wp_kses_post($nm_banner_heading);?>
 														</h1>
 													<?php endif;?>
 													<?php if( $nm_banner_text ):?>
-														<p class="p-3 color-white small-11 medium-12">
+														<p class="p-3 color-white small-12 medium-11 medium-12">
 															<?=wp_kses_post($nm_banner_text);?>
 														</p>
 													<?php endif;?>
@@ -315,51 +315,57 @@ $first_name = explode(' ', $current_user_name)[0];
 									</div>
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-11 medium-5 tablet-4 large-3">
-												<div class="title h6 uppercase">
-													Upcoming
-												</div>
-												<?php while ( $upcoming_webinar_query->have_posts() ) : $upcoming_webinar_query->the_post(); 
-													$webinar_date = get_field('webinar_date') ?? null;	
-													if( $webinar_date  ) {
-														$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
-													}
-													$gated = get_field('gated');
-												?>
-													<article id="post-<?php the_ID(); ?>" <?php post_class('bg-light-gray relative'); ?> role="article">
-														<div class="grid-x color-black">
-															<?php if( $webinar_date ):?>
-																<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
-																	<div class="month h6 uppercase">
-																		<?=$date->format( 'M' ); ?>
-																	</div>
-																	<div class="day h2 m-0">
-																		<?=$date->format( 'd' ); ?>
-																	</div>
-																</div>
-																<div class="cell auto title grid-x align-middle">
-																	<h3 class="h6 weight-400 m-0">
-																		<?php the_title();?>
-																	</h3>
-																</div>
-															<?php endif;?>
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 large-3">
+												<div class="grid-x grid-padding-x card-grid">
+													<div class="cell small-12">
+														<div class="title h6 uppercase">
+															Upcoming
 														</div>
-														<?php if( $gated && !is_user_logged_in() ):?>
-															<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
-																<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
-																<span class="show-for-sr">
-																	This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																</span>
-															</button>
-														<?php else:?>
-															<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-														<?php endif;?>
-													</article>
-												<?php endwhile;?>
+													</div>
+													<?php while ( $upcoming_webinar_query->have_posts() ) : $upcoming_webinar_query->the_post(); 
+														$webinar_date = get_field('webinar_date') ?? null;	
+														if( $webinar_date  ) {
+															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
+														}
+														$gated = get_field('gated');
+													?>
+														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
+															<div class="bg-light-gray relative h-100">
+																<div class="grid-x color-black h-100">
+																	<?php if( $webinar_date ):?>
+																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
+																			<div class="month h6 uppercase">
+																				<?=$date->format( 'M' ); ?>
+																			</div>
+																			<div class="day h2 m-0">
+																				<?=$date->format( 'd' ); ?>
+																			</div>
+																		</div>
+																		<div class="cell auto title grid-x align-middle">
+																			<h3 class="h6 weight-400 m-0">
+																				<?php the_title();?>
+																			</h3>
+																		</div>
+																	<?php endif;?>
+																</div>
+																<?php if( $gated && !is_user_logged_in() ):?>
+																	<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
+																		<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
+																		<span class="show-for-sr">
+																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
+																		</span>
+																	</button>
+																<?php else:?>
+																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
+																<?php endif;?>
+															</div>
+														</article>
+													<?php endwhile;?>
+												</div>
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-11 medium-7 tablet-8 large-9">
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 large-9">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
@@ -423,7 +429,7 @@ $first_name = explode(' ', $current_user_name)[0];
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_webinars_page);?>">
 															View <span class="inline-icon-wrap">Webinars
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" fill="#201F1F"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/><path d="m6.657 4.446.74.672 1.515-1.672H6.657v1ZM4.13 7.235l-.741-.672-.002.002.743.67Zm.571.633.743.67-.743-.67Zm3.203-3.554-.743-.67.743.67Zm.05-.067.837.548.164-.25v-.298h-1Zm0-.018-.899-.436-.1.206v.23h1Zm.029-.058.9.437.1-.207v-.23h-1Zm0-.027-.947-.32-.053.156v.164h1Zm.014-.058-.99-.137-.003.019-.002.018.995.1Zm0-.087L7 3.929l-.007.104.014.103L7.998 4Zm0-.09.998-.069-.001-.015-.002-.015-.995.1Zm-.014-.056h-1v.165l.053.156.947-.32Zm0-.027h1v-.23l-.1-.206-.9.436Zm-.028-.058h-1v.23l.1.207.9-.437Zm0-.018h1v-.325l-.192-.263-.808.588Zm-.05-.069.808-.588-.03-.043-.036-.039-.743.67ZM4.701.13 3.959.8l.743-.67Zm-.57.633-.744.67.743-.67Zm2.514 2.788v1h2.25l-1.507-1.67-.743.67ZM0 4h-1c0 .698.534 1.447 1.403 1.447v-2C.83 3.446 1 3.793 1 4H0Zm.403.447v1h6.254v-2H.403v1Zm6.254 0-.742-.671L3.39 6.563l.741.672.741.67 2.526-2.787-.741-.672ZM4.13 7.235l-.743-.67c-.5.555-.5 1.417 0 1.972l.743-.67.743-.669c.103.114.14.245.14.353a.528.528 0 0 1-.14.353l-.743-.67Zm0 .633-.743.67a1.376 1.376 0 0 0 2.057 0l-.743-.67-.743-.67c.108-.12.273-.2.458-.2.184 0 .35.08.457.2l-.743.67Zm.571 0 .743.67 3.203-3.554-.743-.67-.743-.67L3.96 7.199l.743.67Zm3.203-3.554.743.67a1.54 1.54 0 0 0 .144-.189l-.836-.548-.837-.548c-.002.004.013-.021.043-.054l.743.67Zm.05-.067h1V4.23h-2v.018h1Zm0-.018.9.437.028-.058-.9-.437-.899-.437-.028.059.9.436Zm.029-.058h1v-.027h-2v.027h1Zm0-.027.947.32c.01-.03.048-.14.062-.278l-.995-.1-.995-.1a.8.8 0 0 1 .021-.12c.006-.024.012-.04.013-.042l.947.32Zm.014-.058.99.137c.017-.12.017-.241 0-.362L7.998 4l-.99.137a.684.684 0 0 1 0-.187l.99.137Zm0-.087.998.069a1.663 1.663 0 0 0 0-.228l-.998.07L7 3.977a.351.351 0 0 1 0-.048l.998.069Zm0-.09.995-.1c-.015-.15-.06-.27-.062-.276l-.947.32-.947.32a.826.826 0 0 1-.034-.165l.995-.099Zm-.014-.056h1v-.027h-2v.027h1Zm0-.027.9-.436-.029-.058-.9.436-.899.437.028.058.9-.437Zm-.028-.058h1V3.75h-2v.018h1Zm0-.018.808-.588-.05-.069-.809.588-.809.588.05.07.81-.589Zm-.05-.069.742-.67L5.445-.54l-.743.67-.743.67 3.204 3.55.742-.669ZM4.701.13l.743-.67a1.376 1.376 0 0 0-2.057 0l.743.67.743.67a.617.617 0 0 1-.457.199.617.617 0 0 1-.458-.2l.743-.67Zm-.57 0-.744-.67c-.5.555-.5 1.418 0 1.973l.743-.67.743-.67c.103.115.14.246.14.353a.528.528 0 0 1-.14.353L4.13.13Zm0 .633-.743.67L5.904 4.22l.742-.67.743-.67L4.874.093l-.743.67Zm2.514 2.788v-1H.403v2h6.243v-1Zm-6.243 0v-1C-.466 2.551-1 3.301-1 4h2a.574.574 0 0 1-.597.552v-1Z" fill="#201F1F" mask="url(#a)"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
@@ -437,9 +443,9 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php if ( $events_query->have_posts() || $news_query->have_posts() ) :?>
 							<section class="events-news home-cpt-row">
 								<div class="grid-container">
-									<div class="body grid-x grid-padding-x">
+									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $events_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-11 medium-5 tablet-4 large-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 large-3">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">Events</h2>
@@ -448,65 +454,69 @@ $first_name = explode(' ', $current_user_name)[0];
 														<hr>
 													</div>
 												</div>
-												<?php while ( $events_query->have_posts() ) : $events_query->the_post(); 
-													$event_date = get_field('cpt_event_date') ?? null;	
-													if( $event_date ) {
-														$date = DateTime::createFromFormat( 'Ymd', $event_date );
-													}
-													$gated = get_field('gated');
-												?>
-													<article id="post-<?php the_ID(); ?>" <?php post_class('bg-light-gray relative'); ?> role="article">
-														<div class="grid-x color-black">
-															<?php if( $webinar_date ):?>
-																<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
-																	<div class="month h6 uppercase">
-																		<?=$date->format( 'M' ); ?>
-																	</div>
-																	<div class="day h2 m-0">
-																		<?=$date->format( 'd' ); ?>
-																	</div>
+												<div class="grid-x grid-padding-x card-grid">
+													<?php while ( $events_query->have_posts() ) : $events_query->the_post(); 
+														$event_date = get_field('cpt_event_date') ?? null;	
+														if( $event_date ) {
+															$date = DateTime::createFromFormat( 'Ymd', $event_date );
+														}
+														$gated = get_field('gated');
+													?>
+														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
+															<div class="bg-light-gray relative h-100">
+																<div class="grid-x color-black h-100">
+																	<?php if( $webinar_date ):?>
+																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
+																			<div class="month h6 uppercase">
+																				<?=$date->format( 'M' ); ?>
+																			</div>
+																			<div class="day h2 m-0">
+																				<?=$date->format( 'd' ); ?>
+																			</div>
+																		</div>
+																		<div class="cell auto title grid-x align-middle">
+																			<h3 class="h6 weight-400 m-0">
+																				<?php the_title();?>
+																			</h3>
+																		</div>
+																	<?php endif;?>
 																</div>
-																<div class="cell auto title grid-x align-middle">
-																	<h3 class="h6 weight-400 m-0">
-																		<?php the_title();?>
-																	</h3>
-																</div>
-															<?php endif;?>
-														</div>
-														<?php if( $gated && !is_user_logged_in() ):?>
-															<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
-																<div class="reveal-trigger-overlay grid-x align-middle align-center">
-																	<svg width="31" height="31" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg" fill="none">
-																	<circle cx="15.5" cy="15.5" r="15.5" fill="#fff"/>
-																	<path fill="#C84DFF" clip-path="url(#a)" d="M21.246 13.2h-.474v-1.94c0-2.9-2.59-5.26-5.77-5.26-3.181 0-5.77 2.36-5.77 5.26v1.94h-.475c-.97 0-1.757.718-1.757 1.602v7.596C7 23.284 7.787 24 8.757 24h12.486c.97 0 1.757-.717 1.757-1.602v-7.596c0-.884-.785-1.601-1.754-1.601Zm-5.508 5.504v.995c0 .15-.131.268-.296.268h-.884c-.162 0-.293-.121-.293-.268v-.995c-.403-.226-.673-.627-.673-1.09 0-.71.63-1.282 1.41-1.282.778 0 1.406.575 1.406 1.282 0 .46-.27.864-.67 1.09Zm2.504-5.504h-6.48v-1.94c0-1.63 1.451-2.954 3.24-2.954 1.787 0 3.24 1.324 3.24 2.954v1.94Z"/>
-																	<defs>
-																		<clipPath id="a">
-																		<path d="M7 6h16v18H7z" fill="#fff"/>
-																		</clipPath>
-																	</defs>
-																	</svg>
-																</div>
-																<span class="show-for-sr">
-																	This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																</span>
-															</button>
-														<?php else:?>
-															<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-														<?php endif;?>
-													</article>
-												<?php endwhile;?>
+																<?php if( $gated && !is_user_logged_in() ):?>
+																	<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
+																		<div class="reveal-trigger-overlay grid-x align-middle align-center">
+																			<svg width="31" height="31" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg" fill="none">
+																			<circle cx="15.5" cy="15.5" r="15.5" fill="#fff"/>
+																			<path fill="#C84DFF" clip-path="url(#a)" d="M21.246 13.2h-.474v-1.94c0-2.9-2.59-5.26-5.77-5.26-3.181 0-5.77 2.36-5.77 5.26v1.94h-.475c-.97 0-1.757.718-1.757 1.602v7.596C7 23.284 7.787 24 8.757 24h12.486c.97 0 1.757-.717 1.757-1.602v-7.596c0-.884-.785-1.601-1.754-1.601Zm-5.508 5.504v.995c0 .15-.131.268-.296.268h-.884c-.162 0-.293-.121-.293-.268v-.995c-.403-.226-.673-.627-.673-1.09 0-.71.63-1.282 1.41-1.282.778 0 1.406.575 1.406 1.282 0 .46-.27.864-.67 1.09Zm2.504-5.504h-6.48v-1.94c0-1.63 1.451-2.954 3.24-2.954 1.787 0 3.24 1.324 3.24 2.954v1.94Z"/>
+																			<defs>
+																				<clipPath id="a">
+																				<path d="M7 6h16v18H7z" fill="#fff"/>
+																				</clipPath>
+																			</defs>
+																			</svg>
+																		</div>
+																		<span class="show-for-sr">
+																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
+																		</span>
+																	</button>
+																<?php else:?>
+																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
+																<?php endif;?>
+															</div>
+														</article>
+													<?php endwhile;?>
+												</div>
 												<?php if( $global_events_page ):?>
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_events_page);?>">
 															View <span class="inline-icon-wrap">Events
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" fill="#201F1F"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/><path d="m6.657 4.446.74.672 1.515-1.672H6.657v1ZM4.13 7.235l-.741-.672-.002.002.743.67Zm.571.633.743.67-.743-.67Zm3.203-3.554-.743-.67.743.67Zm.05-.067.837.548.164-.25v-.298h-1Zm0-.018-.899-.436-.1.206v.23h1Zm.029-.058.9.437.1-.207v-.23h-1Zm0-.027-.947-.32-.053.156v.164h1Zm.014-.058-.99-.137-.003.019-.002.018.995.1Zm0-.087L7 3.929l-.007.104.014.103L7.998 4Zm0-.09.998-.069-.001-.015-.002-.015-.995.1Zm-.014-.056h-1v.165l.053.156.947-.32Zm0-.027h1v-.23l-.1-.206-.9.436Zm-.028-.058h-1v.23l.1.207.9-.437Zm0-.018h1v-.325l-.192-.263-.808.588Zm-.05-.069.808-.588-.03-.043-.036-.039-.743.67ZM4.701.13 3.959.8l.743-.67Zm-.57.633-.744.67.743-.67Zm2.514 2.788v1h2.25l-1.507-1.67-.743.67ZM0 4h-1c0 .698.534 1.447 1.403 1.447v-2C.83 3.446 1 3.793 1 4H0Zm.403.447v1h6.254v-2H.403v1Zm6.254 0-.742-.671L3.39 6.563l.741.672.741.67 2.526-2.787-.741-.672ZM4.13 7.235l-.743-.67c-.5.555-.5 1.417 0 1.972l.743-.67.743-.669c.103.114.14.245.14.353a.528.528 0 0 1-.14.353l-.743-.67Zm0 .633-.743.67a1.376 1.376 0 0 0 2.057 0l-.743-.67-.743-.67c.108-.12.273-.2.458-.2.184 0 .35.08.457.2l-.743.67Zm.571 0 .743.67 3.203-3.554-.743-.67-.743-.67L3.96 7.199l.743.67Zm3.203-3.554.743.67a1.54 1.54 0 0 0 .144-.189l-.836-.548-.837-.548c-.002.004.013-.021.043-.054l.743.67Zm.05-.067h1V4.23h-2v.018h1Zm0-.018.9.437.028-.058-.9-.437-.899-.437-.028.059.9.436Zm.029-.058h1v-.027h-2v.027h1Zm0-.027.947.32c.01-.03.048-.14.062-.278l-.995-.1-.995-.1a.8.8 0 0 1 .021-.12c.006-.024.012-.04.013-.042l.947.32Zm.014-.058.99.137c.017-.12.017-.241 0-.362L7.998 4l-.99.137a.684.684 0 0 1 0-.187l.99.137Zm0-.087.998.069a1.663 1.663 0 0 0 0-.228l-.998.07L7 3.977a.351.351 0 0 1 0-.048l.998.069Zm0-.09.995-.1c-.015-.15-.06-.27-.062-.276l-.947.32-.947.32a.826.826 0 0 1-.034-.165l.995-.099Zm-.014-.056h1v-.027h-2v.027h1Zm0-.027.9-.436-.029-.058-.9.436-.899.437.028.058.9-.437Zm-.028-.058h1V3.75h-2v.018h1Zm0-.018.808-.588-.05-.069-.809.588-.809.588.05.07.81-.589Zm-.05-.069.742-.67L5.445-.54l-.743.67-.743.67 3.204 3.55.742-.669ZM4.701.13l.743-.67a1.376 1.376 0 0 0-2.057 0l.743.67.743.67a.617.617 0 0 1-.457.199.617.617 0 0 1-.458-.2l.743-.67Zm-.57 0-.744-.67c-.5.555-.5 1.418 0 1.973l.743-.67.743-.67c.103.115.14.246.14.353a.528.528 0 0 1-.14.353L4.13.13Zm0 .633-.743.67L5.904 4.22l.742-.67.743-.67L4.874.093l-.743.67Zm2.514 2.788v-1H.403v2h6.243v-1Zm-6.243 0v-1C-.466 2.551-1 3.301-1 4h2a.574.574 0 0 1-.597.552v-1Z" fill="#201F1F" mask="url(#a)"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
 											</div>
 										<?php endif;?>
 										<?php if ( $news_query->have_posts() ) :?>
-											<div class="home-cpt-main news-row cell small-11 medium-7 tablet-8 large-9">
+											<div class="home-cpt-main news-row cell small-12 medium-11 medium-7 tablet-8 large-9">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">News</h2>
@@ -516,7 +526,7 @@ $first_name = explode(' ', $current_user_name)[0];
 													</div>
 												</div>
 												<div class="grid-x grid-padding-x pad-right">
-													<div class="cell small-12 large-8">
+													<div class="cell small-12 large-8 show-for-xlarge">
 														<?php $i = 1; while ( $news_query->have_posts() ) : $news_query->the_post(); 
 															$thumbnail_id = get_post_thumbnail_id(); 
 															$gated = get_field('gated');
@@ -560,51 +570,84 @@ $first_name = explode(' ', $current_user_name)[0];
 															
 														<?php $i++; endwhile;?>
 													</div>
-													<div class="cell small-12 large-4 medium-no-pad-right">
-														<?php $i = 1; while ( $news_query->have_posts() ) : $news_query->the_post(); 
-															$thumbnail_id = get_post_thumbnail_id(); 
-															$gated = get_field('gated');
-														?>
-													
-															<?php if( $i >= 2 ):?>
-																<article id="post-<?php the_ID(); ?>" <?php post_class('stacked relative'); ?> role="article">
-																	<div class="card-grid grid-x grid-padding-x">
-																		<?php if( $thumbnail_id ):?>
-																			<div class="cell small-12 medium-4">
-																				<div class="thumb-wrap relative bg-black has-object-fit-img">
-																					<?php if( $thumbnail_id ) {
-																						echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
-																					};?>
-																					<?php if( $gated && !is_user_logged_in() ) {
-																						get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
-																					};?>
+													<div class="cell small-12 xlarge-4 medium-no-pad-right">
+														<div class="grid-x grid-padding-x">
+															<?php $i = 1; while ( $news_query->have_posts() ) : $news_query->the_post(); 
+																$thumbnail_id = get_post_thumbnail_id(); 
+																$gated = get_field('gated');
+															?>
+															
+																<?php if( $i == 1 ):?>
+																	<article id="post-<?php the_ID(); ?>" <?php post_class('stacked relative hide-for-xlarge cell small-6 medium-12 large-6 xlarge-12'); ?> role="article">
+																		<div class="card-grid grid-x grid-padding-x">
+																			<?php if( $thumbnail_id ):?>
+																				<div class="cell small-12 medium-4">
+																					<div class="thumb-wrap relative bg-black has-object-fit-img">
+																						<?php if( $thumbnail_id ) {
+																							echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
+																						};?>
+																						<?php if( $gated && !is_user_logged_in() ) {
+																							get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
+																						};?>
+																					</div>
 																				</div>
+																			<?php endif;?>
+																			<div class="title-wrap cell small-12 medium-8">
+																				<?php get_template_part('template-parts/content', 'byline-title');?>
 																			</div>
-																		<?php endif;?>
-																		<div class="title-wrap cell small-12 medium-8">
-																			<?php get_template_part('template-parts/content', 'byline-title');?>
 																		</div>
-																	</div>
-																	<?php if( $gated && !is_user_logged_in() ):?>
-																		<button class="reveal-trigger absolute-link-trigger" data-open="gated-content-alert">
-																			<span class="show-for-sr">
-																				This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																			</span>
-																		</button>
-																	<?php else:?>
-																		<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-																	<?php endif;?>
-																</article>
-															<?php endif;?>
-													
-														<?php $i++; endwhile;?>
+																		<?php if( $gated && !is_user_logged_in() ):?>
+																			<button class="reveal-trigger absolute-link-trigger" data-open="gated-content-alert">
+																				<span class="show-for-sr">
+																					This triggers a modal that informs the user that the content is gated and how to Join and gain access.
+																				</span>
+																			</button>
+																		<?php else:?>
+																			<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
+																		<?php endif;?>
+																	</article>
+																<?php endif;?>
+														
+																<?php if( $i >= 2 ):?>
+																	<article id="post-<?php the_ID(); ?>" <?php post_class('stacked relative cell small-6 medium-12 large-6 xlarge-12'); ?> role="article">
+																		<div class="card-grid grid-x grid-padding-x">
+																			<?php if( $thumbnail_id ):?>
+																				<div class="cell small-12 medium-4">
+																					<div class="thumb-wrap relative bg-black has-object-fit-img">
+																						<?php if( $thumbnail_id ) {
+																							echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
+																						};?>
+																						<?php if( $gated && !is_user_logged_in() ) {
+																							get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
+																						};?>
+																					</div>
+																				</div>
+																			<?php endif;?>
+																			<div class="title-wrap cell small-12 medium-8">
+																				<?php get_template_part('template-parts/content', 'byline-title');?>
+																			</div>
+																		</div>
+																		<?php if( $gated && !is_user_logged_in() ):?>
+																			<button class="reveal-trigger absolute-link-trigger" data-open="gated-content-alert">
+																				<span class="show-for-sr">
+																					This triggers a modal that informs the user that the content is gated and how to Join and gain access.
+																				</span>
+																			</button>
+																		<?php else:?>
+																			<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
+																		<?php endif;?>
+																	</article>
+																<?php endif;?>
+														
+															<?php $i++; endwhile;?>
+														</div>
 													</div>
 												</div>
 												<?php if( $global_news_page ):?>
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_news_page);?>">
 															View <span class="inline-icon-wrap">News
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" fill="#201F1F"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/><path d="m6.657 4.446.74.672 1.515-1.672H6.657v1ZM4.13 7.235l-.741-.672-.002.002.743.67Zm.571.633.743.67-.743-.67Zm3.203-3.554-.743-.67.743.67Zm.05-.067.837.548.164-.25v-.298h-1Zm0-.018-.899-.436-.1.206v.23h1Zm.029-.058.9.437.1-.207v-.23h-1Zm0-.027-.947-.32-.053.156v.164h1Zm.014-.058-.99-.137-.003.019-.002.018.995.1Zm0-.087L7 3.929l-.007.104.014.103L7.998 4Zm0-.09.998-.069-.001-.015-.002-.015-.995.1Zm-.014-.056h-1v.165l.053.156.947-.32Zm0-.027h1v-.23l-.1-.206-.9.436Zm-.028-.058h-1v.23l.1.207.9-.437Zm0-.018h1v-.325l-.192-.263-.808.588Zm-.05-.069.808-.588-.03-.043-.036-.039-.743.67ZM4.701.13 3.959.8l.743-.67Zm-.57.633-.744.67.743-.67Zm2.514 2.788v1h2.25l-1.507-1.67-.743.67ZM0 4h-1c0 .698.534 1.447 1.403 1.447v-2C.83 3.446 1 3.793 1 4H0Zm.403.447v1h6.254v-2H.403v1Zm6.254 0-.742-.671L3.39 6.563l.741.672.741.67 2.526-2.787-.741-.672ZM4.13 7.235l-.743-.67c-.5.555-.5 1.417 0 1.972l.743-.67.743-.669c.103.114.14.245.14.353a.528.528 0 0 1-.14.353l-.743-.67Zm0 .633-.743.67a1.376 1.376 0 0 0 2.057 0l-.743-.67-.743-.67c.108-.12.273-.2.458-.2.184 0 .35.08.457.2l-.743.67Zm.571 0 .743.67 3.203-3.554-.743-.67-.743-.67L3.96 7.199l.743.67Zm3.203-3.554.743.67a1.54 1.54 0 0 0 .144-.189l-.836-.548-.837-.548c-.002.004.013-.021.043-.054l.743.67Zm.05-.067h1V4.23h-2v.018h1Zm0-.018.9.437.028-.058-.9-.437-.899-.437-.028.059.9.436Zm.029-.058h1v-.027h-2v.027h1Zm0-.027.947.32c.01-.03.048-.14.062-.278l-.995-.1-.995-.1a.8.8 0 0 1 .021-.12c.006-.024.012-.04.013-.042l.947.32Zm.014-.058.99.137c.017-.12.017-.241 0-.362L7.998 4l-.99.137a.684.684 0 0 1 0-.187l.99.137Zm0-.087.998.069a1.663 1.663 0 0 0 0-.228l-.998.07L7 3.977a.351.351 0 0 1 0-.048l.998.069Zm0-.09.995-.1c-.015-.15-.06-.27-.062-.276l-.947.32-.947.32a.826.826 0 0 1-.034-.165l.995-.099Zm-.014-.056h1v-.027h-2v.027h1Zm0-.027.9-.436-.029-.058-.9.436-.899.437.028.058.9-.437Zm-.028-.058h1V3.75h-2v.018h1Zm0-.018.808-.588-.05-.069-.809.588-.809.588.05.07.81-.589Zm-.05-.069.742-.67L5.445-.54l-.743.67-.743.67 3.204 3.55.742-.669ZM4.701.13l.743-.67a1.376 1.376 0 0 0-2.057 0l.743.67.743.67a.617.617 0 0 1-.457.199.617.617 0 0 1-.458-.2l.743-.67Zm-.57 0-.744-.67c-.5.555-.5 1.418 0 1.973l.743-.67.743-.67c.103.115.14.246.14.353a.528.528 0 0 1-.14.353L4.13.13Zm0 .633-.743.67L5.904 4.22l.742-.67.743-.67L4.874.093l-.743.67Zm2.514 2.788v-1H.403v2h6.243v-1Zm-6.243 0v-1C-.466 2.551-1 3.301-1 4h2a.574.574 0 0 1-.597.552v-1Z" fill="#201F1F" mask="url(#a)"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
@@ -627,57 +670,61 @@ $first_name = explode(' ', $current_user_name)[0];
 											<hr>
 										</div>
 									</div>
-									<div class="body grid-x grid-padding-x">
+									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-11 medium-5 tablet-4 large-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 large-3">
 												<div class="title h6 uppercase">
 													Upcoming
 												</div>
-												<?php while ( $upcoming_podcast_query->have_posts() ) : $upcoming_podcast_query->the_post(); 
-													$podcast_date = get_field('podcast_date') ?? null;	
-													if( $podcast_date  ) {
-														$date = DateTime::createFromFormat( 'Ymd', $podcast_date );
-													}
-													$gated = get_field('gated');
-												?>
-													<article id="post-<?php the_ID(); ?>" <?php post_class('bg-light-gray relative'); ?> role="article">
-														<div class="grid-x color-black">
-															<?php if( $webinar_date ):?>
-																<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
-																	<div class="month h6 uppercase">
-																		<?=$date->format( 'M' ); ?>
-																	</div>
-																	<div class="day h2 m-0">
-																		<?=$date->format( 'd' ); ?>
-																	</div>
+												<div class="grid-x grid-padding-x card-grid">
+													<?php while ( $upcoming_podcast_query->have_posts() ) : $upcoming_podcast_query->the_post(); 
+														$podcast_date = get_field('podcast_date') ?? null;	
+														if( $podcast_date  ) {
+															$date = DateTime::createFromFormat( 'Ymd', $podcast_date );
+														}
+														$gated = get_field('gated');
+													?>
+														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
+															<div class="bg-light-gray relative h-100">
+																<div class="grid-x color-black h-100">
+																	<?php if( $webinar_date ):?>
+																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
+																			<div class="month h6 uppercase">
+																				<?=$date->format( 'M' ); ?>
+																			</div>
+																			<div class="day h2 m-0">
+																				<?=$date->format( 'd' ); ?>
+																			</div>
+																		</div>
+																		<div class="cell auto title grid-x align-middle">
+																			<h3 class="h6 weight-400 m-0">
+																				<?php the_title();?>
+																			</h3>
+																		</div>
+																	<?php endif;?>
 																</div>
-																<div class="cell auto title grid-x align-middle">
-																	<h3 class="h6 weight-400 m-0">
-																		<?php the_title();?>
-																	</h3>
-																</div>
-															<?php endif;?>
-														</div>
-														<?php if( $gated && !is_user_logged_in() ):?>
-															<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
-																<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
-																<span class="show-for-sr">
-																	This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																</span>
-															</button>
-														<?php else:?>
-															<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-														<?php endif;?>
-													</article>
-												<?php endwhile;?>
+																<?php if( $gated && !is_user_logged_in() ):?>
+																	<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
+																		<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
+																		<span class="show-for-sr">
+																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
+																		</span>
+																	</button>
+																<?php else:?>
+																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
+																<?php endif;?>
+															</div>
+														</article>
+													<?php endwhile;?>
+												</div>
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-11 medium-7 tablet-8 large-9">
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 large-9">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
-												<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-4 pad-right">
+												<div class="card-grid grid-x grid-padding-x small-up-2 medium-up-2 large-up-4 pad-right">
 													<?php while ( $latest_podcast_query->have_posts() ) : $latest_podcast_query->the_post(); 
 														$podcast_date = get_field('webinar_date') ?? null;	
 														if( $podcast_date  ) {
@@ -689,7 +736,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														<div class="cell">
 															<article id="post-<?php the_ID(); ?>" <?php post_class('relative'); ?> role="article">
 																<?php if( $thumbnail_id || $webinar_date ):?>
-																	<div class="thumb-date-wrap has-object-fit-img bg-black">
+																	<div class="thumb-icon-wrap has-object-fit-img bg-black">
 																		<?php if( $thumbnail_id ) {
 																			echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
 																		};?>
@@ -725,7 +772,7 @@ $first_name = explode(' ', $current_user_name)[0];
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_podcasts_page);?>">
 															View <span class="inline-icon-wrap">Podcasts
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" fill="#201F1F"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/><path d="m6.657 4.446.74.672 1.515-1.672H6.657v1ZM4.13 7.235l-.741-.672-.002.002.743.67Zm.571.633.743.67-.743-.67Zm3.203-3.554-.743-.67.743.67Zm.05-.067.837.548.164-.25v-.298h-1Zm0-.018-.899-.436-.1.206v.23h1Zm.029-.058.9.437.1-.207v-.23h-1Zm0-.027-.947-.32-.053.156v.164h1Zm.014-.058-.99-.137-.003.019-.002.018.995.1Zm0-.087L7 3.929l-.007.104.014.103L7.998 4Zm0-.09.998-.069-.001-.015-.002-.015-.995.1Zm-.014-.056h-1v.165l.053.156.947-.32Zm0-.027h1v-.23l-.1-.206-.9.436Zm-.028-.058h-1v.23l.1.207.9-.437Zm0-.018h1v-.325l-.192-.263-.808.588Zm-.05-.069.808-.588-.03-.043-.036-.039-.743.67ZM4.701.13 3.959.8l.743-.67Zm-.57.633-.744.67.743-.67Zm2.514 2.788v1h2.25l-1.507-1.67-.743.67ZM0 4h-1c0 .698.534 1.447 1.403 1.447v-2C.83 3.446 1 3.793 1 4H0Zm.403.447v1h6.254v-2H.403v1Zm6.254 0-.742-.671L3.39 6.563l.741.672.741.67 2.526-2.787-.741-.672ZM4.13 7.235l-.743-.67c-.5.555-.5 1.417 0 1.972l.743-.67.743-.669c.103.114.14.245.14.353a.528.528 0 0 1-.14.353l-.743-.67Zm0 .633-.743.67a1.376 1.376 0 0 0 2.057 0l-.743-.67-.743-.67c.108-.12.273-.2.458-.2.184 0 .35.08.457.2l-.743.67Zm.571 0 .743.67 3.203-3.554-.743-.67-.743-.67L3.96 7.199l.743.67Zm3.203-3.554.743.67a1.54 1.54 0 0 0 .144-.189l-.836-.548-.837-.548c-.002.004.013-.021.043-.054l.743.67Zm.05-.067h1V4.23h-2v.018h1Zm0-.018.9.437.028-.058-.9-.437-.899-.437-.028.059.9.436Zm.029-.058h1v-.027h-2v.027h1Zm0-.027.947.32c.01-.03.048-.14.062-.278l-.995-.1-.995-.1a.8.8 0 0 1 .021-.12c.006-.024.012-.04.013-.042l.947.32Zm.014-.058.99.137c.017-.12.017-.241 0-.362L7.998 4l-.99.137a.684.684 0 0 1 0-.187l.99.137Zm0-.087.998.069a1.663 1.663 0 0 0 0-.228l-.998.07L7 3.977a.351.351 0 0 1 0-.048l.998.069Zm0-.09.995-.1c-.015-.15-.06-.27-.062-.276l-.947.32-.947.32a.826.826 0 0 1-.034-.165l.995-.099Zm-.014-.056h1v-.027h-2v.027h1Zm0-.027.9-.436-.029-.058-.9.436-.899.437.028.058.9-.437Zm-.028-.058h1V3.75h-2v.018h1Zm0-.018.808-.588-.05-.069-.809.588-.809.588.05.07.81-.589Zm-.05-.069.742-.67L5.445-.54l-.743.67-.743.67 3.204 3.55.742-.669ZM4.701.13l.743-.67a1.376 1.376 0 0 0-2.057 0l.743.67.743.67a.617.617 0 0 1-.457.199.617.617 0 0 1-.458-.2l.743-.67Zm-.57 0-.744-.67c-.5.555-.5 1.418 0 1.973l.743-.67.743-.67c.103.115.14.246.14.353a.528.528 0 0 1-.14.353L4.13.13Zm0 .633-.743.67L5.904 4.22l.742-.67.743-.67L4.874.093l-.743.67Zm2.514 2.788v-1H.403v2h6.243v-1Zm-6.243 0v-1C-.466 2.551-1 3.301-1 4h2a.574.574 0 0 1-.597.552v-1Z" fill="#201F1F" mask="url(#a)"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>

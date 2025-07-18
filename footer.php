@@ -35,7 +35,7 @@
 												<h2><?=wp_kses_post($mailing_list_heading);?></h2>
 											<?php endif;?>
 											<?php if( $mailing_list_text ):?>
-												<div class="text-wrap">
+												<div class="text-wrap p p-3">
 													<?=wp_kses_post($mailing_list_text);?>
 												</div>
 											<?php endif;?>
