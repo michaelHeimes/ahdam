@@ -28,7 +28,7 @@
 					<div class="site-info">
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-center">
-								<div class="cell small-12 xlarge-10">
+								<div class="cell small-12 large-10">
 									<?php if( $mailing_list_heading || $mailing_list_text || $mailing_list_form_id ):?>
 										<div class="form">
 											<?php if( $mailing_list_heading ):?>

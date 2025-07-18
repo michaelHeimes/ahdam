@@ -16,8 +16,8 @@ register_nav_menus(
 function trailhead_top_nav_non_member() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_class'		=> 'large-horizontal menu main-nav',	// Adding custom nav class
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion large-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
+		'menu_class'		=> 'vertical xlarge-horizontal menu main-nav align-right',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion xlarge-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
 		'theme_location'	=> 'main-nav-non-member',					// Where it's located in the theme
 		'depth'				=> 2,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
@@ -30,8 +30,8 @@ function trailhead_top_nav_non_member() {
 function trailhead_top_nav_member() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_class'		=> 'large-horizontal menu main-nav',	// Adding custom nav class
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion large-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
+		'menu_class'		=> 'vertical xlarge-horizontal menu main-nav align-right',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion xlarge-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
 		'theme_location'	=> 'main-nav-member',					// Where it's located in the theme
 		'depth'				=> 2,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)

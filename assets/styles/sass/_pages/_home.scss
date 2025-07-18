@@ -13,41 +13,63 @@
 			transform: translateY(-4px);
 		}
 	}
-	.home-banner {
+	.home-banner.non-member {
+		padding-top: clamp(2.313rem, 2.07rem + 1.036vw, 3.313rem);
 		background-image: linear-gradient(34.61deg, #5354B5 38.9%, #2891D2 75%, #05B1C5 100%);
 		background-image: linear-gradient(34.61deg, #5354B5 9%, #2891D2 75%, #05B1C5 100%);
 		overflow: hidden;
 		margin-bottom: clamp(3.5rem, 2.972rem + 2.254vw, 5rem);
 		.left {
-			max-width: 388px;
+			@include breakpoint(small down) {
+				margin-bottom: 3rem;
+			}
+			@include breakpoint(tablet) {
+				max-width: 388px;
+			}
 			h1 {
 				margin-bottom: 0.3em;
 			}
 			.btn-group {
-				margin-top: 32px;
+				margin-top: clamp(1.4rem, 1.254rem + 0.621vw, 2rem);
+			}
+		}
+		.middle {
+			@include breakpoint(medium down) {
+				max-width: 450px;
 			}
 		}
 		.right {
-			padding-top: 92px;
+			padding-top: 50px;
+			@include breakpoint(medium) {
+				padding-top: 92px;
+			}
 			&:before {
 				content: '';
 				display: block;
 				background-color: $white;
-				border-radius: 16px 0 0 0;
 				position: absolute;
-				top: 92px;
 				bottom: 0;
-				left: 20px;
-				width: calc( 100% + 12px);
+				left: 0px;
+				width: 100%;
+				top: 50px;
+				@include breakpoint(medium) {
+					border-radius: 16px 0 0 0;
+					width: calc( 100% + 12px);
+					top: 92px;
+					left: 20px;
+				}
 				@include breakpoint(xxlarge) {
 					border-radius: 16px 16px 0 0;
 				}
 			}
 			nav {
-				padding: 43px 0px 58px 36px;
+				padding: 43px 20px 58px;
 				position: relative;
-				border-radius: 20px 0 0 0;
 				overflow: hidden;
+				@include breakpoint(medium) {
+					border-radius: 20px 0 0 0;
+					padding: 43px 0px 58px 36px;
+				}
 				hr {
 					margin-top: 17px;
 					margin-bottom: 25px;
@@ -63,6 +85,83 @@
 				}
 				h2 {
 					margin-bottom: -1px;
+				}
+			}
+		}
+	}
+	.home-banner.member {
+		margin-top: clamp(2.494rem, 2.234rem + 1.107vw, 3.563rem);
+		margin-bottom: clamp(3.544rem, 3.175rem + 1.573vw, 5.063rem);
+		.inner.bg-light-gray {
+			padding: clamp(1.925rem, 1.725rem + 0.854vw, 2.75rem) clamp(2.45rem, 2.195rem + 1.087vw, 3.5rem) 0;
+			@include breakpoint(medium down) {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+		.left {
+			margin-bottom: 2rem;
+			text-align: center;
+			@include breakpoint(large) {
+				text-align: left;
+			}
+			.btn-wrap {
+				margin-top: clamp(1.4rem, 1.254rem + 0.621vw, 2rem);
+			}
+		}
+		.right {
+			.cards {
+				.card {
+					margin-bottom: clamp(1.925rem, 1.725rem + 0.854vw, 2.75rem);
+					@include breakpoint(tablet down) {
+						max-width: 210px;
+					}
+					.inner {
+						padding: 2rem 1rem clamp(0.744rem, 0.666rem + 0.33vw, 1.063rem);
+						border-radius: 10px;
+						.icon-wrap {
+							margin-bottom: clamp(1.05rem, 0.941rem + 0.466vw, 1.5rem);
+						}
+						.learn-more {
+							//position: absolute;
+							width: 100px;
+							text-align: center;
+							bottom: clamp(1.969rem, 1.764rem + 0.874vw, 2.813rem); 
+							transform: translateY(16px);
+							transition: opacity .25s ease, transform .3s ease;
+						}
+					}
+					a.inner {
+						transition: .3s ease;
+						transform-origin: center;
+						svg {
+							circle,
+							path {
+								transition: .3s ease;
+							}
+						}
+						&:hover,
+						&:focus {
+							color: $white;
+							background-color: $color-violet;
+							transform: scale(1.05);
+							height: calc(100% + 30px);
+							transform: translateY(-15px);
+							svg {
+								circle {
+									fill: $white;
+								}
+								path {
+									fill: $color-violet;
+								}
+							}
+							.learn-more {
+								transform: translateY(-30px);
+								opacity: 1 !important;
+								transition: opacity .25s ease, transform .3s ease;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -146,7 +245,9 @@
 					}
 				}
 				.pad-right {
-					padding-right: 7%;
+					@include breakpoint(medium) {
+						padding-right: 7%;
+					}
 				}
 				article {
 					&.webinar {
@@ -226,8 +327,12 @@
 					
 				}
 				&.news-row {
+					article {
+						margin-bottom: 15px;
+					}
 					.featured {
 						.thumb-wrap {
+							aspect-ratio: 1/1;
 							height: 100%;
 						}
 						.left {
@@ -242,14 +347,22 @@
 						font-size: rem-calc(14);
 						padding-top: 1rem;
 					}
+					.thumb-wrap {
+						border-radius: 10px;
+						overflow: overflow-hidden;
+					}
 					.stacked {
 						.thumb-wrap {
 							min-height: 0;
 							width: 100%;
 							aspect-ratio: 1/1;
-						}					}
+						}					
+					}
 				}
 			}
+		}
+		&.webinars {
+			
 		}
 	}
 	.member-spotlights {

@@ -17,6 +17,10 @@ $nm_banner_button_link_2 = $fields['nm_banner_button_link_2'] ?? null;
 $nm_banner_graphic = $fields['nm_banner_graphic'] ?? null;
 $nm_banner_cta_rows = $fields['nm_banner_cta_rows'] ?? null;
 
+$m_banner_text = $fields['m_banner_text'] ?? null;
+$m_banner_button_link = $fields['m_banner_button_link'] ?? null;
+$m_banner_featured_ctas = $fields['m_banner_featured_ctas'] ?? null;
+
 $today = current_time('Ymd'); // get today's date in Ymd format in WP timezone
 
 $upcoming_webinar_args = array(
@@ -115,35 +119,41 @@ $global_events_page = get_field('global_events_page', 'option') ?? null;
 $global_news_page = get_field('global_news_page', 'option') ?? null;
 $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 
-$member_spotlight_posts = get_field('member_spotlight_posts') ?? null;
+$member_spotlight_posts = $fields['member_spotlight_posts'] ?? null;
 
-$partnerships = get_field('partnerships') ?? null;
-$partnerships_page_link = get_field('partnerships_page_link') ?? null;
+$partnerships = $fields['partnerships'] ?? null;
+$partnerships_page_link = $fields['partnerships_page_link'] ?? null;
+
+$current_user_name = wp_get_current_user()->display_name;
+$first_name = explode(' ', $current_user_name)[0];
+
 
 ?>
 	<div class="content">
 		<div class="inner-content">
 
 			<main id="primary" class="site-main">
-		
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					
 					<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_graphic || $nm_banner_cta_rows ):?>
-						<header class="entry-header home-banner">
+						<header class="entry-header home-banner non-member">
 							<div class="grid-container">
-								<div class="grid-x grid-padding-x">
+								<div class="grid-x grid-padding-x align-center">
 									<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_button_link_1 || $nm_banner_button_link_2 ):?>
-										<div class="left cell small-12 medium-4 large-auto grid-x align-middle">
+										<div class="left cell small-12 medium-6 large-auto grid-x align-middle">
 											<div>
-												<?php if( $nm_banner_heading ):?>
-													<h1 class="color-white">
-														<?=wp_kses_post($nm_banner_heading);?>
-													</h1>
-												<?php endif;?>
-												<?php if( $nm_banner_text ):?>
-													<p class="p-3 color-white">
-														<?=wp_kses_post($nm_banner_text);?>
-													</p>
-												<?php endif;?>
+												<div class="grid-x align-center">
+													<?php if( $nm_banner_heading ):?>
+														<h1 class="color-white small-11 medium-12">
+															<?=wp_kses_post($nm_banner_heading);?>
+														</h1>
+													<?php endif;?>
+													<?php if( $nm_banner_text ):?>
+														<p class="p-3 color-white small-11 medium-12">
+															<?=wp_kses_post($nm_banner_text);?>
+														</p>
+													<?php endif;?>
+												</div>
 												<?php if( $nm_banner_button_link_1 || $nm_banner_button_link_2 ) {
 													get_template_part('template-parts/part', 'btn-group',
 														array(
@@ -158,12 +168,12 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 										</div>
 									<?php endif;?>
 									<?php if( $nm_banner_graphic ):?>
-										<div class="middle cell small-12 large-auto grid-x align-middle">
+										<div class="middle cell small-12 medium-6 large-auto grid-x align-middle">
 											<?=wp_get_attachment_image( $nm_banner_graphic['id'], 'full' );?>
 										</div>
 									<?php endif;?>
 									<?php if( $nm_banner_cta_rows ):?>
-										<div class="right cell small-12 medium-4 large-auto grid-x align-bottom relative">
+										<div class="right cell small-12 medium-6 large-auto grid-x align-bottom relative">
 											<nav class="small-12">
 												<ul class="menu vertical">
 													<?php $count = count($nm_banner_cta_rows); $i = 1; foreach($nm_banner_cta_rows as $row):
@@ -218,6 +228,79 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 							</div>
 						</header><!-- .entry-header -->
 					<?php endif;?>
+					
+					<?php if( $m_banner_text || $m_banner_button_link || $m_banner_featured_ctas || $first_name ):?>
+						<header class="entry-header home-banner member">
+							<div class="grid-container">
+								<div class="inner bg-light-gray">
+									<div class="grid-x grid-padding-x align-middle">
+										<div class="left cell small-12 large-5">
+											<div class="h1">Welcome <?=esc_html($first_name);?></div>
+											<?php if( $m_banner_text ):?>
+												<div class="h3"><?=wp_kses_post($m_banner_text);?></div>
+											<?php endif;?>
+											<?php if( $m_banner_button_link ) :?>
+												<div class="btn-wrap">
+													<?php get_template_part('template-parts/part', 'btn-link',
+														array(
+															'link' => $m_banner_button_link, 
+															'classes' => 'black',
+														),
+													);?>	
+												</div>
+											<?php endif;?>
+										</div>
+										<?php if( $m_banner_featured_ctas ):?>
+											<div class="right cell small-12 large-7">
+												<div class="cards grid-x grid-padding-x align-center">
+													<?php foreach($m_banner_featured_ctas  as $cta):
+														$icon = $cta['icon'] ?? null;
+														$title = $cta['title'] ?? null;
+														$link = $cta['link'] ?? null;	
+													?>
+														<div class="card cell small-12 medium-4 text-center">
+														<?php
+														$is_link = $link && isset($link['url']);
+														$link_url = $is_link ? $link['url'] : '';
+														$link_title = $is_link ? $link['title'] : '';
+														$link_target = $is_link && isset($link['target']) ? $link['target'] : '_self';
+														?>
+														
+														<<?= $is_link ? 'a' : 'div'; ?>
+															class="inner relative h-100 bg-white color-black grid-x flex-dir-column align-middle align-justify"
+															<?= $is_link ? ' href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '"' : ''; ?>
+														>
+															<div class="top">
+																<?php if( $icon ): ?>
+																	<div class="icon-wrap" style="display: inline-block; max-width: 58px;">
+																		<?= wp_get_attachment_image( $icon['id'], 'large', false, [ 'class' => 'style-svg' ] ); ?>
+																	</div>
+																<?php endif; ?>
+															
+																<?php if( $title ): ?>
+																	<p class="p-2">
+																		<b><?= wp_kses_post($title); ?></b>
+																	</p>
+																<?php endif; ?>
+															</div>
+															<?php if( $is_link && $link_title ): ?>
+																<div class="learn-more h6" style="opacity: 0;">
+																	<u><b><?= esc_html($link_title); ?></b></u>
+																</div>
+															<?php endif; ?>
+														</<?= $is_link ? 'a' : 'div'; ?>>
+														</div>
+													<?php endforeach;?>
+												</div>
+											</div>
+										<?php endif;?>
+									</div>
+								</div>
+							</div>
+						</header>
+					<?php endif;?>
+					
+					
 					<section class="body" itemprop="text">
 						<?php if ( $upcoming_webinar_query->have_posts() || $latest_webinar_query->have_posts() ) :?>
 							<section class="webinars home-cpt-row">
@@ -230,9 +313,9 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 											<hr>
 										</div>
 									</div>
-									<div class="body grid-x grid-padding-x">
+									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-3">
+											<div class="home-cpt-sidebar cell small-11 medium-5 tablet-4 large-3">
 												<div class="title h6 uppercase">
 													Upcoming
 												</div>
@@ -276,12 +359,12 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-9">
+											<div class="home-cpt-main cell small-11 medium-7 tablet-8 large-9">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
-												<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-4 pad-right">
-													<?php while ( $latest_webinar_query->have_posts() ) : $latest_webinar_query->the_post(); 
+												<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 large-up-4 pad-right">
+													<?php $i = 1; while ( $latest_webinar_query->have_posts() ) : $latest_webinar_query->the_post(); 
 														$webinar_date = get_field('webinar_date') ?? null;	
 														if( $webinar_date  ) {
 															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
@@ -290,7 +373,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 														$host_images = get_field('host_images') ?? null;
 														$gated = get_field('gated');
 													?>
-														<div class="cell">
+														<div class="cell<?php if( $i > 1 ):?> show-for-medium<?php endif;?><?php if( $i > 2 ):?> show-for-tablet<?php endif;?><?php if( $i > 3 ):?> show-for-large<?php endif;?>">
 															<article id="post-<?php the_ID(); ?>" <?php post_class('relative'); ?> role="article">
 																<?php if( $host_images || $webinar_date ):?>
 																	<div class="thumb-date-wrap grid-x align-justify bg-black relative z-1">
@@ -334,7 +417,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 																<?php endif;?>
 															</article>
 														</div>
-													<?php endwhile;?>
+													<?php $i++; endwhile;?>
 												</div>
 												<?php if( $global_webinars_page ):?>
 													<div class="archive-link-wrap grid-x align-right">
@@ -351,15 +434,12 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 							</section>
 						<?php endif;?>
 						
-						
-						
-						
 						<?php if ( $events_query->have_posts() || $news_query->have_posts() ) :?>
 							<section class="events-news home-cpt-row">
 								<div class="grid-container">
 									<div class="body grid-x grid-padding-x">
 										<?php if ( $events_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-3">
+											<div class="home-cpt-sidebar cell small-11 medium-5 tablet-4 large-3">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">Events</h2>
@@ -426,7 +506,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 											</div>
 										<?php endif;?>
 										<?php if ( $news_query->have_posts() ) :?>
-											<div class="home-cpt-main news-row cell small-12 medium-9">
+											<div class="home-cpt-main news-row cell small-11 medium-7 tablet-8 large-9">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">News</h2>
@@ -436,18 +516,18 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 													</div>
 												</div>
 												<div class="grid-x grid-padding-x pad-right">
-													<div class="cell small-12 medium-8">
+													<div class="cell small-12 large-8">
 														<?php $i = 1; while ( $news_query->have_posts() ) : $news_query->the_post(); 
 															$thumbnail_id = get_post_thumbnail_id(); 
 															$gated = get_field('gated');
 														?>
 																
 															<?php if( $i == 1 ):?>
-																<article id="post-<?php the_ID(); ?>" <?php post_class('featured relative'); ?> role="article">
-																	<div class="card-grid grid-x grid-padding-x">
+																<article id="post-<?php the_ID(); ?>" <?php post_class('featured relative h-100'); ?> role="article">
+																	<div class="card-grid grid-x grid-padding-x h-100">
 																		<?php if( $thumbnail_id ):?>
-																			<div class="cell small-12 medium-6">
-																				<div class="thumb-wrap has-object-fit-img bg-black">
+																			<div class="cell small-12 large-6">
+																				<div class="thumb-wrap has-object-fit-img bg-black h-100">
 																					<?php if( $thumbnail_id ) {
 																						echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
 																					};?>
@@ -457,7 +537,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 																				</div>
 																			</div>
 																		<?php endif;?>
-																		<div class="title-wrap cell small-12 medium-6">
+																		<div class="title-wrap cell small-12 large-6">
 																			<?php get_template_part('template-parts/content', 'byline-title');?>
 																			<?php if ( has_excerpt() ) : ?>
 																				<div class="excerpt">
@@ -480,7 +560,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 															
 														<?php $i++; endwhile;?>
 													</div>
-													<div class="cell small-12 medium-4 medium-no-pad-right">
+													<div class="cell small-12 large-4 medium-no-pad-right">
 														<?php $i = 1; while ( $news_query->have_posts() ) : $news_query->the_post(); 
 															$thumbnail_id = get_post_thumbnail_id(); 
 															$gated = get_field('gated');
@@ -549,7 +629,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 									</div>
 									<div class="body grid-x grid-padding-x">
 										<?php if ( $upcoming_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-3">
+											<div class="home-cpt-sidebar cell small-11 medium-5 tablet-4 large-3">
 												<div class="title h6 uppercase">
 													Upcoming
 												</div>
@@ -593,7 +673,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-9">
+											<div class="home-cpt-main cell small-11 medium-7 tablet-8 large-9">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
@@ -660,7 +740,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 							<section class="member-spotlights color-white relative">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
-										<div class="cell small-12 xlarge-10">
+										<div class="cell small-12 large-10">
 											<header class="section-header grid-x grid-padding-x align-middle">
 												<div class="cell shrink title-wrap">
 													<div class="title h6 uppercase">
@@ -757,7 +837,7 @@ $partnerships_page_link = get_field('partnerships_page_link') ?? null;
 							<section class="partnerships">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
-										<div class="cell small-12 xlarge-10">
+										<div class="cell small-12 large-10">
 											<header class="section-header grid-x grid-padding-x align-middle">
 												<div class="cell shrink title-wrap">
 													<div class="title h6 uppercase">

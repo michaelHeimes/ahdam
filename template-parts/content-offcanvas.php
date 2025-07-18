@@ -38,7 +38,7 @@
 				$link_title = $link['title'];
 				$link_target = $link['target'] ? $link['target'] : '_self';
 		?>
-			<a class="ask-experts-cta uppercase bg-violet color-white hide-for-large text-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+			<a class="ask-experts-cta uppercase bg-violet color-white text-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 				<?php if($icon) {
 					echo wp_get_attachment_image( $icon['id'], 'full' );
 				};?>
