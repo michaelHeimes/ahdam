@@ -1,4 +1,8 @@
 footer#colophon {
+	text-align: center;
+	@include breakpoint(medium) {
+		text-align: left;
+	} 
 	.footer-border {
 		height: clamp(0.938rem, 0.805rem + 0.563vw, 1.313rem);
 		background: linear-gradient(
@@ -10,21 +14,51 @@ footer#colophon {
 		);
 		
 	}
+	.menu .logo {
+		margin-bottom: rem-calc(42);
+		a {
+			padding: 0;
+		}
+	}
+	.site-info {
+		padding-top: rem-calc(56);
+		padding-bottom: clamp(4.375rem, 3.781rem + 2.535vw, 6.063rem);
+	}
+	.text-wrap {
+		margin-bottom: rem-calc(34);
+		h2 {
+			margin-bottom: 13px;
+		}
+	}
 	.form-wrap {
+		margin-bottom: clamp(3.413rem, 2.898rem + 2.197vw, 4.875rem);
+		h2 {
+			margin-bottom: clamp(0.875rem, 0.765rem + 0.469vw, 1.188rem);
+		}
 		.gform_wrapper {
 			form {
 				@extend .grid-x;
-				@extend .grid-padding-x;
-				margin-right: -($smallGutter * .5);
-				margin-left: -($smallGutter * .5);
+				margin-right: -1rem;
+				margin-left: -1rem;
+				display: flex !important;
+				flex-direction: column;
 				@include breakpoint(medium) {
+					flex-direction: row;
 					margin-right: -($mediumGutter * .5);
 					margin-left: -($mediumGutter * .5);
 				}
 				.gform-body {
+					text-align: left;
+					@include breakpoint(small down) {
+						flex: 1;
+						margin-bottom: 29px;
+					}
 					@extend .cell;
 					@extend .auto;
+					padding-left: 1rem;
+					padding-right: 1rem;
 					input {
+						border-color: $white;
 						border-radius: 100px;
 						height: 50px;
 						padding: 0 20px;
@@ -38,12 +72,18 @@ footer#colophon {
 				.gform-footer {
 					@extend .cell;
 					@extend .shrink;
+					padding-left: 1rem;
+					padding-right: 1rem;
 					margin: 0;
+					@include breakpoint(small down) {
+						display: flex;
+						justify-content: center;
+					}
 					button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 						display: inline-block;
 						vertical-align: middle;
 						margin: 0;
-						padding: 0.85em 1em;
+						padding: 0.85em 1.5em;
 						border: 2px solid #0C0D3D;
 						border-radius: 100px;
 						-webkit-transition: background-color 0.25s ease, color 0.25s ease;
@@ -56,6 +96,7 @@ footer#colophon {
 						text-align: center;
 						cursor: pointer;
 						text-transform: uppercase;
+						background-color: $color-pink;
 						svg {
 							path {
 								all: revert-layer;
@@ -66,9 +107,6 @@ footer#colophon {
 			}
 		}
 	}
-	.site-info {
-
-	}
 	
 	.left {
 		.bottom {
@@ -78,16 +116,34 @@ footer#colophon {
 		}
 	}
 		
-	ul#footer-links {
+	.link-cell {
+		margin-bottom: 47px;
+		.h6 {
+			margin-bottom: .65rem;
+		}
+		.menu {
+			li {
+				margin-bottom: 6px;
+				a {
+					color: $white;
+					padding: 0;
+				}
+			}
+		}
+	}
+		
+	ul#footer-navigation {
 		@include breakpoint(medium down) {
-			padding-bottom: 4.08rem;
+			// padding-bottom: 4.08rem;
+			justify-content: center;
 		}
 		li {
 			a {
-				font-size: rem-calc(14);
-				line-height: rem-calc(19);
+				@extend .h6;
+				color: $color-pink;
 				font-weight: bold;
 				text-transform: uppercase;
+				padding: 0;
 			}
 		}
 	}

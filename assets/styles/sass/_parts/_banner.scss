@@ -1,0 +1,24 @@
+.page-banner {
+	margin-top: 20px;
+	@include breakpoint(medium) {
+		margin-top: 50px;
+	}
+	@include breakpoint(xlarge) {
+		margin-top: 100px;
+	}
+	.left {
+		.inner {
+			padding: 5% 5% 1rem 5%;
+		}
+	}
+	.right {
+		.img-wrap {
+			border-radius: 10px;
+			overflow: hidden;
+		}
+	}
+	hr {
+		margin-top: clamp(1.706rem, 1.449rem + 1.099vw, 2.438rem);
+		margin-bottom: clamp(5.425rem, 4.606rem + 3.493vw, 7.75rem);
+	}
+}

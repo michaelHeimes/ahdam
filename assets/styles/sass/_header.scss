@@ -41,6 +41,11 @@ header.site-header {
 			flex: 1;
 			.login-join-wrap {
 				padding-right: 0;
+				a.button.no-arrow {
+					svg {
+						margin: 0;
+					}
+				}
 			}
 		}
 		li.logo {
@@ -239,6 +244,27 @@ header.site-header {
 		// svg path {
 		// 	fill: $black;
 		// }
+	}
+	.btn-group {
+		&.non-member {
+			> div {
+				flex: 1;
+				a {
+					width: 100%;
+				}
+			}
+		}
+		&.member {
+			a.no-arrow {
+				aspect-ratio: 1/1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				svg {
+					margin: 0;
+				}
+			}
+		}
 	}
 	.main-nav {
 		padding-top: 19px;

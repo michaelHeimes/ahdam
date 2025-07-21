@@ -134,173 +134,178 @@ $first_name = explode(' ', $current_user_name)[0];
 
 			<main id="primary" class="site-main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					
-					<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_graphic || $nm_banner_cta_rows ):?>
-						<header class="entry-header home-banner non-member">
-							<div class="grid-container">
-								<div class="grid-x grid-padding-x align-center">
-									<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_button_link_1 || $nm_banner_button_link_2 ):?>
-										<div class="left cell small-12 medium-6 large-auto grid-x align-middle">
-											<div>
-												<div class="grid-x align-center">
-													<?php if( $nm_banner_heading ):?>
-														<h1 class="color-white small-12 medium-11 medium-12">
-															<?=wp_kses_post($nm_banner_heading);?>
-														</h1>
-													<?php endif;?>
-													<?php if( $nm_banner_text ):?>
-														<p class="p-3 color-white small-12 medium-11 medium-12">
-															<?=wp_kses_post($nm_banner_text);?>
-														</p>
-													<?php endif;?>
-												</div>
-												<?php if( $nm_banner_button_link_1 || $nm_banner_button_link_2 ) {
-													get_template_part('template-parts/part', 'btn-group',
-														array(
-															'btn1' => $nm_banner_button_link_1,
-															'btn1-classes' => '',
-															'btn2' => $nm_banner_button_link_2,
-															'btn2-classes' => 'white-outline',
-														),
-													);
-												};?>
+				
+					<?php if( is_user_logged_in() ):?>
+						
+						<?php if( $m_banner_text || $m_banner_button_link || $m_banner_featured_ctas || $first_name ):?>
+							<header class="entry-header home-banner member">
+								<div class="grid-container">
+									<div class="inner bg-light-gray">
+										<div class="grid-x grid-padding-x align-middle">
+											<div class="left cell small-12 large-5">
+												<div class="h1">Welcome <?=esc_html($first_name);?></div>
+												<?php if( $m_banner_text ):?>
+													<div class="h3"><?=wp_kses_post($m_banner_text);?></div>
+												<?php endif;?>
+												<?php if( $m_banner_button_link ) :?>
+													<div class="btn-wrap">
+														<?php get_template_part('template-parts/part', 'btn-link',
+															array(
+																'link' => $m_banner_button_link, 
+																'classes' => 'black',
+															),
+														);?>	
+													</div>
+												<?php endif;?>
 											</div>
-										</div>
-									<?php endif;?>
-									<?php if( $nm_banner_graphic ):?>
-										<div class="middle cell small-12 medium-6 large-auto grid-x align-middle">
-											<?=wp_get_attachment_image( $nm_banner_graphic['id'], 'full' );?>
-										</div>
-									<?php endif;?>
-									<?php if( $nm_banner_cta_rows ):?>
-										<div class="right cell small-12 medium-6 large-auto grid-x align-bottom relative">
-											<nav class="small-12">
-												<ul class="menu vertical">
-													<?php $count = count($nm_banner_cta_rows); $i = 1; foreach($nm_banner_cta_rows as $row):
-														$icon = $row['icon'] ?? null;	
-														$title = $row['title'] ?? null;	
-														$text = $row['text'] ?? null;	
-														$button_link = $row['button_link'] ?? null;
-														$button_class = $row['button_class'] ?? null;	
-													?>
-														<li class="grid-x">
-															<?php if( $icon ):?>
-																<div class="icon-wrap cell shrink">
-																	<div class="inner">
-																		<?=wp_get_attachment_image( $icon['id'], 'full' );?>
-																	</div>
-																</div>
-															<?php endif;?>
-															<?php if( $title || $text ):?>
-																<div class="cell auto">
-																	<?php if( $title ):?>
-																		<h2 class="h5">
-																			<?=wp_kses_post($title );?>
-																		</h2>
-																	<?php endif;?>
-																	<?php if( $text ):?>
-																		<p>
-																			<?=wp_kses_post($text );?>
-																		</p>
-																	<?php endif;?>
-																</div>
-															<?php endif;?>
-															<?php if( $button_link ):?>
-																<div class="cell auto">
-																	<?php get_template_part('template-parts/part', 'btn-link',
-																		array(
-																			'link' => $button_link, 
-																			'classes' => $button_class . ' small-12',
-																		),
-																	);?>	
-																</div>															
-															<?php endif;?>
-															<?php if( $count !== $i ):?>
-																<hr class="small-12">
-															<?php endif;?>
-														</li>
-													<?php $i++; endforeach;?>
-												</ul>
-											</nav>
-										</div>
-									<?php endif;?>
-								</div>
-							</div>
-						</header><!-- .entry-header -->
-					<?php endif;?>
-					
-					<?php if( $m_banner_text || $m_banner_button_link || $m_banner_featured_ctas || $first_name ):?>
-						<header class="entry-header home-banner member">
-							<div class="grid-container">
-								<div class="inner bg-light-gray">
-									<div class="grid-x grid-padding-x align-middle">
-										<div class="left cell small-12 large-5">
-											<div class="h1">Welcome <?=esc_html($first_name);?></div>
-											<?php if( $m_banner_text ):?>
-												<div class="h3"><?=wp_kses_post($m_banner_text);?></div>
-											<?php endif;?>
-											<?php if( $m_banner_button_link ) :?>
-												<div class="btn-wrap">
-													<?php get_template_part('template-parts/part', 'btn-link',
-														array(
-															'link' => $m_banner_button_link, 
-															'classes' => 'black',
-														),
-													);?>	
-												</div>
-											<?php endif;?>
-										</div>
-										<?php if( $m_banner_featured_ctas ):?>
-											<div class="right cell small-12 large-7">
-												<div class="cards grid-x grid-padding-x align-center">
-													<?php foreach($m_banner_featured_ctas  as $cta):
-														$icon = $cta['icon'] ?? null;
-														$title = $cta['title'] ?? null;
-														$link = $cta['link'] ?? null;	
-													?>
-														<div class="card cell small-12 medium-4 text-center">
-														<?php
-														$is_link = $link && isset($link['url']);
-														$link_url = $is_link ? $link['url'] : '';
-														$link_title = $is_link ? $link['title'] : '';
-														$link_target = $is_link && isset($link['target']) ? $link['target'] : '_self';
+											<?php if( $m_banner_featured_ctas ):?>
+												<div class="right cell small-12 large-7">
+													<div class="cards grid-x grid-padding-x align-center">
+														<?php foreach($m_banner_featured_ctas  as $cta):
+															$icon = $cta['icon'] ?? null;
+															$title = $cta['title'] ?? null;
+															$link = $cta['link'] ?? null;	
 														?>
-														
-														<<?= $is_link ? 'a' : 'div'; ?>
-															class="inner relative h-100 bg-white color-black grid-x flex-dir-column align-middle align-justify"
-															<?= $is_link ? ' href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '"' : ''; ?>
-														>
-															<div class="top">
-																<?php if( $icon ): ?>
-																	<div class="icon-wrap" style="display: inline-block; max-width: 58px;">
-																		<?= wp_get_attachment_image( $icon['id'], 'large', false, [ 'class' => 'style-svg' ] ); ?>
+															<div class="card cell small-12 medium-4 text-center">
+															<?php
+															$is_link = $link && isset($link['url']);
+															$link_url = $is_link ? $link['url'] : '';
+															$link_title = $is_link ? $link['title'] : '';
+															$link_target = $is_link && isset($link['target']) ? $link['target'] : '_self';
+															?>
+															
+															<<?= $is_link ? 'a' : 'div'; ?>
+																class="inner relative h-100 bg-white color-black grid-x flex-dir-column align-middle align-justify"
+																<?= $is_link ? ' href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '"' : ''; ?>
+															>
+																<div class="top">
+																	<?php if( $icon ): ?>
+																		<div class="icon-wrap" style="display: inline-block; max-width: 58px;">
+																			<?= wp_get_attachment_image( $icon['id'], 'large', false, [ 'class' => 'style-svg' ] ); ?>
+																		</div>
+																	<?php endif; ?>
+																
+																	<?php if( $title ): ?>
+																		<p class="p-2">
+																			<b><?= wp_kses_post($title); ?></b>
+																		</p>
+																	<?php endif; ?>
+																</div>
+																<?php if( $is_link && $link_title ): ?>
+																	<div class="learn-more h6" style="opacity: 0;">
+																		<u><b><?= esc_html($link_title); ?></b></u>
 																	</div>
 																<?php endif; ?>
-															
-																<?php if( $title ): ?>
-																	<p class="p-2">
-																		<b><?= wp_kses_post($title); ?></b>
-																	</p>
-																<?php endif; ?>
+															</<?= $is_link ? 'a' : 'div'; ?>>
 															</div>
-															<?php if( $is_link && $link_title ): ?>
-																<div class="learn-more h6" style="opacity: 0;">
-																	<u><b><?= esc_html($link_title); ?></b></u>
-																</div>
-															<?php endif; ?>
-														</<?= $is_link ? 'a' : 'div'; ?>>
-														</div>
-													<?php endforeach;?>
+														<?php endforeach;?>
+													</div>
 												</div>
+											<?php endif;?>
+										</div>
+									</div>
+								</div>
+							</header>
+						<?php endif;?>
+						
+					<?php else:?>
+											
+						<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_graphic || $nm_banner_cta_rows ):?>
+							<header class="entry-header home-banner non-member">
+								<div class="grid-container">
+									<div class="grid-x grid-padding-x align-center">
+										<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_button_link_1 || $nm_banner_button_link_2 ):?>
+											<div class="left cell small-12 medium-6 large-auto grid-x align-middle">
+												<div>
+													<div class="grid-x align-center">
+														<?php if( $nm_banner_heading ):?>
+															<h1 class="color-white small-12 medium-11 medium-12">
+																<?=wp_kses_post($nm_banner_heading);?>
+															</h1>
+														<?php endif;?>
+														<?php if( $nm_banner_text ):?>
+															<p class="p-3 color-white small-12 medium-11 medium-12">
+																<?=wp_kses_post($nm_banner_text);?>
+															</p>
+														<?php endif;?>
+													</div>
+													<?php if( $nm_banner_button_link_1 || $nm_banner_button_link_2 ) {
+														get_template_part('template-parts/part', 'btn-group',
+															array(
+																'btn1' => $nm_banner_button_link_1,
+																'btn1-classes' => '',
+																'btn2' => $nm_banner_button_link_2,
+																'btn2-classes' => 'white-outline',
+															),
+														);
+													};?>
+												</div>
+											</div>
+										<?php endif;?>
+										<?php if( $nm_banner_graphic ):?>
+											<div class="middle cell small-12 medium-6 large-auto grid-x align-middle">
+												<?=wp_get_attachment_image( $nm_banner_graphic['id'], 'full' );?>
+											</div>
+										<?php endif;?>
+										<?php if( $nm_banner_cta_rows ):?>
+											<div class="right cell small-12 medium-8 large-auto grid-x align-bottom relative">
+												<nav class="small-12">
+													<ul class="menu vertical">
+														<?php $count = count($nm_banner_cta_rows); $i = 1; foreach($nm_banner_cta_rows as $row):
+															$icon = $row['icon'] ?? null;	
+															$title = $row['title'] ?? null;	
+															$text = $row['text'] ?? null;	
+															$button_link = $row['button_link'] ?? null;
+															$button_class = $row['button_class'] ?? null;	
+														?>
+															<li class="grid-x">
+																<?php if( $icon ):?>
+																	<div class="icon-wrap cell shrink">
+																		<div class="inner">
+																			<?=wp_get_attachment_image( $icon['id'], 'full' );?>
+																		</div>
+																	</div>
+																<?php endif;?>
+																<?php if( $title || $text ):?>
+																	<div class="cell auto">
+																		<?php if( $title ):?>
+																			<h2 class="h5">
+																				<?=wp_kses_post($title );?>
+																			</h2>
+																		<?php endif;?>
+																		<?php if( $text ):?>
+																			<p>
+																				<?=wp_kses_post($text );?>
+																			</p>
+																		<?php endif;?>
+																	</div>
+																<?php endif;?>
+																<?php if( $button_link ):?>
+																	<div class="cell auto">
+																		<?php get_template_part('template-parts/part', 'btn-link',
+																			array(
+																				'link' => $button_link, 
+																				'classes' => $button_class . ' small-12',
+																			),
+																		);?>	
+																	</div>															
+																<?php endif;?>
+																<?php if( $count !== $i ):?>
+																	<hr class="small-12">
+																<?php endif;?>
+															</li>
+														<?php $i++; endforeach;?>
+													</ul>
+												</nav>
 											</div>
 										<?php endif;?>
 									</div>
 								</div>
-							</div>
-						</header>
+							</header><!-- .entry-header -->
+						<?php endif;?>
+						
 					<?php endif;?>
-					
-					
+
 					<section class="body" itemprop="text">
 						<?php if ( $upcoming_webinar_query->have_posts() || $latest_webinar_query->have_posts() ) :?>
 							<section class="webinars home-cpt-row">
@@ -369,7 +374,7 @@ $first_name = explode(' ', $current_user_name)[0];
 												<div class="title h6 uppercase">
 													Latest
 												</div>
-												<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 large-up-4 pad-right">
+												<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 xlarge-up-4 pad-right">
 													<?php $i = 1; while ( $latest_webinar_query->have_posts() ) : $latest_webinar_query->the_post(); 
 														$webinar_date = get_field('webinar_date') ?? null;	
 														if( $webinar_date  ) {
@@ -379,7 +384,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														$host_images = get_field('host_images') ?? null;
 														$gated = get_field('gated');
 													?>
-														<div class="cell<?php if( $i > 1 ):?> show-for-medium<?php endif;?><?php if( $i > 2 ):?> show-for-tablet<?php endif;?><?php if( $i > 3 ):?> show-for-large<?php endif;?>">
+														<div class="cell<?php if( $i > 1 ):?> show-for-medium<?php endif;?><?php if( $i > 2 ):?> show-for-tablet<?php endif;?><?php if( $i > 3 ):?> show-for-xlarge<?php endif;?>">
 															<article id="post-<?php the_ID(); ?>" <?php post_class('relative'); ?> role="article">
 																<?php if( $host_images || $webinar_date ):?>
 																	<div class="thumb-date-wrap grid-x align-justify bg-black relative z-1">
@@ -940,13 +945,13 @@ $first_name = explode(' ', $current_user_name)[0];
 														</div>
 														<?php if( count($partnerships) > 1 ):?>
 															<div class="cell small-12 medium-6">
-																<div class="nav grid-x grid-padding-x h-100 small-up-1 medium-up-2 relative z-1">
+																<div class="nav grid-x card-grid h-100 relative z-1">
 																	<?php $i = 0; foreach($partnerships as $partnership):
 																		$partner_name = $partnership['partner_name'] ?? null;
 																		$light_logo = $partnership['light_logo'] ?? null;	
 																	?>
-																		<div class="cell h-100">
-																			<div class="swiper-page h-100 bg-black relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
+																		<div class="cell small-6 h-100">
+																			<div class="swiper-page bg-black relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
 																				<div class="show-for-sr">
 																					Slides to <?=esc_html($partner_name);?>
 																				</div>

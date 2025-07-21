@@ -103,8 +103,14 @@
 		border-color: $color-seafoam;
 		&:hover,
 		&:focus {
+			color: $white;
 			background-color: #00827F;
 			border-color: #00827F;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
 		}
 	}
 	&.sky-blue {

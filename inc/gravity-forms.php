@@ -27,7 +27,7 @@ function input_to_button( $button, $form ) {
 		$value = $fragment->get_attribute( $attribute );
 
 		if ( $attribute === 'class' ) {
-			$value .= ' violet'; // Append violet class
+			$value .= ' pink'; // Append class
 		}
 
 		if ( ! empty( $value ) ) {

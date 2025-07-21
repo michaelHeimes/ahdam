@@ -29,6 +29,17 @@
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-center">
 								<div class="cell small-12 large-10">
+									
+									<?php if( $footer_logo ):?>
+										<ul class="menu hide-for-medium grid-x align-center">
+											<li class="logo">
+												<a href="<?php echo home_url(); ?>" rel="home">
+													<?=wp_get_attachment_image(  $footer_logo['id'], 'full');?>
+												</a>
+											</li>
+										</ul>
+									<?php endif;?>
+									
 									<?php if( $mailing_list_heading || $mailing_list_text || $mailing_list_form_id ):?>
 										<div class="form">
 											<?php if( $mailing_list_heading ):?>
@@ -50,7 +61,7 @@
 									<div class="grid-x grid-padding-x">
 										<?php if( $footer_logo ):?>
 											<div class="cell small-12 medium-5">
-												<ul class="menu">
+												<ul class="menu show-for-medium">
 													<li class="logo">
 														<a href="<?php echo home_url(); ?>" rel="home">
 															<?=wp_get_attachment_image(  $footer_logo['id'], 'full');?>
@@ -60,7 +71,7 @@
 												<?php if( $footer_about_heading || $footer_about_text ):?>
 													<div class="footer-about">
 														<?php if( $footer_about_heading ):?>
-															<h2 class="h6"><?=wp_kses_post($footer_about_heading);?></h2>
+															<h2 class="h6 color-pink uppercase"><?=wp_kses_post($footer_about_heading);?></h2>
 														<?php endif;?>
 														<?php if( $footer_about_text ):?>
 															<div class="text-wrap">
@@ -74,7 +85,7 @@
 										<div class="cell small-12 medium-7">
 											<div class="grid-x grid-padding-x">
 												<?php if( $footer_address || $footer_directions ):?>
-													<div class="cell small-12 large-4">
+													<div class="link-cell cell small-12 large-4">
 														<h3 class="h6 uppercase color-pink">Location</h3>
 														<?php if( $footer_directions ):?>
 															<a class="color-white" href="<?=esc_url($footer_directions);?>" aria-label="Links to directions" target="_blank">
@@ -87,18 +98,36 @@
 														<?php endif;?>
 													</div>
 												<?php endif;?>
-												<div class="cell small-12 large-6">
+												<div class="link-cell cell small-12 large-6">
 													<?php trailhead_footer_navigation();?>
 												</div>
 											</div>
 											<?php if( $footer_information_links || $footer_hours ):?>
 												<div class="grid-x grid-padding-x">
 													<?php if( $footer_information_links ):?>
-														<div class="cell small-12 large-4">
-															<h3 class="h6">Information</h3>
+														<div class="link-cell cell small-12 large-4">
+															<h3 class="h6 uppercase color-pink">Information</h3>
+															
+															<ul class="menu vertical">
+																<?php foreach( $footer_information_links as $footer_information_link ):
+																	$link = $footer_information_link['link'] ?? null;
+																	if( $link ) {
+																		$link_url = $link['url'];
+																		$link_title = $link['title'];
+																		$link_target = $link['target'] ? $link['target'] : '_self';
+																	}
+																	?>
+																	<li>
+																		<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+																			<u><?php echo esc_html( $link_title ); ?></u>
+																		</a>
+															
+																	</li>
+																<?php endforeach;?>
+															</ul>
+															
 														</div>
 													<?php endif;?>
-													
 												</div>
 											<?php endif;?>
 										</div>

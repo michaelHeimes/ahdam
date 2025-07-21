@@ -9,6 +9,7 @@
  $login = get_field('header_login', 'option') ?? null;
  $join = get_field('header_join', 'option') ?? null;
  $training_center = get_field('header_training_center', 'option') ?? null;
+ $header_member_dashboard = get_field('header_member_dashboard', 'option') ?? null;
 ?>
 
 <div class="top-bar-wrap grid-container relative">
@@ -49,25 +50,47 @@
 		<div class="top-bar-right show-for-xlarge">
 			<div class="grid-x align-right">
 				<div class="cell shrink large-auto">
-					<div class="grid-x grid-padding-x align-middle">
-						<div class="cell auto">
-							<?php trailhead_top_nav_non_member();?>
-						</div>
-						<?php if( $login || $join ):?>
+					<?php if( is_user_logged_in() ):?>
+						<div class="grid-x grid-padding-x align-middle">
+							<div class="cell auto">
+								<?php trailhead_top_nav_member();?>
+							</div>
 							<div class="login-join-wrap cell shrink">
-								<?php if( $login  || $join ) {
+								<?php if( $training_center ||  $header_member_dashboard ) {
 									get_template_part('template-parts/part', 'btn-group',
 										array(
-											'btn1' => $login,
-											'btn1-classes' => 'black-outline',
-											'btn2' => $join,
-											'btn2-classes' => 'violet',
+											'flex-classes' => 'align-middle',
+											'btn1' =>  $training_center ,
+											'btn1-classes' => 'seafoam',
+											'btn2' => $header_member_dashboard,
+											'btn2-classes' => 'violet no-arrow',
+											'icon2' => '<svg width="20" height="23" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="m224 256a128 128 0 1 0 0-256 128 128 0 1 0 0 256zm-45.7 48c-98.5 0-178.3 79.8-178.3 178.3 0 16.4 13.3 29.7 29.7 29.7h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3z" fill="#fff"/></svg>',
 										),
 									);
 								};?>
 							</div>
-						<?php endif;?>
-					</div>
+						</div>
+					<?php else:?>
+						<div class="grid-x grid-padding-x align-middle">
+							<div class="cell auto">
+								<?php trailhead_top_nav_non_member();?>
+							</div>
+							<?php if( $login || $join ):?>
+								<div class="login-join-wrap cell shrink">
+									<?php if( $login  || $join ) {
+										get_template_part('template-parts/part', 'btn-group',
+											array(
+												'btn1' => $login,
+												'btn1-classes' => 'black-outline',
+												'btn2' => $join,
+												'btn2-classes' => 'violet',
+											),
+										);
+									};?>
+								</div>
+							<?php endif;?>
+						</div>
+					<?php endif;?>
 				</div>
 			</div>
 		</div>

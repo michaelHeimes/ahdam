@@ -723,7 +723,7 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
+h6, .h6, footer#colophon ul#footer-navigation li a, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -751,7 +751,7 @@ h2 small, .h2 small,
 h3 small, .h3 small,
 h4 small, .h4 small,
 h5 small, .h5 small,
-h6 small, .h6 small, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder small {
+h6 small, .h6 small, footer#colophon ul#footer-navigation li a small, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder small {
   line-height: 0;
   color: #B7B1B1;
 }
@@ -771,7 +771,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.1875rem;
+  font-size: 1.8125rem;
   line-height: 1.11111;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -792,35 +792,35 @@ h5, .h5 {
 }
 
 footer#colophon .form-wrap .gform_wrapper form .gform-body input::-webkit-input-placeholder {
-  font-size: 0.875rem;
+  font-size: 1.0625rem;
   line-height: 1.11111;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
 footer#colophon .form-wrap .gform_wrapper form .gform-body input::-moz-placeholder {
-  font-size: 0.875rem;
+  font-size: 1.0625rem;
   line-height: 1.11111;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
 footer#colophon .form-wrap .gform_wrapper form .gform-body input:-ms-input-placeholder {
-  font-size: 0.875rem;
+  font-size: 1.0625rem;
   line-height: 1.11111;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
 footer#colophon .form-wrap .gform_wrapper form .gform-body input::-ms-input-placeholder {
-  font-size: 0.875rem;
+  font-size: 1.0625rem;
   line-height: 1.11111;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
-h6, .h6, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
-  font-size: 0.875rem;
+h6, .h6, footer#colophon ul#footer-navigation li a, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
+  font-size: 1.0625rem;
   line-height: 1.11111;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -843,19 +843,19 @@ h6, .h6, footer#colophon .form-wrap .gform_wrapper form .gform-body input::place
     font-size: 1.25rem;
   }
   footer#colophon .form-wrap .gform_wrapper form .gform-body input::-webkit-input-placeholder {
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
   }
   footer#colophon .form-wrap .gform_wrapper form .gform-body input::-moz-placeholder {
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
   }
   footer#colophon .form-wrap .gform_wrapper form .gform-body input:-ms-input-placeholder {
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
   }
   footer#colophon .form-wrap .gform_wrapper form .gform-body input::-ms-input-placeholder {
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
   }
-  h6, .h6, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
-    font-size: 0.875rem;
+  h6, .h6, footer#colophon ul#footer-navigation li a, footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
+    font-size: 1.0625rem;
   }
 }
 a {
@@ -1813,32 +1813,32 @@ ul.no-bullet, ol.no-bullet {
   }
 }
 
-.grid-padding-x .grid-padding-x, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x, .grid-padding-x footer#colophon .form-wrap .gform_wrapper form, footer#colophon .form-wrap .gform_wrapper .grid-padding-x form, footer#colophon .form-wrap .gform_wrapper form form {
+.grid-padding-x .grid-padding-x {
   margin-right: -1.25rem;
   margin-left: -1.25rem;
 }
 @media print, screen and (min-width: 40em) {
-  .grid-padding-x .grid-padding-x, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x, .grid-padding-x footer#colophon .form-wrap .gform_wrapper form, footer#colophon .form-wrap .gform_wrapper .grid-padding-x form, footer#colophon .form-wrap .gform_wrapper form form {
+  .grid-padding-x .grid-padding-x {
     margin-right: -1.25rem;
     margin-left: -1.25rem;
   }
 }
-.grid-container:not(.full) > .grid-padding-x, footer#colophon .form-wrap .gform_wrapper .grid-container:not(.full) > form {
+.grid-container:not(.full) > .grid-padding-x {
   margin-right: -1.25rem;
   margin-left: -1.25rem;
 }
 @media print, screen and (min-width: 40em) {
-  .grid-container:not(.full) > .grid-padding-x, footer#colophon .form-wrap .gform_wrapper .grid-container:not(.full) > form {
+  .grid-container:not(.full) > .grid-padding-x {
     margin-right: -1.25rem;
     margin-left: -1.25rem;
   }
 }
-.grid-padding-x > .cell, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-footer, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-body, footer#colophon .form-wrap .gform_wrapper form > .cell, footer#colophon .form-wrap .gform_wrapper form > .gform-footer, footer#colophon .form-wrap .gform_wrapper form > .gform-body {
+.grid-padding-x > .cell, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-footer, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-body {
   padding-right: 1.25rem;
   padding-left: 1.25rem;
 }
 @media print, screen and (min-width: 40em) {
-  .grid-padding-x > .cell, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-footer, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-body, footer#colophon .form-wrap .gform_wrapper form > .cell, footer#colophon .form-wrap .gform_wrapper form > .gform-footer, footer#colophon .form-wrap .gform_wrapper form > .gform-body {
+  .grid-padding-x > .cell, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-footer, footer#colophon .form-wrap .gform_wrapper form .grid-padding-x > .gform-body {
     padding-right: 1.25rem;
     padding-left: 1.25rem;
   }
@@ -8136,6 +8136,15 @@ svg {
   background-repeat: no-repeat;
 }
 
+.card-grid {
+  margin-left: -0.6875rem;
+  margin-right: -0.6875rem;
+}
+.card-grid > .cell, footer#colophon .form-wrap .gform_wrapper form .card-grid > .gform-footer, footer#colophon .form-wrap .gform_wrapper form .card-grid > .gform-body {
+  padding-left: 0.6875rem;
+  padding-right: 0.6875rem;
+}
+
 .relative {
   position: relative;
 }
@@ -8873,6 +8882,9 @@ header.site-header #top-bar-menu .top-bar-right {
 header.site-header #top-bar-menu .top-bar-right .login-join-wrap {
   padding-right: 0;
 }
+header.site-header #top-bar-menu .top-bar-right .login-join-wrap a.button.no-arrow svg {
+  margin: 0;
+}
 header.site-header #top-bar-menu li.logo {
   max-width: 210px;
 }
@@ -9010,6 +9022,29 @@ header.site-header #top-bar-menu .menu-toggle-wrap a#menu-toggle.clicked span:nt
     top: 100px;
   }
 }
+.off-canvas .btn-group.non-member > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.off-canvas .btn-group.non-member > div a {
+  width: 100%;
+}
+.off-canvas .btn-group.member a.no-arrow {
+  aspect-ratio: 1/1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.off-canvas .btn-group.member a.no-arrow svg {
+  margin: 0;
+}
 .off-canvas .main-nav {
   padding-top: 19px;
   padding-bottom: 11px;
@@ -9093,21 +9128,76 @@ header.site-header #top-bar-menu .menu-toggle-wrap a#menu-toggle.clicked span:nt
   display: block;
 }
 
+footer#colophon {
+  text-align: center;
+}
+@media print, screen and (min-width: 40em) {
+  footer#colophon {
+    text-align: left;
+  }
+}
 footer#colophon .footer-border {
   height: clamp(0.938rem, 0.805rem + 0.563vw, 1.313rem);
   background: linear-gradient(5deg, #C84DFF 0%, #5354B5 38.9%, #2891D2 75%, #05B1C5 100%);
 }
+footer#colophon .menu .logo {
+  margin-bottom: 2.625rem;
+}
+footer#colophon .menu .logo a {
+  padding: 0;
+}
+footer#colophon .site-info {
+  padding-top: 3.5rem;
+  padding-bottom: clamp(4.375rem, 3.781rem + 2.535vw, 6.063rem);
+}
+footer#colophon .text-wrap {
+  margin-bottom: 2.125rem;
+}
+footer#colophon .text-wrap h2 {
+  margin-bottom: 13px;
+}
+footer#colophon .form-wrap {
+  margin-bottom: clamp(3.413rem, 2.898rem + 2.197vw, 4.875rem);
+}
+footer#colophon .form-wrap h2 {
+  margin-bottom: clamp(0.875rem, 0.765rem + 0.469vw, 1.188rem);
+}
 footer#colophon .form-wrap .gform_wrapper form {
-  margin-right: -20px;
-  margin-left: -20px;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media print, screen and (min-width: 40em) {
   footer#colophon .form-wrap .gform_wrapper form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-right: -20px;
     margin-left: -20px;
   }
 }
+footer#colophon .form-wrap .gform_wrapper form .gform-body {
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  footer#colophon .form-wrap .gform_wrapper form .gform-body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-bottom: 29px;
+  }
+}
 footer#colophon .form-wrap .gform_wrapper form .gform-body input {
+  border-color: #fff;
   border-radius: 100px;
   height: 50px;
   padding: 0 20px;
@@ -9133,13 +9223,25 @@ footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
 footer#colophon .form-wrap .gform_wrapper form .gform-footer {
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0;
+}
+@media print, screen and (max-width: 39.99875em) {
+  footer#colophon .form-wrap .gform_wrapper form .gform-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 footer#colophon .form-wrap .gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  padding: 0.85em 1em;
+  padding: 0.85em 1.5em;
   border: 2px solid #0C0D3D;
   border-radius: 100px;
   -webkit-transition: background-color 0.25s ease, color 0.25s ease;
@@ -9152,6 +9254,7 @@ footer#colophon .form-wrap .gform_wrapper form .gform-footer button.button:where
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
+  background-color: #C84DFF;
 }
 footer#colophon .form-wrap .gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path {
   all: revert-layer;
@@ -9161,16 +9264,43 @@ footer#colophon .form-wrap .gform_wrapper form .gform-footer button.button:where
     padding-bottom: 4.1rem;
   }
 }
+footer#colophon .link-cell {
+  margin-bottom: 47px;
+}
+footer#colophon .link-cell .form-wrap .gform_wrapper form .gform-body input::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .link-cell input::-webkit-input-placeholder {
+  margin-bottom: 0.65rem;
+}
+footer#colophon .link-cell .form-wrap .gform_wrapper form .gform-body input::-moz-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .link-cell input::-moz-placeholder {
+  margin-bottom: 0.65rem;
+}
+footer#colophon .link-cell .form-wrap .gform_wrapper form .gform-body input:-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .link-cell input:-ms-input-placeholder {
+  margin-bottom: 0.65rem;
+}
+footer#colophon .link-cell .form-wrap .gform_wrapper form .gform-body input::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .link-cell input::-ms-input-placeholder {
+  margin-bottom: 0.65rem;
+}
+footer#colophon .link-cell .h6, footer#colophon .link-cell ul#footer-navigation li a, footer#colophon ul#footer-navigation li .link-cell a, footer#colophon .link-cell .form-wrap .gform_wrapper form .gform-body input::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .link-cell input::placeholder {
+  margin-bottom: 0.65rem;
+}
+footer#colophon .link-cell .menu li {
+  margin-bottom: 6px;
+}
+footer#colophon .link-cell .menu li a {
+  color: #fff;
+  padding: 0;
+}
 @media print, screen and (max-width: 56.24875em) {
-  footer#colophon ul#footer-links {
-    padding-bottom: 4.08rem;
+  footer#colophon ul#footer-navigation {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
-footer#colophon ul#footer-links li a {
-  font-size: 0.875rem;
-  line-height: 1.1875rem;
+footer#colophon ul#footer-navigation li a {
+  color: #C84DFF;
   font-weight: bold;
   text-transform: uppercase;
+  padding: 0;
 }
 footer#colophon .copyright {
   margin-bottom: 0;
@@ -9310,8 +9440,14 @@ footer#colophon .copyright {
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).seafoam:hover, .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).seafoam:focus,
 .button.seafoam:hover,
 .button.seafoam:focus {
+  color: #fff;
   background-color: #00827F;
   border-color: #00827F;
+}
+.gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).seafoam:hover svg path, .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).seafoam:focus svg path,
+.button.seafoam:hover svg path,
+.button.seafoam:focus svg path {
+  fill: #fff;
 }
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).sky-blue,
 .button.sky-blue {
@@ -9342,6 +9478,31 @@ footer#colophon .copyright {
   fill: #fff;
 }
 
+.page-banner {
+  margin-top: 20px;
+}
+@media print, screen and (min-width: 40em) {
+  .page-banner {
+    margin-top: 50px;
+  }
+}
+@media screen and (min-width: 78.125em) {
+  .page-banner {
+    margin-top: 100px;
+  }
+}
+.page-banner .left .inner {
+  padding: 5% 5% 1rem 5%;
+}
+.page-banner .right .img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.page-banner hr {
+  margin-top: clamp(1.706rem, 1.449rem + 1.099vw, 2.438rem);
+  margin-bottom: clamp(5.425rem, 4.606rem + 3.493vw, 7.75rem);
+}
+
 @media print, screen and (min-width: 40em) {
   .page-template-custom-page-home .medium-no-pad-right {
     padding-right: 0;
@@ -9363,7 +9524,7 @@ footer#colophon .copyright {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-.page-template-custom-page-home .title.h6, .page-template-custom-page-home footer#colophon .form-wrap .gform_wrapper form .gform-body input.title::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home input.title::placeholder {
+.page-template-custom-page-home .title.h6, .page-template-custom-page-home footer#colophon .form-wrap .gform_wrapper form .gform-body input.title::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home input.title::placeholder, .page-template-custom-page-home footer#colophon ul#footer-navigation li a.title, footer#colophon ul#footer-navigation li .page-template-custom-page-home a.title {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -9419,7 +9580,11 @@ footer#colophon .copyright {
 }
 @media print, screen and (min-width: 40em) {
   .page-template-custom-page-home .home-banner.non-member .right:before {
-    border-radius: 16px 0 0 0;
+    border-radius: 16px 16px 0 0;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .page-template-custom-page-home .home-banner.non-member .right:before {
     width: calc(100% + 12px);
     top: 92px;
     left: 20px;
@@ -9438,6 +9603,11 @@ footer#colophon .copyright {
 @media print, screen and (min-width: 40em) {
   .page-template-custom-page-home .home-banner.non-member .right nav {
     border-radius: 20px 0 0 0;
+    padding: 18px 32px 58px;
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .page-template-custom-page-home .home-banner.non-member .right nav {
     padding: 43px 0px 58px 36px;
   }
 }
@@ -9568,7 +9738,7 @@ footer#colophon .copyright {
 .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.title::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.title::-ms-input-placeholder {
   margin-bottom: 19px;
 }
-.page-template-custom-page-home .home-cpt-row .body .title.h6, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.title::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.title::placeholder {
+.page-template-custom-page-home .home-cpt-row .body .title.h6, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.title::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.title::placeholder, .page-template-custom-page-home .home-cpt-row .body footer#colophon ul#footer-navigation li a.title, footer#colophon ul#footer-navigation li .page-template-custom-page-home .home-cpt-row .body a.title {
   margin-bottom: 19px;
 }
 .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.month::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.month::-webkit-input-placeholder {
@@ -9583,7 +9753,7 @@ footer#colophon .copyright {
 .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.month::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.month::-ms-input-placeholder {
   margin-bottom: 0;
 }
-.page-template-custom-page-home .home-cpt-row .body .month.h6, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.month::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.month::placeholder {
+.page-template-custom-page-home .home-cpt-row .body .month.h6, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.month::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.month::placeholder, .page-template-custom-page-home .home-cpt-row .body footer#colophon ul#footer-navigation li a.month, footer#colophon ul#footer-navigation li .page-template-custom-page-home .home-cpt-row .body a.month {
   margin-bottom: 0;
 }
 .page-template-custom-page-home .home-cpt-row .body .absolute-link-trigger {
@@ -9610,14 +9780,6 @@ footer#colophon .copyright {
 .page-template-custom-page-home .home-cpt-row .body .archive-link-wrap svg {
   margin-left: 0.4375rem;
 }
-.page-template-custom-page-home .home-cpt-row .body .card-grid {
-  margin-left: -0.6875rem;
-  margin-right: -0.6875rem;
-}
-.page-template-custom-page-home .home-cpt-row .body .card-grid > .cell, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .card-grid > .gform-body, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .home-cpt-row .body .card-grid > .gform-body, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .card-grid > .gform-footer, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .home-cpt-row .body .card-grid > .gform-footer {
-  padding-left: 0.6875rem;
-  padding-right: 0.6875rem;
-}
 .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body .home-cpt-sidebar > input.title::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > input.title::-webkit-input-placeholder {
   margin-bottom: 19px;
 }
@@ -9630,7 +9792,7 @@ footer#colophon .copyright {
 .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body .home-cpt-sidebar > input.title::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > input.title::-ms-input-placeholder {
   margin-bottom: 19px;
 }
-.page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > .title.h6, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body .home-cpt-sidebar > input.title::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > input.title::placeholder {
+.page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > .title.h6, .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body .home-cpt-sidebar > input.title::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > input.title::placeholder, .page-template-custom-page-home .home-cpt-row .body footer#colophon ul#footer-navigation li .home-cpt-sidebar > a.title, footer#colophon ul#footer-navigation li .page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar > a.title {
   margin-bottom: 19px;
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-sidebar article {
@@ -9655,6 +9817,11 @@ footer#colophon .copyright {
 @media print, screen and (min-width: 64em) {
   .page-template-custom-page-home .home-cpt-row .body .home-cpt-main .pad-right {
     padding-right: 7%;
+  }
+}
+@media print, screen and (max-width: 39.99875em) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar {
+    max-width: 419px;
   }
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap,
@@ -9684,11 +9851,38 @@ footer#colophon .copyright {
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-wrap .date-wrap .date {
   padding-top: 2px;
 }
-.page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
-  min-height: clamp(5.688rem, 4.829rem + 3.662vw, 8.125rem);
+@media screen and (max-width: 460px) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
+    min-height: clamp(10.438rem, -1.42rem + 59.286vw, 15.625rem);
+  }
+}
+@media screen and (min-width: 461px) and (max-width: 639px) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
+    min-height: 15.625rem;
+  }
+}
+@media print, screen and (min-width: 40em) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
+    min-height: clamp(9.75rem, -1.061rem + 27.027vw, 14.125rem);
+  }
+}
+@media print, screen and (min-width: 56.25em) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
+    min-height: clamp(6.375rem, -2.328rem + 15.473vw, 9.75rem);
+  }
+}
+@media screen and (min-width: 78.125em) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
+    min-height: clamp(7.125rem, -1.013rem + 10.417vw, 8.063rem);
+  }
+}
+@media screen and (min-width: 1394px) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .thumb-date-wrap {
+    min-height: 8.063rem;
+  }
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images {
-  max-width: 136px;
+  max-width: 40%;
   padding: clamp(0.7rem, 0.594rem + 0.451vw, 1rem);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9700,13 +9894,17 @@ footer#colophon .copyright {
       -ms-flex-pack: end;
           justify-content: flex-end;
   gap: clamp(0.35rem, 0.297rem + 0.225vw, 0.5rem);
+  padding: 13px 16px;
+}
+@media print, screen and (min-width: 56.25em) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images {
+    max-width: 50%;
+  }
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images .image-wrap {
-  width: 100%;
   aspect-ratio: 1/1;
   border: clamp(0.188rem, 0.165rem + 0.094vw, 0.25rem) solid #fff;
   border-radius: 100%;
-  max-width: 68px;
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images .image-wrap img {
   width: 100%;
@@ -9716,12 +9914,17 @@ footer#colophon .copyright {
   display: block;
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images.grid {
+  max-width: 60%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: 1fr 16px 1fr;
   grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: initial;
-  grid-template-rows: initial;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: repeat(1, 1fr);
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+  row-gap: 10px;
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images.grid > *:nth-child(1) {
   -ms-grid-row: 1;
@@ -9729,7 +9932,18 @@ footer#colophon .copyright {
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images.grid > *:nth-child(2) {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
+}
+@media print, screen and (min-width: 40em) {
+  .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images.grid {
+    -webkit-column-gap: 8px;
+       -moz-column-gap: 8px;
+            column-gap: 8px;
+    row-gap: 5px;
+  }
+}
+.page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .host-images.grid .image-wrap {
+  max-width: none;
 }
 .page-template-custom-page-home .home-cpt-row .body .home-cpt-main article.webinar .title {
   padding-right: 1.5rem;
@@ -9778,7 +9992,7 @@ footer#colophon .copyright {
   width: 100%;
   aspect-ratio: 1/1;
 }
-@media print, screen and (max-width: 78.12375em) {
+@media print, screen and (max-width: 39.99875em) {
   .page-template-custom-page-home .home-cpt-row .body .home-cpt-main.news-row .stacked .thumb-wrap {
     margin-bottom: 12px;
     max-width: 150px;
@@ -9811,7 +10025,7 @@ footer#colophon .copyright {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   padding-top: clamp(2.975rem, 2.526rem + 1.915vw, 4.25rem);
-  padding-bottom: clamp(3.063rem, 2.6rem + 1.972vw, 4.375rem);
+  padding-bottom: clamp(2.063rem, 1.601rem + 1.971vw, 3.375rem);
 }
 .page-template-custom-page-home .member-spotlights:after {
   content: "";
@@ -9833,9 +10047,23 @@ footer#colophon .copyright {
 .page-template-custom-page-home .member-spotlights .section-header .hr-wrap hr {
   border-color: #fff;
 }
+.page-template-custom-page-home .member-spotlights .section-body .swiper-slide {
+  text-align: center;
+}
+@media print, screen and (min-width: 40em) {
+  .page-template-custom-page-home .member-spotlights .section-body .swiper-slide {
+    text-align: left;
+  }
+}
 .page-template-custom-page-home .member-spotlights .section-body .swiper-slide .img-wrap {
+  display: inline-block;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 15px;
+}
+@media print, screen and (max-width: 39.99875em) {
+  .page-template-custom-page-home .member-spotlights .section-body .swiper-slide .img-wrap {
+    margin-bottom: 2rem;
+  }
 }
 @media print, screen and (min-width: 64em) {
   .page-template-custom-page-home .member-spotlights .section-body .swiper-slide .right .inner {
@@ -9858,6 +10086,7 @@ footer#colophon .copyright {
   padding: 7px 0 3px;
   overflow: hidden;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page footer#colophon .form-wrap .gform_wrapper form .gform-body input::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page input::-webkit-input-placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page input::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page input::-webkit-input-placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::-webkit-input-placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .gform-body .nav > .gform-footer:not(:last-child) .swiper-page input::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page input::-webkit-input-placeholder {
   margin: 0;
@@ -9871,7 +10100,7 @@ footer#colophon .copyright {
 .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page footer#colophon .form-wrap .gform_wrapper form .gform-body input::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page input::-ms-input-placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page input::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page input::-ms-input-placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::-ms-input-placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .gform-body .nav > .gform-footer:not(:last-child) .swiper-page input::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::-ms-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page input::-ms-input-placeholder {
   margin: 0;
 }
-.page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page .h6, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page .h6, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page .h6, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page .h6, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page .h6, .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page input::placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page input::placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page input::placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .gform-body .nav > .gform-footer:not(:last-child) .swiper-page input::placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page input::placeholder {
+.page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page .h6, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page .h6, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page .h6, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page .h6, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page .h6, .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page footer#colophon .form-wrap .gform_wrapper form .gform-body input::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page input::placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page input::placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page input::placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::placeholder, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .gform-body .nav > .gform-footer:not(:last-child) .swiper-page input::placeholder, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page .gform-body input::placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page input::placeholder, .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page footer#colophon ul#footer-navigation li a, footer#colophon ul#footer-navigation li .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page a, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page ul#footer-navigation li a, .page-template-custom-page-home .member-spotlights .section-body footer#colophon ul#footer-navigation li .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page a, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page ul#footer-navigation li a, footer#colophon ul#footer-navigation li .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page a, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page ul#footer-navigation li a, .page-template-custom-page-home .member-spotlights .section-body footer#colophon ul#footer-navigation li .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page a, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page ul#footer-navigation li a, footer#colophon ul#footer-navigation li .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page a {
   margin: 0;
 }
 .page-template-custom-page-home .member-spotlights .section-body .nav > .cell:not(:last-child) .swiper-page:not(:hover):not(.active):after, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-body:not(:last-child) .swiper-page:not(:hover):not(.active):after, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-body:not(:last-child) .swiper-page:not(:hover):not(.active):after, .page-template-custom-page-home .member-spotlights .section-body footer#colophon .form-wrap .gform_wrapper form .nav > .gform-footer:not(:last-child) .swiper-page:not(:hover):not(.active):after, footer#colophon .form-wrap .gform_wrapper form .page-template-custom-page-home .member-spotlights .section-body .nav > .gform-footer:not(:last-child) .swiper-page:not(:hover):not(.active):after {
@@ -9902,8 +10131,15 @@ footer#colophon .copyright {
 .page-template-custom-page-home .partnerships .swiper-slide .btn-wrap {
   margin-top: 27px;
 }
+.page-template-custom-page-home .partnerships .nav {
+  margin-top: 2.4375rem;
+}
 .page-template-custom-page-home .partnerships .swiper-page {
+  padding: 1.5rem;
   cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: clamp(8.438rem, 7.359rem + 4.601vw, 11.5rem);
 }
 .page-template-custom-page-home .partnerships .swiper-page:before {
   content: "";
@@ -9914,8 +10150,8 @@ footer#colophon .copyright {
   border-style: solid;
   border-width: 0 13px 12px 13px;
   border-color: transparent transparent #fff transparent;
-  -webkit-transform: rotate(180deg) translateY(calc(0% + 12px));
-          transform: rotate(180deg) translateY(calc(0% + 12px));
+  -webkit-transform: rotate(180deg) translateY(0);
+          transform: rotate(180deg) translateY(0);
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
@@ -9931,6 +10167,10 @@ footer#colophon .copyright {
   border-width: 0 13px 12px 13px;
   -webkit-transform: rotate(180deg) translateY(calc(0% - 12px));
           transform: rotate(180deg) translateY(calc(0% - 12px));
+}
+
+.page-template-default main {
+  padding-bottom: clamp(6.825rem, 5.795rem + 4.394vw, 9.75rem);
 }
 
 .single main {

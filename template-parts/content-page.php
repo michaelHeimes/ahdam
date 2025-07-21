@@ -6,10 +6,11 @@
  *
  * @package trailhead
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    <?php get_template_part('template-parts/part', 'page-header');?>
 		
 	<div class="entry-content">
         <div class="grid-container">

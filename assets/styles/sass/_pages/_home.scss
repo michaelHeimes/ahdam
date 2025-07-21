@@ -53,7 +53,9 @@
 				width: 100%;
 				top: 50px;
 				@include breakpoint(medium) {
-					border-radius: 16px 0 0 0;
+					border-radius: 16px 16px 0 0;
+				}
+				@include breakpoint(large) {
 					width: calc( 100% + 12px);
 					top: 92px;
 					left: 20px;
@@ -68,6 +70,9 @@
 				overflow: hidden;
 				@include breakpoint(medium) {
 					border-radius: 20px 0 0 0;
+					padding: 18px 32px 58px;
+				}
+				@include breakpoint(large) {
 					padding: 43px 0px 58px 36px;
 				}
 				hr {
@@ -214,14 +219,6 @@
 					margin-left: rem-calc(7);
 				}
 			}
-			.card-grid {
-				margin-left: rem-calc(-11);
-				margin-right: rem-calc(-11);
-				> .cell {
-					padding-left: rem-calc(11);
-					padding-right: rem-calc(11);
-				}
-			}
 			.home-cpt-sidebar {
 				> .title.h6 {
 					margin-bottom: 19px;
@@ -255,6 +252,9 @@
 				}
 				article {
 					&.webinar {
+						@include breakpoint(small down) {
+							max-width: 419px;
+						}
 						.thumb-date-wrap,
 						.thumb-wrap {
 							border-radius: 10px;
@@ -281,22 +281,43 @@
 							}
 						}
 						.thumb-date-wrap {
-							min-height: clamp(5.688rem, 4.829rem + 3.662vw, 8.125rem);
+							@media screen and (max-width: 460px) {
+								min-height: clamp(10.438rem, -1.42rem + 59.286vw, 15.625rem);
+							}
+							@media screen and (min-width: 461px) and (max-width: 639px) {
+								min-height: rem-calc(250);
+							}
+							@include breakpoint(medium) {
+								min-height: clamp(9.75rem, -1.061rem + 27.027vw, 14.125rem);
+							}
+							@include breakpoint(tablet) {
+								min-height: clamp(6.375rem, -2.328rem + 15.473vw, 9.75rem);
+							}				
+							@include breakpoint(xlarge) {
+								min-height: clamp(7.125rem, -1.013rem + 10.417vw, 8.063rem);
+							}
+							@media screen and (min-width: 1394px) {
+								min-height: 8.063rem;
+							}
 						}
 						.host-images {
-							max-width: 136px;
+							max-width: 40%;
 							padding: clamp(0.7rem, 0.594rem + 0.451vw, 1rem);
 							display: flex;
 							align-items: flex-end;
 							justify-content: flex-end;
 						    gap: clamp(0.35rem, 0.297rem + 0.225vw, 0.5rem);
-						
+							padding: 13px 16px;
+							@include breakpoint(tablet) {
+								max-width: 50%;
+							}
 							.image-wrap {
-									width: 100%;
+									// width: 70%;
+									// max-width: 68px;
 									aspect-ratio: 1 / 1;
 									border: clamp(0.188rem, 0.165rem + 0.094vw, 0.25rem) solid $white;
 									border-radius: 100%;
-									max-width: 68px;
+									//max-width: 68px;
 								img {
 									width: 100%;
 									height: 100%;
@@ -305,15 +326,28 @@
 								}
 							}
 							&.grid {
+								max-width: 60%;
 								display: grid;
 								grid-template-columns: repeat(2, 1fr);
-								grid-template-rows: initial;
+								grid-template-rows: repeat(1, 1fr);
 								// display: flex;
 								// flex-wrap: wrap;
-								// .image-wrap {
-								// 	flex: 0 0 calc(50% - clamp(0.35rem, 0.297rem + 0.225vw, 0.5rem));
-								// 	flex: 0 0 50%;
-								// }
+								column-gap: 16px;
+								row-gap: 10px;
+								@include breakpoint(medium) {
+									column-gap: 8px;
+									row-gap: 5px;
+								}
+								.image-wrap {
+									max-width: none;
+									// flex: 0 0 calc(50% - clamp(0.35rem, 0.297rem + 0.225vw, 0.5rem));
+									// flex: 0 0 calc(50% - 4px);
+									// width: 100px;
+									// height: 100px;
+									@include breakpoint(medium) {
+										
+									}
+								}
 							}
 						}
 						.title {
@@ -365,7 +399,7 @@
 							min-height: 0;
 							width: 100%;
 							aspect-ratio: 1/1;
-							@include breakpoint(large down) {
+							@include breakpoint(small down) {
 								margin-bottom: 12px;
 								max-width: 150px;
 							}
@@ -400,7 +434,7 @@
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
 		padding-top: clamp(2.975rem, 2.526rem + 1.915vw, 4.25rem);
-		padding-bottom: clamp(3.063rem, 2.6rem + 1.972vw, 4.375rem);
+		padding-bottom: clamp(2.063rem, 1.601rem + 1.971vw, 3.375rem);
 		&:after {
 			content: '';
 			display: block;
@@ -423,9 +457,17 @@
 		}
 		.section-body {
 			.swiper-slide {
+				text-align: center;
+				@include breakpoint(medium) {
+					text-align: left;
+				}
 				.img-wrap {
+					display: inline-block;
 					overflow: hidden;
-					border-radius: 10px;
+					border-radius: 15px;
+					@include breakpoint(small down) {
+						margin-bottom: 2rem;
+					}
 				}
 				.right .inner {
 					@include breakpoint(large) {
@@ -450,6 +492,7 @@
 						padding: 7px 0 3px;
 						overflow: hidden;
 						border-radius: 10px;
+						margin-bottom: 1rem;
 						.h6 {
 							margin: 0;
 						}
@@ -485,8 +528,15 @@
 				margin-top: 27px;
 			}
 		}
+		.nav {
+			margin-top: rem-calc(39);
+		}
 		.swiper-page {
+			padding: 1.5rem;
 			cursor: pointer;
+			border-radius: 10px;
+			overflow: hidden; 
+			min-height: clamp(8.438rem, 7.359rem + 4.601vw, 11.5rem);
 			&:before {
 				content: '';
 				position: absolute;
@@ -496,7 +546,7 @@
 				border-style: solid;
 				border-width: 0 13px 12px 13px;
 				border-color: transparent transparent $white transparent;
-				transform: rotate(180deg) translateY(calc(0% + 12px));
+				transform: rotate(180deg) translateY(0);
 				transition: transform .3s ease;
 			}
 			&:hover,
