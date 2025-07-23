@@ -7,10 +7,12 @@ p,
 	font-size: rem-calc(16);
 	&.p-2 {
 		font-size: rem-calc(18);
+		font-size: clamp(1rem, 0.956rem + 0.188vw, 1.125rem);
 	}
 	&.p-3,
 	&.p-3 p {
 		font-size: rem-calc(20);
+		font-size: clamp(1.063rem, 0.996rem + 0.282vw, 1.25rem);
 	}
 }
 h1,

@@ -90,8 +90,9 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 @import "_parts/button";
 @import "_parts/banner";
 
-// @import "_modules/page-modules";
+@import "_blocks/accordion";
 
 @import "_pages/home";
 @import "_pages/default";
+@import "_pages/archives";
 @import "_pages/single-post";

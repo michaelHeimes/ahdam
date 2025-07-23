@@ -269,7 +269,7 @@ require_once(get_template_directory().'/inc/acf-json.php');
 require_once(get_template_directory().'/inc/acf-options.php');
 
 // ACF Block
-//require_once(get_template_directory().'/inc/acf-blocks.php');
+require_once(get_template_directory().'/inc/acf-blocks.php');
 
 // Disable Gutenberg
 require_once(get_template_directory().'/inc/disable-gutenberg.php'); 

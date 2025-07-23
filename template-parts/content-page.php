@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php get_template_part('template-parts/part', 'page-header');?>
+    <?php get_template_part('template-parts/part', 'page-banner');?>
 		
 	<div class="entry-content">
         <div class="grid-container">

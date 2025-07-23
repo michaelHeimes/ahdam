@@ -119,6 +119,9 @@ $global_events_page = get_field('global_events_page', 'option') ?? null;
 $global_news_page = get_field('global_news_page', 'option') ?? null;
 $global_podcasts_page = get_field('global_podcasts_page', 'option') ?? null;
 
+$testimonials = $fields['testimonials'] ?? null;
+$testimonials_title = $fields['testimonials_title'] ?? null;
+
 $member_spotlight_posts = $fields['member_spotlight_posts'] ?? null;
 
 $partnerships = $fields['partnerships'] ?? null;
@@ -385,48 +388,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														$gated = get_field('gated');
 													?>
 														<div class="cell<?php if( $i > 1 ):?> show-for-medium<?php endif;?><?php if( $i > 2 ):?> show-for-tablet<?php endif;?><?php if( $i > 3 ):?> show-for-xlarge<?php endif;?>">
-															<article id="post-<?php the_ID(); ?>" <?php post_class('relative'); ?> role="article">
-																<?php if( $host_images || $webinar_date ):?>
-																	<div class="thumb-date-wrap grid-x align-justify bg-black relative z-1">
-																		<div class="date-wrap cell shrink grid-x relative z-1">
-																			<div class="date text-center">
-																				<div class="month h6 uppercase">
-																					<?=$date->format( 'M' ); ?>
-																				</div>
-																				<div class="day h2">
-																					<?=$date->format( 'd' ); ?>
-																				</div>
-																			</div>
-																		</div>
-																		<?php if( $host_images ):?>
-																			<div class="host-images cell auto relative z-1<?php if( count($host_images) > 1 ):?> grid<?php endif;?>">
-																				<?php foreach( $host_images as $image_id ): ?>
-																					<div class="image-wrap cell overflow-hidden">
-																						<?=wp_get_attachment_image( $image_id, 'medium' ); ?>
-																					</div>
-																				<?php endforeach;?>
-																			</div>
-																		<?php endif;?>
-																		<?php if( $gated && !is_user_logged_in() ) {
-																			get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
-																		};?>
-																	</div>
-																	<div class="title">
-																		<h3 class="h6 m-0">
-																			<?php the_title();?>
-																		</h3>
-																	</div>
-																<?php endif;?>
-																<?php if( $gated && !is_user_logged_in() ):?>
-																	<button class="reveal-trigger absolute-link-trigger z-1" data-open="gated-content-alert">
-																		<span class="show-for-sr">
-																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																		</span>
-																	</button>
-																<?php else:?>
-																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-																<?php endif;?>
-															</article>
+															<?php get_template_part('template-parts/loop', 'webinar');?>
 														</div>
 													<?php $i++; endwhile;?>
 												</div>
@@ -783,6 +745,68 @@ $first_name = explode(' ', $current_user_name)[0];
 												<?php endif;?>
 											</div>
 										<?php endif;?>
+									</div>
+								</div>
+							</section>
+						<?php endif;?>
+						
+						<?php if( $testimonials_title || $testimonials ):?>
+							<section class="testimonials bg-light-gray">
+								<div class="grid-container">
+									<div class="grid-x grid-padding-x align-center">
+										<div class="cell small-12 medium-11 tablet-10 large-9">
+											<div class="inner bg-white text-center">
+												<?php if( $testimonials_title ):?>
+													<h2 class="h3">
+														<?=wp_kses_post($testimonials_title);?>
+													</h2>
+												<?php endif;?>
+												<?php if( $testimonials ):?>
+													<div class="overflow-hidden">
+														<div class="testimonials-slider">
+															<div class="swiper-wrapper">
+																<?php foreach($testimonials as $post):
+																	setup_postdata($post);
+																	$quote = get_field('quote') ?? null;
+																	$company = get_field('company') ?? null;
+																?>
+																	<div class="swiper-slide">
+																		<?php if( $quote ):?>
+																			<div class="p p-3">
+																				<?=wp_kses_post($quote);?>
+																			</div>
+																		<?php endif;?>
+																		<hr>
+																		<?php if( $company ):?>
+																			<div class="h6 uppercase">
+																				<?=wp_kses_post($company);?>
+																			</div>
+																		<?php endif;?>
+																		<div class="h3">
+																			<?php the_title();?>
+																		</div>
+																	</div>
+																<?php endforeach;?>
+															</div>
+															<?php if( count($testimonials) > 1 ):?>
+																<div class="btns-wrap grid-x align-center">
+																	<div class="cell shrink">
+																		<div class="swiper-btn swiper-button-prev">
+																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.34 10.45h6.25c.22 0 .41-.2.41-.45s-.19-.45-.41-.45H8.34l2.52-2.79a.48.48 0 0 0 0-.63.38.38 0 0 0-.57 0l-3.2 3.55a.5.5 0 0 0 0 .64l3.2 3.55a.38.38 0 0 0 .57 0 .48.48 0 0 0 0-.63l-2.52-2.79Z" fill="#6357FD"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#6357FD"/></svg>
+																		</div>
+																	</div>
+																	<div class="cell shrink">
+																		<div class="swiper-btn swiper-button-next">
+																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10c0 .25.18.45.4.45h6.25l-2.53 2.79a.48.48 0 0 0 0 .63.38.38 0 0 0 .57 0l3.2-3.55c.04-.05.06-.1.08-.15v-.02l.03-.06v-.03a.3.3 0 0 0 0-.24l-.03-.06v-.02a.45.45 0 0 0-.08-.14L11.2 6.13a.38.38 0 0 0-.57 0 .48.48 0 0 0 0 .63l2.51 2.79H6.4A.45.45 0 0 0 6 10Z" fill="#6357FD"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#6357FD"/></svg>
+																		</div>
+																	</div>
+																</div>
+															<?php endif;?>
+														</div>
+													</div>
+												<?php endif;?>
+											</div>
+										</div>
 									</div>
 								</div>
 							</section>

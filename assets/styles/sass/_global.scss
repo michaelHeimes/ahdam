@@ -121,7 +121,13 @@ POSTS & CONTENT STYLES
 	iframe {
 		width: 100%;
 	}
-	[class^="wp-block-"]:not(.wp-block-image):not(.wp-block-column):not(.wp-block-heading):not(.wp-block-embed__wrapper),
+	:where(.is-layout-flex) {
+		gap: calc($smallGutter * .5);
+		@include breakpoint(medium) {
+			gap: calc($mediumGutter * .5);
+		}
+	}
+	[class^="wp-block-"]:not(.wp-block-image):not(.wp-block-column):not(.wp-block-heading):not(.wp-block-embed__wrapper):not(.wp-block-buttons > .wp-block-button):not(.wp-block-button__link),
 	.module.block,
 	blockquote {
 		margin-top:clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
@@ -160,8 +166,28 @@ POSTS & CONTENT STYLES
 				margin-bottom: 5rem;
 			}
 		}
+		&.wp-block-columns {
+			> .wp-block-column {
+				.wp-block-buttons {
+					margin-top: 1.5rem;
+					margin-bottom: 0;
+					@media screen and (max-width: 439px) {
+						flex-direction: column;
+						align-items: center;
+					}
+				}
+			}
+		}
 	}
-
+	.wp-block-button__link {
+		@extend .button;
+		font-size: 0.9rem !important;
+		font-weight: 700 !important;
+		border: 0px;
+		border-radius: 100px !important;
+		padding: calc(0.85em + 2px) calc(1em + 2px);
+		transition: background-color 0.25s ease, color 0.25s ease !important;
+	}
 } 
 
 .wp-caption {

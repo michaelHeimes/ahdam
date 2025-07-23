@@ -1,0 +1,32 @@
+.wp-block-accordion-drawers {
+	.accordion {
+		.accordion-item {
+			border-top: 1px solid $medium-gray;
+			a {
+				&:before,
+				&:after {
+					position: absolute;
+					top: 50%;
+					right: 1rem;
+					content: '';
+					display: block;
+					width: 18px;
+					height: 3px;
+					background-color: $color-pink;
+					transform-origin: center;
+				}
+				&:after {
+					transform: rotate(90deg);
+				}
+				display: block;
+				padding: 18px 0 19px;
+				color: $body-font-color;
+				line-height: 1.3888;
+				.grid-x {
+					flex-wrap: nowrap;
+					column-gap: 20px;
+				}
+			}
+		}
+	}
+}

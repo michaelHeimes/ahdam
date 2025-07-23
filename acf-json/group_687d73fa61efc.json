@@ -77,6 +77,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/custom-page-home.php"
             }
         ]
     ],
@@ -89,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753052980
+    "modified": 1753272888
 }

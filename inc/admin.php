@@ -104,16 +104,38 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 	
 	
 	// 1. Add the new column to each post type admin list
-	add_filter( 'manage_webinar_posts_columns', 'add_date_column' );
-	add_filter( 'manage_event_posts_columns', 'add_date_column' );
-	add_filter( 'manage_podcast_posts_columns', 'add_date_column' );
-	function add_date_column( $columns ) {
+	add_filter( 'manage_webinar_posts_columns', 'add_webinar_date_column' );
+	add_filter( 'manage_event_posts_columns', 'add_event_date_column' );
+	add_filter( 'manage_podcast_posts_columns', 'add_postcast_date_column' );
+	function add_webinar_date_column( $columns ) {
 		// Insert after title
 		$new_columns = array();
 		foreach ( $columns as $key => $value ) {
 			$new_columns[ $key ] = $value;
 			if ( $key == 'title' ) {
-				$new_columns['webinar_date'] = 'Date';
+				$new_columns['webinar_date'] = 'Webinar Date';
+			}
+		}
+		return $new_columns;
+	}
+	function add_event_date_column( $columns ) {
+		// Insert after title
+		$new_columns = array();
+		foreach ( $columns as $key => $value ) {
+			$new_columns[ $key ] = $value;
+			if ( $key == 'title' ) {
+				$new_columns['webinar_date'] = 'Event Date';
+			}
+		}
+		return $new_columns;
+	}
+	function add_podcast_date_column( $columns ) {
+		// Insert after title
+		$new_columns = array();
+		foreach ( $columns as $key => $value ) {
+			$new_columns[ $key ] = $value;
+			if ( $key == 'title' ) {
+				$new_columns['webinar_date'] = 'Podcast Date';
 			}
 		}
 		return $new_columns;
@@ -179,9 +201,7 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 		}
 	}
 	
-	
-	
-	
+
 	
 	// 1. Add the "Gated Post" column to multiple post types
 	add_filter( 'manage_post_posts_columns', 'add_gated_column' );

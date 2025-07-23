@@ -8,7 +8,7 @@
 	}
 	.left {
 		.inner {
-			padding: 5% 5% 1rem 5%;
+			padding: clamp(4.375rem, 3.715rem + 2.817vw, 6.25rem) 5% 1rem 5%;
 		}
 	}
 	.right {
@@ -20,5 +20,46 @@
 	hr {
 		margin-top: clamp(1.706rem, 1.449rem + 1.099vw, 2.438rem);
 		margin-bottom: clamp(5.425rem, 4.606rem + 3.493vw, 7.75rem);
+	}
+}
+
+.page-template-custom-page-webinars {
+	.page-banner {
+		hr {
+			margin-bottom: rem-calc(32);
+		}
+	}
+	h2.h6 {
+		margin-bottom: rem-calc(19);
+	}
+}
+
+body .alm-btn-wrap {
+	padding: 2rem 50px 0;
+	.alm-load-more-btn {
+		@extend .button;
+		@extend .violet;
+		box-shadow: none;
+		width: 100%;
+		max-width: 230px;
+		margin: 0;
+		&:hover,
+		&:focus {
+			color: $white;
+			background-color: #473EB8 !important;
+			border-color: #473EB8 !important;
+		}
+		&.loading {
+			padding-left: 1em !important;
+			box-shadow: none !important;
+			&:before {
+				position: absolute;
+				left: -42px;
+				margin: 4px;
+			}
+		}
+		&.done {
+			display: none;
+		}
 	}
 }

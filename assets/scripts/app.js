@@ -186,6 +186,22 @@
         
     }
     
+    _app.testimonials_slider = function() {
+        const testimonialSlider = document.querySelector('.testimonials-slider');
+        
+        if( !testimonialSlider ) return;
+        
+        const testimonialSwiper = new Swiper(testimonialSlider, {
+            loop: true,
+            pagination: false,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        
+    }
+    
     // Custom Functions
     
     _app.mobile_takover_nav = function() {
@@ -225,6 +241,7 @@
         _app.mobile_takover_nav();
         _app.member_spotlight_slider();
         _app.partnerships_slider();
+        _app.testimonials_slider();
     }
     
     
