@@ -7,7 +7,7 @@ $join = get_field('header_join', 'option') ?? null;
 <div class="part-gated-content-alert">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-center">
-			<div class="cell small-12 large-10 xlarge-8 text-center">
+			<div class="cell small-12 xlarge-10 xlarge-8 text-center">
 				<div class="bg-light-gray">
 					<?php if( $global_gated_content_notification_copy || $login || $join ):?>
 						<?php if( $global_gated_content_notification_copy ) {

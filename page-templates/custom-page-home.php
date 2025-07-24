@@ -143,7 +143,7 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php if( $m_banner_text || $m_banner_button_link || $m_banner_featured_ctas || $first_name ):?>
 							<header class="entry-header home-banner member">
 								<div class="grid-container">
-									<div class="inner bg-light-gray">
+									<div class="inner bg-light-gray br-10 overflow-hidden">
 										<div class="grid-x grid-padding-x align-middle">
 											<div class="left cell small-12 large-5">
 												<div class="h1">Welcome <?=esc_html($first_name);?></div>
@@ -178,7 +178,7 @@ $first_name = explode(' ', $current_user_name)[0];
 															?>
 															
 															<<?= $is_link ? 'a' : 'div'; ?>
-																class="inner relative h-100 bg-white color-black grid-x flex-dir-column align-middle align-justify"
+																class="inner relative h-100 bg-white box-shadow-5-15-10 br-10 color-black grid-x flex-dir-column align-middle align-justify"
 																<?= $is_link ? ' href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '"' : ''; ?>
 															>
 																<div class="top">
@@ -338,7 +338,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														$gated = get_field('gated');
 													?>
 														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
-															<div class="bg-light-gray relative h-100">
+															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
 																	<?php if( $webinar_date ):?>
 																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
@@ -430,7 +430,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														$gated = get_field('gated');
 													?>
 														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
-															<div class="bg-light-gray relative h-100">
+															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
 																	<?php if( $webinar_date ):?>
 																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
@@ -652,7 +652,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														$gated = get_field('gated');
 													?>
 														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
-															<div class="bg-light-gray relative h-100">
+															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
 																	<?php if( $webinar_date ):?>
 																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
@@ -755,7 +755,7 @@ $first_name = explode(' ', $current_user_name)[0];
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
 										<div class="cell small-12 medium-11 tablet-10 large-9">
-											<div class="inner bg-white text-center">
+											<div class="inner bg-white box-shadow-5-15-10 br-10 text-center">
 												<?php if( $testimonials_title ):?>
 													<h2 class="h3">
 														<?=wp_kses_post($testimonials_title);?>
@@ -816,7 +816,7 @@ $first_name = explode(' ', $current_user_name)[0];
 							<section class="member-spotlights color-white relative">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
-										<div class="cell small-12 large-10">
+										<div class="cell small-12 xlarge-10">
 											<header class="section-header grid-x grid-padding-x align-middle">
 												<div class="cell shrink title-wrap">
 													<div class="title h6 uppercase">
@@ -889,7 +889,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																}
 															?>
 																<div class="cell">
-																	<div class="swiper-page relative text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
+																	<div class="swiper-page br-10 relative text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
 																		<?php if($member_detail):?>
 																			<div class="title h6">
 																				<?=wp_kses_post($member_detail);?>
@@ -913,7 +913,7 @@ $first_name = explode(' ', $current_user_name)[0];
 							<section class="partnerships">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
-										<div class="cell small-12 large-10">
+										<div class="cell small-12 xlarge-10">
 											<header class="section-header grid-x grid-padding-x align-middle">
 												<div class="cell shrink title-wrap">
 													<div class="title h6 uppercase">
@@ -975,7 +975,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																		$light_logo = $partnership['light_logo'] ?? null;	
 																	?>
 																		<div class="cell small-6 h-100">
-																			<div class="swiper-page bg-black relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
+																			<div class="swiper-page br-10 overflow-hidden bg-black relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
 																				<div class="show-for-sr">
 																					Slides to <?=esc_html($partner_name);?>
 																				</div>

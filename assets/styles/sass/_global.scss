@@ -83,7 +83,7 @@ POSTS & CONTENT STYLES
 	p,
 	ul,
 	ol {
-		font-size: clamp(1rem, 0.956rem + 0.188vw, 1.125rem);
+		font-size: rem-calc(16);
 	}
 	img {
 		max-width: 100%;

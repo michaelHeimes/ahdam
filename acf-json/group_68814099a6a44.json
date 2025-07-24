@@ -164,6 +164,30 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_688246439b858",
+                    "label": "Posts to Show",
+                    "name": "expert_posts_to_show",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All",
+                        "picker": "Picker"
+                    },
+                    "default_value": "all",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal"
+                },
+                {
                     "key": "field_6881426258bb5",
                     "label": "Expert Q&A Posts",
                     "name": "expert_qa_posts",
@@ -171,7 +195,15 @@
                     "type": "relationship",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_688246439b858",
+                                "operator": "==",
+                                "value": "picker"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -189,7 +221,7 @@
                         "post_type",
                         "taxonomy"
                     ],
-                    "return_format": "",
+                    "return_format": "object",
                     "min": "",
                     "max": "",
                     "allow_in_bindings": 0,
@@ -224,6 +256,30 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_688247019b85b",
+                    "label": "Posts to Show",
+                    "name": "job_posts_to_show",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All",
+                        "picker": "Picker"
+                    },
+                    "default_value": "all",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal"
+                },
+                {
                     "key": "field_688142e258bbb",
                     "label": "Job Posts",
                     "name": "job_posts",
@@ -231,7 +287,15 @@
                     "type": "relationship",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_688247019b85b",
+                                "operator": "==",
+                                "value": "picker"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -380,5 +444,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753306491
+    "modified": 1753369040
 }

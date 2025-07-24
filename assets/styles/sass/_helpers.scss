@@ -23,6 +23,10 @@
 	background-color: $black;
 	color: $white;
 }
+.bg-navy {
+	background-color: $color-navy;
+	color: $white;
+}
 .bg-violet {
 	background-color: $color-violet;
 	color: $white;
@@ -42,4 +46,10 @@
 }
 .overflow-hidden {
 	overflow: hidden;
+}
+.box-shadow-5-15-10 {
+	box-shadow: 0px 5px 15px 10px rgba(0,0,0,0.04);
+}
+.br-10 {
+	border-radius: 10px;
 }

@@ -21,7 +21,7 @@ get_header();
 			<?php get_template_part('template-parts/part', 'page-header');?>
 
 			<div class="grid-x grid-padding-x align-center">
-				<div class="cell small-12 large-10">
+				<div class="cell small-12 xlarge-10">
 
 					<?php
 					if ( have_posts() ) :

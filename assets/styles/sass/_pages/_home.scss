@@ -98,8 +98,6 @@
 		margin-top: clamp(2.494rem, 2.234rem + 1.107vw, 3.563rem);
 		margin-bottom: clamp(3.544rem, 3.175rem + 1.573vw, 5.063rem);
 		.inner.bg-light-gray {
-			border-radius: 10px;
-			overflow: hidden;
 			padding: clamp(1.925rem, 1.725rem + 0.854vw, 2.75rem) clamp(2.45rem, 2.195rem + 1.087vw, 3.5rem) 0;
 			@include breakpoint(medium down) {
 				padding-left: 1rem;
@@ -125,7 +123,6 @@
 					}
 					.inner {
 						padding: 2rem 1rem clamp(0.744rem, 0.666rem + 0.33vw, 1.063rem);
-						border-radius: 10px;
 						.icon-wrap {
 							margin-bottom: clamp(1.05rem, 0.941rem + 0.466vw, 1.5rem);
 						}
@@ -226,7 +223,6 @@
 				article {
 					margin-bottom: 15px;
 					.bg-light-gray {
-						border-radius: 10px;
 						overflow: hidden;
 					}
 					.date {
@@ -326,9 +322,7 @@
 		hr {
 			margin: clamp(1.188rem, 1.011rem + 0.751vw, 1.688rem) 0;
 		}
-		.bg-white {
-			border-radius: 11px;
-			box-shadow: 0px 5px 15px 10px rgba(0,0,0,0.04);
+		.inner {
 			padding: clamp(2.013rem, 1.709rem + 1.296vw, 2.875rem) 5% clamp(2.013rem, 1.709rem + 1.296vw, 2.875rem);
 		}
 		.swiper-slide {
@@ -414,7 +408,6 @@
 					.swiper-page {
 						padding: 7px 0 3px;
 						overflow: hidden;
-						border-radius: 10px;
 						margin-bottom: 1rem;
 						.h6 {
 							margin: 0;
@@ -457,8 +450,6 @@
 		.swiper-page {
 			padding: 1.5rem;
 			cursor: pointer;
-			border-radius: 10px;
-			overflow: hidden; 
 			min-height: clamp(8.438rem, 7.359rem + 4.601vw, 11.5rem);
 			&:before {
 				content: '';

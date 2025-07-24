@@ -1,0 +1,67 @@
+.wp-block-ask-experts-form {
+	.grid-x {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.left,
+	.right {
+		padding-left: 0;
+		padding-right: 0;
+		.inner {
+			padding: clamp(1.969rem, 1.672rem + 1.268vw, 2.813rem) clamp(2.319rem, 1.969rem + 1.493vw, 3.313rem);
+		}
+	}
+	.left {
+		.copy-wrap {
+			margin-bottom: clamp(1.444rem, 1.226rem + 0.93vw, 2.063rem);
+		}
+		form.search-form {
+			@extend .grid-x;
+			@extend .grid-padding-x;
+			> * {
+				@extend .cell;
+			}
+			label {
+				@extend .auto; 
+			}
+			input.search-field {
+				color: $black;
+				margin: 0;
+				border: 2px solid $color-navy;
+				border-radius: 20px;
+				padding: 3px 14px 6px 34px;
+				height: 34px;
+				background: url('data:image/svg+xml,<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23a)"><path d="m13.741 14.359-2.678-2.905a7.211 7.211 0 0 0 1.619-4.578C12.682 3.086 9.837 0 6.34 0S0 3.085 0 6.876c0 3.79 2.845 6.876 6.34 6.876 1.242 0 2.392-.394 3.36-1.05l2.785 3.019a.85.85 0 0 0 .62.279.85.85 0 0 0 .621-.279c.363-.377.363-.985.015-1.362ZM1.771 6.876c0-2.724 2.043-4.956 4.57-4.956s4.555 2.232 4.555 4.956-2.043 4.956-4.555 4.956c-2.512 0-4.57-2.216-4.57-4.956Z" fill="%23050D57" fill-opacity=".5"/></g><defs><clipPath id="a"><path fill="%23fff" d="M0 0h14v16H0z" /></clipPath></defs></svg>');
+				background-repeat: no-repeat;
+				background-position: 14px 50%;
+				&:focus {
+					box-shadow: none;
+					border-color: $color-violet;
+				}
+			}
+			input.search-field::placeholder {
+				font-weight: 700;
+				color: rgb(130,134,171);
+				@extend .p;
+			}
+			button.search-submit {
+				@extend .shrink;
+				@extend .button;
+				@extend .violet;
+				padding: 0.35em 1em;
+			}
+		}
+	}
+	.right {
+		.text-wrap {
+			padding-bottom: clamp(1.137rem, 0.966rem + 0.732vw, 1.625rem);
+			.btn-group {
+				margin-top: 10px;
+			}
+		}
+		.dummy-form {
+			filter: blur(3px);
+		}
+	}
+}
+

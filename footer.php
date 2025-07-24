@@ -23,12 +23,12 @@
 		<?php get_template_part('template-parts/part', 'members-only-content');?>
 	</div>
 
-				<footer id="colophon" class="site-footer bg-black">
+				<footer id="colophon" class="site-footer bg-navy">
 					<div class="footer-border"></div>
 					<div class="site-info">
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-center">
-								<div class="cell small-12 large-10">
+								<div class="cell small-12 xlarge-10">
 									
 									<?php if( $footer_logo ):?>
 										<ul class="menu hide-for-medium grid-x align-center">

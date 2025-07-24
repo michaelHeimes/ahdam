@@ -79,30 +79,6 @@ footer#colophon {
 						display: flex;
 						justify-content: center;
 					}
-					button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
-						display: inline-block;
-						vertical-align: middle;
-						margin: 0;
-						padding: 0.85em 1.5em;
-						border: 2px solid #0C0D3D;
-						border-radius: 100px;
-						-webkit-transition: background-color 0.25s ease, color 0.25s ease;
-						transition: background-color 0.25s ease, color 0.25s ease;
-						font-family: inherit;
-						font-size: 0.9rem;
-						font-weight: 700;
-						-webkit-appearance: none;
-						line-height: 1;
-						text-align: center;
-						cursor: pointer;
-						text-transform: uppercase;
-						background-color: $color-pink;
-						svg {
-							path {
-								all: revert-layer;
-							}
-						}
-					}
 				}	
 			}
 		}

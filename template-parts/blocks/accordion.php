@@ -34,10 +34,34 @@ if( $content_source == 'manual' ) {
     $rows = $manual_content['rows'] ?? null;
 }
 if( $content_source == 'expert-qas' ) {
-    $rows = $expert_qas['expert_qa_posts'] ?? null;
+    $expert_posts_to_show = $expert_qas['expert_posts_to_show'];
+    if( $expert_posts_to_show == 'all' ) {
+        $rows = get_posts(array(
+            'post_type'      => 'expert-qa',
+            'posts_per_page' => -1,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        ));
+    }
+    if( $expert_posts_to_show == 'picker' ) {
+        $rows = $expert_qas['expert_qa_posts'] ?? null;
+    }
 }
 if( $content_source == 'jobs' ) {
-    $rows = $jobs['job_posts'] ?? null;
+    $job_posts_to_show = $jobs['job_posts_to_show'];
+    if( $job_posts_to_show == 'all' ) {
+        $rows = get_posts(array(
+            'post_type'      => 'job',
+            'posts_per_page' => -1,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        ));
+    }
+    if( $job_posts_to_show == 'picker' ) {
+        $rows = $jobs['job_posts'] ?? null;
+    }
 }
 
 $auto_open_first = get_field('auto_open_first');
@@ -48,7 +72,7 @@ $update_url_with_drawer_title = get_field('update_url_with_drawer_title');
 if( $rows ):
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <ul class="accordion" 
+    <ul class="accordion bg-white box-shadow-5-15-10 br-10" 
     <?php
         if($allow_multiple_expand) {
             echo 'data-multi-expand="true"';
@@ -82,7 +106,7 @@ if( $rows ):
             if( $title && $content ):
         ?>
             <li class="accordion-item<?php if($auto_open_first && $i == 1):?> is-active<?php endif;?>" data-accordion-item>
-                <a class="p p-2" href="#<?=sanitize_title($title);?>" class="accordion-title">
+                <a class="p p-2 relative" href="#<?=sanitize_title($title);?>" class="accordion-title">
                     <?php if( $content_source == 'expert-qas' ):?>
                         <div class="grid-x">
                             <div class="cell shrink">
@@ -99,7 +123,7 @@ if( $rows ):
                     <?php endif;?>
                 
                 </a>
-                <div class="accordion-content" data-tab-content id="<?=sanitize_title($title);?>">
+                <div class="accordion-content p" data-tab-content id="<?=sanitize_title($title);?>">
                     <?php if( $content_source == 'expert-qas' ):?>
                         <div class="grid-x">
                             <div class="cell shrink">

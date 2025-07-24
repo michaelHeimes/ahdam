@@ -21,7 +21,7 @@ $fields = get_fields();
 						<?php get_template_part('template-parts/part', 'page-banner');?>
 					
 						<div class="grid-x grid-padding-x align-center">
-							<div class="cell small-12 large-10">
+							<div class="cell small-12 xlarge-10">
 								<h2 class="h6">
 									Upcoming
 								</h2>
@@ -53,7 +53,7 @@ $fields = get_fields();
 						</div>
 											
 						<div class="grid-x grid-padding-x align-center">
-							<div class="cell small-12 large-10">
+							<div class="cell small-12 xlarge-10">
 								<h2 class="h6">
 									Archives
 								</h2>
