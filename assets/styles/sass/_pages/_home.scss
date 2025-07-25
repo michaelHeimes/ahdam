@@ -192,24 +192,6 @@
 			.month.h6 {
 				margin-bottom: 0;
 			}
-			.absolute-link-trigger {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				&.reveal-trigger {
-					cursor: pointer;
-				}
-			}
-			.reveal-trigger-overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba( $black, .8 );
-			}
 			.archive-link-wrap {
 				padding-top: clamp(1.5rem, 1.28rem + 0.939vw, 2.125rem);
 				svg {

@@ -274,6 +274,9 @@ require_once(get_template_directory().'/inc/acf-blocks.php');
 // Disable Gutenberg
 require_once(get_template_directory().'/inc/disable-gutenberg.php'); 
 
+// Gutenberg Customizations
+require_once(get_template_directory().'/inc/gutenberg-customizations.php'); 
+
 // Add Page Slug to Body Class
 // require_once(get_template_directory().'/inc/page-slug-body-class.php');
 

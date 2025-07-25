@@ -17,8 +17,15 @@
                 "id": ""
             },
             "choices": {
+                "appeal-writing": "Appeal Writing Workshops",
+                "knowledge-center": "Knowledge Center",
+                "member-spotlight": "Member Spotlights",
                 "news": "News",
-                "webinar": "Webinar"
+                "newsletter": "Newsletter",
+                "podcast": "Podcasts",
+                "tip-sheet": "Tip-sheets",
+                "webinar": "Webinars",
+                "whitepaper": "Whitepaper"
             },
             "default_value": "",
             "return_format": "value",
@@ -47,5 +54,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753395216
+    "modified": 1753465032
 }

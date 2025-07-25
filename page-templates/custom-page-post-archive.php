@@ -8,9 +8,10 @@
  */
 
 get_header();
-$post_type_to_show = get_field('post_type_to_show');
+$content = get_the_content();
+$post_type_to_show = get_field('post_type_to_show') ?? null;
 ?>
-	<div class="content">
+	<div class="content archive-<?=sanitize_title($post_type_to_show);?>">
 		<div class="inner-content">
 		
 			<main id="primary" class="site-main">
@@ -19,6 +20,16 @@ $post_type_to_show = get_field('post_type_to_show');
 					<div class="grid-container">
 					
 						<?php get_template_part('template-parts/part', 'page-banner');?>
+						
+						<?php if (has_blocks(get_the_ID()) || trim(strip_tags($content)) !== '') :?>
+							<div class="grid-x grid-padding-x align-center entry-content">
+								<div class="cell small-12 xlarge-10">
+									<div class="wp-block-content-wrap">
+										<?php the_content();?>
+									</div>
+								</div>
+							</div>
+						<?php endif;?>
 					
 						<?php if( $post_type_to_show  == 'webinar' ):?>
 							<div class="grid-x grid-padding-x align-center">
@@ -47,6 +58,7 @@ $post_type_to_show = get_field('post_type_to_show');
 											
 						<div class="grid-x grid-padding-x align-center">
 							<div class="cell small-12 xlarge-10">
+								
 								<?php if( $post_type_to_show  == 'webinar' ):?>
 									<h2 class="h6">
 										Archives

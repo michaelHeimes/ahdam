@@ -9,7 +9,7 @@ $gated = get_field('gated');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('relative cell archive-card'); ?> role="article">
 	<?php if( $host_images || $webinar_date ):?>
-		<div class="thumb-date-wrap grid-x align-justify bg-black relative z-1">
+		<div class="thumb-date-wrap br-10 overflow-hidden grid-x align-justify bg-black relative z-1">
 			<div class="date-wrap cell shrink grid-x relative z-1">
 				<div class="date text-center">
 					<div class="month h6 uppercase">

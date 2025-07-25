@@ -71,7 +71,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "interview"
+                "value": "post"
             }
         ],
         [
@@ -79,6 +79,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "podcast"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tip-sheet"
             }
         ]
     ],
@@ -91,5 +98,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751916632
+    "modified": 1753465922
 }
