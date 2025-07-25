@@ -70,13 +70,6 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 	// add_filter( 'tiny_mce_before_init', 'add_styleselect_classes' ); 
 
 
-	// add editor-style.css
-	function theme_editor_style() {
-		add_editor_style( get_template_directory_uri() . '/assets/styles/style.min.css' );
-	}
-	add_action('init', 'theme_editor_style');
-
-
 	// remove revisions meta box and recreate on right side for all post types
 	function relocate_revisions_metabox() {
 		$args = array(
@@ -106,9 +99,8 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 	// 1. Add the new column to each post type admin list
 	add_filter( 'manage_webinar_posts_columns', 'add_webinar_date_column' );
 	add_filter( 'manage_event_posts_columns', 'add_event_date_column' );
-	add_filter( 'manage_podcast_posts_columns', 'add_postcast_date_column' );
+	add_filter( 'manage_podcast_posts_columns', 'add_podcast_date_column' );
 	function add_webinar_date_column( $columns ) {
-		// Insert after title
 		$new_columns = array();
 		foreach ( $columns as $key => $value ) {
 			$new_columns[ $key ] = $value;
@@ -119,23 +111,21 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 		return $new_columns;
 	}
 	function add_event_date_column( $columns ) {
-		// Insert after title
 		$new_columns = array();
 		foreach ( $columns as $key => $value ) {
 			$new_columns[ $key ] = $value;
 			if ( $key == 'title' ) {
-				$new_columns['webinar_date'] = 'Event Date';
+				$new_columns['event_date'] = 'Event Date';
 			}
 		}
 		return $new_columns;
 	}
 	function add_podcast_date_column( $columns ) {
-		// Insert after title
 		$new_columns = array();
 		foreach ( $columns as $key => $value ) {
 			$new_columns[ $key ] = $value;
 			if ( $key == 'title' ) {
-				$new_columns['webinar_date'] = 'Podcast Date';
+				$new_columns['podcast_date'] = 'Podcast Date';
 			}
 		}
 		return $new_columns;
@@ -146,60 +136,45 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 	add_action( 'manage_event_posts_custom_column', 'show_date_column', 10, 2 );
 	add_action( 'manage_podcast_posts_custom_column', 'show_date_column', 10, 2 );
 	function show_date_column( $column, $post_id ) {
-		if ( $column == 'webinar_date' ) {
-			$field_map = array(
-				'webinar' => 'webinar_date',
-				'event'   => 'cpt_event_date',
-				'podcast' => 'podcast_date',
-			);
+		switch ( $column ) {
+			case 'webinar_date':
+				$date = get_field( 'webinar_date', $post_id );
+				break;
+			case 'event_date':
+				$date = get_field( 'cpt_event_date', $post_id );
+				break;
+			case 'podcast_date':
+				$date = get_field( 'podcast_date', $post_id );
+				break;
+			default:
+				$date = '';
+		}
 	
-			$post_type = get_post_type( $post_id );
-			$field_key = isset( $field_map[ $post_type ] ) ? $field_map[ $post_type ] : '';
-			$date = $field_key ? get_field( $field_key, $post_id ) : '';
-	
-			if ( $date ) {
-				$date_obj = DateTime::createFromFormat( 'Ymd', $date );
-				echo esc_html( $date_obj ? $date_obj->format( 'F j, Y' ) : $date );
-			} else {
-				echo '—';
-			}
+		if ( $date ) {
+			$date_obj = DateTime::createFromFormat( 'Ymd', $date );
+			echo esc_html( $date_obj ? $date_obj->format( 'F j, Y' ) : $date );
+		} else {
+			echo '—';
 		}
 	}
 	
 	// 3. Make the column sortable
-	add_filter( 'manage_edit-webinar_sortable_columns', 'make_date_sortable' );
-	add_filter( 'manage_edit-event_sortable_columns', 'make_date_sortable' );
-	add_filter( 'manage_edit-podcast_sortable_columns', 'make_date_sortable' );
-	function make_date_sortable( $columns ) {
+	function make_webinar_date_sortable( $columns ) {
 		$columns['webinar_date'] = 'webinar_date';
 		return $columns;
 	}
-	
-	// 4. Handle sorting by date as a number
-	add_action( 'pre_get_posts', 'date_column_orderby' );
-	function date_column_orderby( $query ) {
-		if ( ! is_admin() || ! $query->is_main_query() ) {
-			return;
-		}
-	
-		$post_type = $query->get( 'post_type' );
-		$meta_key = '';
-	
-		if ( $query->get( 'orderby' ) == 'webinar_date' ) {
-			if ( $post_type == 'webinar' ) {
-				$meta_key = 'webinar_date';
-			} elseif ( $post_type == 'event' ) {
-				$meta_key = 'cpt_event_date';
-			} elseif ( $post_type == 'podcast' ) {
-				$meta_key = 'podcast_date';
-			}
-	
-			if ( $meta_key ) {
-				$query->set( 'meta_key', $meta_key );
-				$query->set( 'orderby', 'meta_value_num' ); // THIS LINE ensures numeric sorting
-			}
-		}
+	function make_event_date_sortable( $columns ) {
+		$columns['event_date'] = 'event_date';
+		return $columns;
 	}
+	function make_podcast_date_sortable( $columns ) {
+		$columns['podcast_date'] = 'podcast_date';
+		return $columns;
+	}
+	
+	add_filter( 'manage_edit-webinar_sortable_columns', 'make_webinar_date_sortable' );
+	add_filter( 'manage_edit-event_sortable_columns', 'make_event_date_sortable' );
+	add_filter( 'manage_edit-podcast_sortable_columns', 'make_podcast_date_sortable' );
 	
 
 	

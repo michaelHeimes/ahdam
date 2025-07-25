@@ -275,7 +275,7 @@ require_once(get_template_directory().'/inc/acf-blocks.php');
 require_once(get_template_directory().'/inc/disable-gutenberg.php'); 
 
 // Gutenberg Customizations
-require_once(get_template_directory().'/inc/gutenberg-customizations.php'); 
+require_once(get_template_directory().'/inc/disable-gutenberg.php'); 
 
 // Add Page Slug to Body Class
 // require_once(get_template_directory().'/inc/page-slug-body-class.php');
@@ -306,3 +306,6 @@ require_once(get_template_directory().'/inc/image-sizes.php');
 
 // Gravity Forms
 require_once(get_template_directory().'/inc/gravity-forms.php');
+
+// Gated page or post
+require_once(get_template_directory().'/inc/gated-page-post.php');

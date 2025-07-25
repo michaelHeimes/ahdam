@@ -67,3 +67,8 @@ h5,
 .weight-400 {
 	font-weight: 400;
 }
+
+:where(.editor-styles-wrapper) p {
+	line-height: 1.25 !important;
+	font-size: rem-calc(16) !important;
+}

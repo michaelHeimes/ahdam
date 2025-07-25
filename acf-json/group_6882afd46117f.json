@@ -41,7 +41,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/custom-page-news.php"
+                "value": "page-templates\/custom-page-post-archive.php"
             }
         ]
     ],
@@ -54,5 +54,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753465032
+    "modified": 1753473913
 }

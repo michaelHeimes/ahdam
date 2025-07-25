@@ -41,7 +41,7 @@ svg {
 }
 
 .part-gated-content-alert {
-	.bg-light-gray {
+	.inner {
 		padding: clamp(3.938rem, 3.343rem + 2.535vw, 5.625rem) 20px clamp(3.5rem, 2.972rem + 2.254vw, 5rem);
 		h2 {
 			line-height: 1.41;
@@ -53,7 +53,7 @@ svg {
 	}
 }
 
-.page-template-page-members-only {
+.page-template-custom-page-members-only {
 	.part-gated-content-alert {
 		margin-top: clamp(3.938rem, 3.343rem + 2.535vw, 5.625rem);
 		margin-bottom: clamp(3.938rem, 3.343rem + 2.535vw, 5.625rem);

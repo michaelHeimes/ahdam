@@ -8,7 +8,7 @@ $join = get_field('header_join', 'option') ?? null;
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-center">
 			<div class="cell small-12 xlarge-10 xlarge-8 text-center">
-				<div class="bg-light-gray">
+				<div class="inner<?php if( !is_page_template('page-templates/custom-page-members-only.php') ):?> bg-light-gray<?php endif;?>">
 					<?php if( $global_gated_content_notification_copy || $login || $join ):?>
 						<?php if( $global_gated_content_notification_copy ) {
 							echo wp_kses_post($global_gated_content_notification_copy);

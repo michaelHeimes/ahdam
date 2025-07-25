@@ -46,6 +46,8 @@ if( $post_type === 'webinar' ) {
 	}
 }
 
+$newsletter_post_disclaimer = get_field('newsletter_post_disclaimer', 'option') ?? null;
+
 $thumbnail_id = get_post_thumbnail_id();
 ?>
 
@@ -105,6 +107,12 @@ $thumbnail_id = get_post_thumbnail_id();
 									)
 								);
 								?>
+								<?php if( $post_type === 'newsletter' && $newsletter_post_disclaimer ):?>
+									<div class="disclaimer">
+										<hr>
+										<?=wp_kses_post($newsletter_post_disclaimer);?>
+									</div>
+								<?php endif;?>
 							</div>
 						</div>
 					</div><!-- .entry-content -->

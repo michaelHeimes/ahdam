@@ -43,21 +43,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "newsletter"
+                "value": "knowledge-center"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "whitepaper"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "webinar"
+                "value": "member-spotlight"
             }
         ],
         [
@@ -71,7 +64,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "newsletter"
             }
         ],
         [
@@ -87,6 +80,27 @@
                 "operator": "==",
                 "value": "tip-sheet"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "webinar"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "whitepaper"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -98,5 +112,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753465922
+    "modified": 1753473628
 }
