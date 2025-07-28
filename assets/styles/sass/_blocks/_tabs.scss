@@ -1,0 +1,45 @@
+.wp-block-tabs {
+	.tabs {
+		border: 0;
+		background-color: $light-gray;
+		a {
+			color: rgba($black, .25);
+			&[aria-selected=true] {
+				color: $white;
+			}
+			hr {
+				
+			}
+		}
+	}
+	.tabs-content.vertical {
+		border: 0;
+		.text-wrap.has-link-rows {
+			padding-bottom: clamp(2.056rem, 1.746rem + 1.324vw, 2.938rem);
+		}
+		.menu {
+			a {
+				hr {
+					margin: 6px 0 9px;
+				}
+			}
+		}
+		ul.link-rows {
+			margin-bottom: 0;
+			> li:last-child {
+				hr {
+					margin-bottom: 0;
+				}
+			}
+			a {
+				gap: $smallGutter;
+				@include breakpoint(media) {
+					gap: $mediumGutter;
+				}
+				svg {
+					margin-left: 1px;
+				}
+			}
+		}
+	}
+}

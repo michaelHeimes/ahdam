@@ -1,4 +1,7 @@
 <?php
+if(!defined('ABSPATH')) {
+	exit;
+}
 /**
  * Template name: Member's Only Page
  *

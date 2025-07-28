@@ -12,6 +12,7 @@ p,
 		font-size: clamp(1.063rem, 0.996rem + 0.282vw, 1.25rem);
 	}
 }
+.is-font-medium,
 .p-2,
 .p-2 p,
 .p-2 ul,
@@ -20,6 +21,7 @@ h3.p-2 {
 	font-size: rem-calc(18);
 	font-size: clamp(1rem, 0.956rem + 0.188vw, 1.125rem);
 }
+.is-font-large,
 .p-3,
 .p-3 p,
 .p-3 ul,
@@ -60,6 +62,9 @@ h5,
 }
 .color-pink {
 	color: $color-pink;
+}
+.color-violet {
+	color: $color-violet;
 }
 .uppercase {
 	text-transform: uppercase;

@@ -29,7 +29,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.abide.js
 
 // Tabs UI
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
 
 // Accordian
 //@prepros-prepend vendor/foundation/js/plugins/foundation.accordion.js
@@ -50,7 +50,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
 
 // Navigation Widget
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.magellan.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.magellan.js
 
 // Offcanvas Naviagtion Option
 //@prepros-prepend vendor/foundation/js/plugins/foundation.offcanvas.js

@@ -50,7 +50,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 //@include foundation-media-object;
 //@include foundation-orbit;
 @include foundation-responsive-embed;
-//@include foundation-tabs;
+@include foundation-tabs;
 //@include foundation-thumbnail;
 // Menu-based containers
 @include foundation-menu;
@@ -81,6 +81,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 /*--------------------------------------------------------------
 # Custom Styles
 --------------------------------------------------------------*/
+@import "mixins";
 @import "global";
 @import "typography";
 @import "helpers";
@@ -93,6 +94,8 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 
 @import "_blocks/accordion";
 @import "_blocks/expert-qas";
+@import "_blocks/tabs";
+@import "_blocks/sticky-scroll-list";
 
 @import "_pages/home";
 @import "_pages/default";

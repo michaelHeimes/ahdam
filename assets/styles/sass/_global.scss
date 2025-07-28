@@ -24,6 +24,9 @@ svg {
 		right: 0;
 		bottom: 0;
 		background-repeat: no-repeat;
+		&.full-width {
+			@include full-width-breakout;
+		}
 	}
 }
 

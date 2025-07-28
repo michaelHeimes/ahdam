@@ -47,27 +47,33 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 		array_unshift($buttons, 'styleselect');
 		return $buttons;
 	}
-	// add_filter('mce_buttons_2', 'add_styleselect');
+	add_filter('mce_buttons_2', 'add_styleselect');
 
 
 	// add default styles to styleselect
-	function add_styleselect_classes( $init_array ) {  
-		// Define the style_formats array
-		$style_formats = array(  
-			// Each array child is a format with it's own settings
-	        array(  
-	            'title' => 'Large Blue Text',  
-	            'block' => 'span',  
-	            'classes' => 'large-blue-text',
-	            'wrapper' => true,
-	        ),
-		);
-		// Insert the array, JSON ENCODED, into 'style_formats'
-		$init_array['style_formats'] = json_encode( $style_formats );  
-		
-		return $init_array;  
-	} 
-	// add_filter( 'tiny_mce_before_init', 'add_styleselect_classes' ); 
+	add_filter('tiny_mce_before_init', function ($init) {
+		$style_formats = [
+			// [
+			// 	'title' => 'Small',
+			// 	'inline' => 'span',
+			// 	'classes' => 'is-font-small',
+			// ],
+			[
+				'title' => 'Medium',
+				'inline' => 'span',
+				'classes' => 'is-font-medium',
+			],
+			[
+				'title' => 'Large',
+				'inline' => 'span',
+				'classes' => 'is-font-large',
+			],
+		];
+	
+		$init['style_formats'] = json_encode($style_formats);
+		$init['toolbar1'] = 'formatselect,styleselect,bold,italic,underline,bullist,numlist,link,unlink';
+		return $init;
+	});
 
 
 	// remove revisions meta box and recreate on right side for all post types

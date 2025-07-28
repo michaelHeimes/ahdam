@@ -5248,6 +5248,92 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   padding-bottom: 56.25%;
 }
 
+.tabs {
+  margin: 0;
+  border: 1px solid #EFEFEF;
+  background: #fff;
+  list-style-type: none;
+}
+.tabs::before, .tabs::after {
+  display: table;
+  content: " ";
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.tabs::after {
+  clear: both;
+}
+
+.tabs.vertical > li {
+  display: block;
+  float: none;
+  width: auto;
+}
+
+.tabs.simple > li > a {
+  padding: 0;
+}
+.tabs.simple > li > a:hover {
+  background: transparent;
+}
+
+.tabs.primary {
+  background: #C84DFF;
+}
+.tabs.primary > li > a {
+  color: #252242;
+}
+.tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
+  background: #c33cff;
+}
+
+.tabs-title {
+  float: left;
+}
+.tabs-title > a {
+  display: block;
+  padding: clamp(1.225rem, 1.04rem + 0.789vw, 1.75rem) clamp(1.575rem, 1.337rem + 1.014vw, 2.25rem);
+  font-size: inherit;
+  line-height: 1;
+  color: #C84DFF;
+}
+[data-whatinput=mouse] .tabs-title > a {
+  outline: 0;
+}
+.tabs-title > a:hover {
+  background: #fff;
+  color: #ba1fff;
+}
+.tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
+  background: #6357FD;
+  color: #fff;
+}
+
+.tabs-content {
+  border: 1px solid #EFEFEF;
+  border-top: 0;
+  background: #fff;
+  color: #252242;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tabs-content.vertical {
+  border: 1px solid #EFEFEF;
+  border-left: 0;
+}
+
+.tabs-panel {
+  display: none;
+  padding: clamp(2.406rem, 2.043rem + 1.549vw, 3.438rem) clamp(2.231rem, 1.895rem + 1.437vw, 3.188rem);
+}
+.tabs-panel.is-active {
+  display: block;
+}
+
 .menu {
   padding: 0;
   margin: 0;
@@ -8131,6 +8217,14 @@ svg {
   bottom: 0;
   background-repeat: no-repeat;
 }
+.has-bg .bg.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
 
 .card-grid {
   margin-left: -0.6875rem;
@@ -8822,6 +8916,7 @@ body .form-wrap .gform-theme--framework.gform_wrapper form input[type]:where(:no
   font-size: clamp(1.063rem, 0.996rem + 0.282vw, 1.25rem);
 }
 
+.is-font-medium,
 .p-2,
 .p-2 p,
 .p-2 ul,
@@ -8831,6 +8926,7 @@ h3.p-2 {
   font-size: clamp(1rem, 0.956rem + 0.188vw, 1.125rem);
 }
 
+.is-font-large,
 .p-3,
 .p-3 p,
 .p-3 ul,
@@ -8880,6 +8976,10 @@ h5,
 
 .color-pink {
   color: #C84DFF;
+}
+
+.color-violet {
+  color: #6357FD;
 }
 
 .uppercase {
@@ -9958,6 +10058,125 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 .wp-block-ask-experts-form .right .dummy-form {
   -webkit-filter: blur(3px);
           filter: blur(3px);
+}
+
+.wp-block-tabs .tabs {
+  border: 0;
+  background-color: #EFEFEF;
+}
+.wp-block-tabs .tabs a {
+  color: rgba(37, 34, 66, 0.25);
+}
+.wp-block-tabs .tabs a[aria-selected=true] {
+  color: #fff;
+}
+.wp-block-tabs .tabs-content.vertical {
+  border: 0;
+}
+.wp-block-tabs .tabs-content.vertical .text-wrap.has-link-rows {
+  padding-bottom: clamp(2.056rem, 1.746rem + 1.324vw, 2.938rem);
+}
+.wp-block-tabs .tabs-content.vertical .menu a hr {
+  margin: 6px 0 9px;
+}
+.wp-block-tabs .tabs-content.vertical ul.link-rows {
+  margin-bottom: 0;
+}
+.wp-block-tabs .tabs-content.vertical ul.link-rows > li:last-child hr {
+  margin-bottom: 0;
+}
+.wp-block-tabs .tabs-content.vertical ul.link-rows a {
+  gap: 40px;
+  gap: 40px;
+}
+.wp-block-tabs .tabs-content.vertical ul.link-rows a svg {
+  margin-left: 1px;
+}
+
+.wp-block-sticky-scroll-list .bg {
+  background-image: linear-gradient(-25.46deg, #5354B5 38.8879%, #2891D2 75%, #05B1C5 100%);
+}
+.wp-block-sticky-scroll-list .block h3 {
+  font-weight: 600;
+}
+.wp-block-sticky-scroll-list .section {
+  padding: 1.6rem 0;
+}
+@media print, screen and (min-width: 40em) {
+  .wp-block-sticky-scroll-list .section {
+    padding: 10rem 0 0;
+  }
+  .wp-block-sticky-scroll-list .section:last-child {
+    padding-bottom: 10rem;
+  }
+}
+.wp-block-sticky-scroll-list .section:last-child {
+  margin-bottom: 0;
+}
+.wp-block-sticky-scroll-list .nav-wrap .link-wrap {
+  position: relative;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 2.85rem;
+}
+.wp-block-sticky-scroll-list .nav-wrap .link-wrap:first-child {
+  padding-top: 3rem;
+}
+.wp-block-sticky-scroll-list .nav-wrap .link-wrap:last-child {
+  padding-bottom: 0;
+}
+.wp-block-sticky-scroll-list .nav-wrap .link-wrap span {
+  display: inline-block;
+  width: 34px;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  position: relative;
+  top: 2px;
+}
+.wp-block-sticky-scroll-list .nav-wrap .link-wrap:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #FDFDFD;
+}
+.wp-block-sticky-scroll-list .nav-wrap a {
+  color: #fff;
+  font-size: inherit;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  font-weight: 600;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+  opacity: 0.26;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+}
+.wp-block-sticky-scroll-list .nav-wrap a:hover {
+  opacity: 1;
+}
+.wp-block-sticky-scroll-list .nav-wrap a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -3.35rem;
+  width: 16px;
+  top: -8px;
+  bottom: -8px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
+}
+.wp-block-sticky-scroll-list .nav-wrap a.is-active {
+  opacity: 1;
+}
+.wp-block-sticky-scroll-list .nav-wrap a.is-active:before {
+  background-color: #00FAB8;
 }
 
 @media print, screen and (min-width: 40em) {
