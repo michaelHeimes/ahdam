@@ -164,8 +164,74 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_68893e44fe21c",
+                    "label": "Non-member Posts to Show",
+                    "name": "non_member_posts_to_show",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All",
+                        "picker": "Picker"
+                    },
+                    "default_value": "all",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_68893e1008049",
+                    "label": "Non-member Expert Q&A Posts",
+                    "name": "non_member_expert_qa_posts",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_68893e44fe21c",
+                                "operator": "==",
+                                "value": "picker"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "expert-qa"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "return_format": "object",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": []
+                },
+                {
                     "key": "field_688246439b858",
-                    "label": "Posts to Show",
+                    "label": "Member Posts to Show",
                     "name": "expert_posts_to_show",
                     "aria-label": "",
                     "type": "button_group",
@@ -228,6 +294,27 @@
                     "elements": "",
                     "bidirectional": 0,
                     "bidirectional_target": []
+                },
+                {
+                    "key": "field_68893b59a9c96",
+                    "label": "Non-member CTA Text",
+                    "name": "non_member_cta_text",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         },
@@ -444,5 +531,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753369040
+    "modified": 1753824880
 }

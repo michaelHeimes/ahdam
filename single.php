@@ -8,6 +8,8 @@
  */
 
 get_header();
+
+$tip_sheet_icon = get_field('tip_sheet_icon', 'option') ?? null;
 $post_type = get_post_type();
 
 $date = '';
@@ -48,7 +50,16 @@ if( $post_type === 'webinar' ) {
 
 $newsletter_post_disclaimer = get_field('newsletter_post_disclaimer', 'option') ?? null;
 
-$thumbnail_id = get_post_thumbnail_id();
+$thumbnail_id = '';
+$bg_class = 'bg-black';
+
+if( $post_type === 'tip-sheet' ) {
+	$thumbnail_id = $tip_sheet_icon['id'] ?? null;
+	$bg_class = 'bg-violet';
+} else {
+	$thumbnail_id = get_post_thumbnail_id() ?? null;
+}
+
 ?>
 
 	<main id="primary" class="site-main">
@@ -63,11 +74,13 @@ $thumbnail_id = get_post_thumbnail_id();
 							<div class="grid-x grid-padding-x align-center">
 								<?php if( $thumbnail_id ):?>
 									<div class="cell small-12 medium-4">
-										<div class="thumb-wrap has-object-fit-img bg-black h-100">
+										<div class="thumb-wrap has-object-fit-img <?=$bg_class;?> h-100 grid-x align-middle align-center">
 											<?=wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );?>
-											<div class="tag h6 color-white">
-												<b><?=esc_html($post_type_tag);?></b>
-											</div>
+											<?php if( $post_type === 'news' || $post_type === 'webinar' || $post_type === 'podcast' ):?>
+												<div class="tag h6 color-white">
+													<b><?=esc_html($post_type_tag);?></b>
+												</div>
+											<?php endif;?>
 										</div>
 									</div>
 								<?php endif;?>

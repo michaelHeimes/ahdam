@@ -49,6 +49,9 @@
 // Responsive Images
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
 
+// Anchor Link Scrolling
+//@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
+
 // Navigation Widget
 //@prepros-prepend vendor/foundation/js/plugins/foundation.magellan.js
 
@@ -64,8 +67,7 @@
 // Form UI element
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.slider.js
 
-// Anchor Link Scrolling
-//@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
+
 
 // Sticky Elements
 //@prepros-prepend vendor/foundation/js/plugins/foundation.sticky.js

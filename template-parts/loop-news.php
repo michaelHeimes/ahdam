@@ -18,9 +18,7 @@ $gated = get_field('gated');
 		};?>
 	</div>
 	<div class="title">
-		<h3 class="h6 m-0">
-			<?php the_title();?>
-		</h3>
+		<?php get_template_part('template-parts/content', 'byline-title');?>
 	</div>
 	<?php if( $gated && !is_user_logged_in() ):?>
 		<button class="reveal-trigger absolute-link-trigger z-1" data-open="gated-content-alert">

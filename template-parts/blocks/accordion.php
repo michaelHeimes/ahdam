@@ -26,6 +26,9 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+$login = get_field('header_login', 'option') ?? null;
+$join = get_field('header_join', 'option') ?? null;
+
 $content_source = get_field('content_source') ?? null;
 $manual_content = get_field('manual_content') ?? null;
 $expert_qas = get_field('expert_qas') ?? null;
@@ -36,18 +39,28 @@ if( $content_source == 'manual' ) {
     $rows = $manual_content['rows'] ?? null;
 }
 if( $content_source == 'expert-qas' ) {
-    $expert_posts_to_show = $expert_qas['expert_posts_to_show'];
-    if( $expert_posts_to_show == 'all' ) {
+    $non_member_cta_text = $expert_qas['non_member_cta_text'] ?? null;
+    $non_member_posts_to_show = $expert_qas['non_member_posts_to_show'] ?? null;
+    $expert_posts_to_show = $expert_qas['expert_posts_to_show'] ?? null;
+    if( $non_member_posts_to_show  == 'all' || $expert_posts_to_show == 'all' ) {
+        $posts_per_page = -1;
+        if( !is_user_logged_in() ) {
+            $posts_per_page = 2;
+        }
         $rows = get_posts(array(
             'post_type'      => 'expert-qa',
-            'posts_per_page' => -1,
+            'posts_per_page' => $posts_per_page,
             'post_status'    => 'publish',
             'orderby'        => 'date',
             'order'          => 'DESC',
         ));
     }
-    if( $expert_posts_to_show == 'picker' ) {
-        $rows = $expert_qas['expert_qa_posts'] ?? null;
+    if( $non_member_posts_to_show  == 'picker' || $expert_posts_to_show == 'picker' ) {
+        if( is_user_logged_in() ) {
+            $rows = $expert_qas['expert_qa_posts'] ?? null;
+        } else {
+            $rows = $expert_qas['non_member_expert_qa_posts'] ?? null;
+        }
     }
 }
 if( $content_source == 'jobs' ) {
@@ -144,5 +157,23 @@ if( $rows ):
             </li>
         <?php endif; $i++; endforeach;?>
     </ul>
+    <?php if( $content_source == 'expert-qas' && !is_user_logged_in() && $non_member_cta_text ):?>
+        <div class="wp-block-non-member-cta">
+            <?=wp_kses_post($non_member_cta_text);?>
+            <?php if( $login || $join ) :?>
+                <div class="wp-block-link-wrap">
+                    <?php get_template_part('template-parts/part', 'btn-group',
+                        array(
+                            'flex-classes' => 'align-center',
+                            'btn1' => $login,
+                            'btn1-classes' => 'black-outline',
+                            'btn2' => $join,
+                            'btn2-classes' => 'violet',
+                        ),
+                    );?>
+                </div>
+            <?php endif;?>
+        </div>
+    <?php endif;?>
 </section>
 <?php endif;?>

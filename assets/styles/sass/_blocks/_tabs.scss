@@ -33,7 +33,7 @@
 			}
 			a {
 				gap: $smallGutter;
-				@include breakpoint(media) {
+				@include breakpoint(medium) {
 					gap: $mediumGutter;
 				}
 				svg {

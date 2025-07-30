@@ -44,4 +44,17 @@
 			}
 		}
 	}
+	&.single-tip-sheet {
+		.entry-header {
+			.thumb-wrap {
+				padding: 3rem;
+				img {
+					position: static;
+					width: auto;
+					height: auto;
+					max-width: 150px;
+				}
+			}
+		}
+	}
 }

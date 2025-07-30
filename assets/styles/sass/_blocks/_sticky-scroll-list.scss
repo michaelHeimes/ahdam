@@ -1,10 +1,20 @@
 .wp-block-sticky-scroll-list {
+	padding-top: 2.938rem;
+	padding-bottom: clamp(4.681rem, 3.975rem + 3.014vw, 6.688rem);
 	.bg {
 		background-image: linear-gradient(-25.46deg, #5354B5 38.887899999999995%, #2891D2 75%, #05B1C5 100%);
 	}
 	.block {
-		h3 {
+		.inner {
+			max-width: 520px;
+		}
+		.h4 {
 			font-weight: 600;
+		}
+		p,
+		ul,
+		ol {
+			font-size: clamp(1.137rem, 0.966rem + 0.732vw, 1.625rem);
 		}
 	}
 		
@@ -25,12 +35,13 @@
 	}
 	
 	.nav-wrap {
-			
+		margin-bottom: 4.681rem;
 		.link-wrap {
 			position: relative;
 			padding-top: 23px;
 			padding-bottom: 23px;
 			padding-left: 2.85rem;
+			margin-bottom: 0;
 			
 		&:first-child {
 			padding-top: 3rem;
@@ -69,8 +80,11 @@
 			font-weight: 600;
 			flex-wrap: nowrap;
 			position: relative;
-			opacity: .26;
 			transition: opacity .25s ease-out;
+
+			@include breakpoint(medium) {
+				opacity: .26;
+			}
 			
 		&:hover {
 			opacity: 1;
@@ -81,7 +95,8 @@
 			display: block;
 			position: absolute;
 			left: -3.35rem;
-			width: 16px;
+			height: clamp(2.625rem, 2.229rem + 1.69vw, 3.75rem);
+			width: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
 			top: -8px;
 			bottom: -8px;
 			background-color: transparent;
@@ -92,7 +107,7 @@
 			opacity: 1;
 			
 		&:before {
-			background-color: #00FAB8;
+			background-color: $color-seafoam;
 		}
 			
 		}

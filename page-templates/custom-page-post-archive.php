@@ -19,24 +19,25 @@ $post_type_to_show = get_field('post_type_to_show') ?? null;
 		
 			<main id="primary" class="site-main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+										
+					<?php get_template_part('template-parts/part', 'page-banner');?>
 					
-					<div class="grid-container">
-					
-						<?php get_template_part('template-parts/part', 'page-banner');?>
-						
-						<?php if (has_blocks(get_the_ID()) || trim(strip_tags($content)) !== '') :?>
+					<?php if (has_blocks(get_the_ID()) || trim(strip_tags($content)) !== '') :?>
+						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-center entry-content">
-								<div class="cell small-12 xlarge-10">
+								<div class="cell small-12">
 									<div class="wp-block-content-wrap">
 										<?php the_content();?>
 									</div>
 								</div>
 							</div>
-						<?php endif;?>
+						</div>
+					<?php endif;?>
 					
+					<div class="grid-container">
 						<?php if( $post_type_to_show  == 'webinar' ):?>
 							<div class="grid-x grid-padding-x align-center">
-								<div class="cell small-12 xlarge-10">
+								<div class="cell small-12">
 									<h2 class="h6">
 										Upcoming
 									</h2>
@@ -56,11 +57,16 @@ $post_type_to_show = get_field('post_type_to_show') ?? null;
 										]');?>
 									
 								</div>
+								<?php if( $post_type_to_show  == 'webinar' ):?>
+									<div class="cell small-12">
+										<hr class="webinar-break">
+									</div>
+								<?php endif;?>
 							</div>
 						<?php endif;?>
 											
 						<div class="grid-x grid-padding-x align-center">
-							<div class="cell small-12 xlarge-10">
+							<div class="cell small-12">
 								
 								<?php if( $post_type_to_show  == 'webinar' ):?>
 									<h2 class="h6">
@@ -80,8 +86,9 @@ $post_type_to_show = get_field('post_type_to_show') ?? null;
 											scroll="false" 
 											template="default"
 										]');?>
+
 								<?php else:?>
-									
+
 									<?php echo do_shortcode('[ajax_load_more 
 										container_type="div"
 										css_classes="grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 large-up-4 xlarge-up-5 card-grid" 

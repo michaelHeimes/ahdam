@@ -26,11 +26,12 @@ svg {
 		background-repeat: no-repeat;
 		&.full-width {
 			@include full-width-breakout;
+			position: absolute;
 		}
 	}
 }
 
-.card-grid {
+.grid-x.card-grid {
 	margin-left: rem-calc(-11);
 	margin-right: rem-calc(-11);
 	> .cell {
@@ -133,8 +134,20 @@ POSTS & CONTENT STYLES
 	[class^="wp-block-"]:not(.wp-block-image):not(.wp-block-column):not(.wp-block-heading):not(.wp-block-embed__wrapper):not(.wp-block-buttons > .wp-block-button):not(.wp-block-button__link),
 	.module.block,
 	blockquote {
-		margin-top:clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
+		margin-top: clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
 		margin-bottom: clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
+		&.no-top-spacing {
+			margin-top: 0 !important;
+		}
+		&.no-bottom-spacing {
+			margin-bottom: 0 !important;
+		}
+		&.double-top-spacing {
+			margin-top: calc(clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem) * 2) !important;
+		}
+		&.double-bottom-spacing {
+			margin-bottom: calc(clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem) * 2) !important;
+		}
 		&.wp-block-heading:not(h4) {
 			margin-bottom: .7rem;
 		}

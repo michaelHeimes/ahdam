@@ -22,33 +22,3 @@
 		margin-bottom: clamp(5.425rem, 4.606rem + 3.493vw, 7.75rem);
 	}
 }
-
-body .alm-btn-wrap {
-	padding: 2rem 50px 0;
-	.alm-load-more-btn {
-		@extend .button;
-		@extend .violet;
-		box-shadow: none;
-		width: 100%;
-		max-width: 230px;
-		margin: 0;
-		&:hover,
-		&:focus {
-			color: $white;
-			background-color: #473EB8 !important;
-			border-color: #473EB8 !important;
-		}
-		&.loading {
-			padding-left: 1em !important;
-			box-shadow: none !important;
-			&:before {
-				position: absolute;
-				left: -42px;
-				margin: 4px;
-			}
-		}
-		&.done {
-			display: none;
-		}
-	}
-}

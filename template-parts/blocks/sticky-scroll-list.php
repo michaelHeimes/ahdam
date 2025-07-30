@@ -32,9 +32,9 @@ if( $items ):
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> has-bg">
     <div class="bg full-width"></div>
-    <div class="grid-x grid-padding-x">
-        <div class="cell medium-4 nav-wrap bg-light-gray nav-wrap" data-sticky-container data-magellan>
-            <div class="sticky" data-sticky data-anchor="block-<?=$id;?>" data-margin-top="10">
+    <div class="grid-x grid-padding-x relative z-1">
+        <div class="cell medium-4 nav-wrap nav-wrap" data-sticky-container data-magellan>
+            <div class="sticky" data-sticky data-sticky-on="medium" data-anchor="block-<?=$id;?>" data-margin-top="10">
                 <ul class="no-bullet" data-magellan data-offset="100">
                     <?php $i = 1; foreach( $items as $item ):
                         $title = $item['title'] ?? null;
@@ -56,10 +56,10 @@ if( $items ):
                 $text = $item['text'] ?? null;
                 if( $title && $text ):
             ?>
-                <div class="section block" id="row-<?=$id;?>-<?=$i;?>" data-magellan-target="row-<?=$id;?>-<?=$i;?>">
+                <div class="section block grid-x align-right" id="row-<?=$id;?>-<?=$i;?>" data-magellan-target="row-<?=$id;?>-<?=$i;?>">
                     <div class="inner">
                         <?php if( $text ):?>
-                            <div class="text-wrap">
+                            <div class="text-wrap color-white">
                                 <?=wp_kses_post($text);?>
                             </div>
                         <?php endif;?>

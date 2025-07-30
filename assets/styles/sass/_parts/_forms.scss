@@ -4,53 +4,57 @@ body .gform-theme--foundation {
 	--gf-form-footer-margin-y-start: 20px;
 }
 body {
-	.form-wrap .gform-theme--framework.gform_wrapper {
-		form {
-			textarea:where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
-			input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
-				border-radius: 10px;
-				border: 2px solid $black;
-				@extend .p;
-				&:focus {
-					border-color: $color-pink !important;
-				}
-				&::placeholder {
-					font-weight: 700;
-					color: rgb(130,134,171);
+	.entry-content,
+	.form-wrap {
+		.gform-theme--framework.gform_wrapper {
+			form {
+				textarea:where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+				input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
+					border-radius: 10px;
+					border: 2px solid $black;
 					@extend .p;
-				}
-			}	
-			input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
-				min-height: 50px;
-			}	
-			.gform-footer {
-				button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type="submit"],
-				:where(:not(.mce-splitbtn))>button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)), .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type="submit"] {
-					display: inline-block;
-					vertical-align: middle;
-					margin: 0;
-					padding: 0.85em 1.5em;
-					border: 2px solid #0C0D3D;
-					border-radius: 100px;
-					-webkit-transition: background-color 0.25s ease, color 0.25s ease;
-					transition: background-color 0.25s ease, color 0.25s ease;
-					font-family: inherit;
-					font-size: 0.9rem;
-					font-weight: 700;
-					-webkit-appearance: none;
-					line-height: 1;
-					text-align: center;
-					cursor: pointer;
-					text-transform: uppercase;
-					background-color: $color-pink;
-					svg {
-						path {
-							all: revert-layer;
-						}
-					}
-					&:hover,
 					&:focus {
-						background-color: #913BB7;
+						border-color: $color-pink !important;
+					}
+					&::placeholder {
+						font-weight: 700;
+						color: rgb(130,134,171);
+						@extend .p;
+					}
+				}	
+				input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
+					min-height: 50px;
+				}	
+				.gform-footer {
+					button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type="submit"],
+					:where(:not(.mce-splitbtn))>button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)), .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type="submit"] {
+						display: inline-block;
+						vertical-align: middle;
+						margin: 0;
+						padding: 0.85em 1.5em;
+						border: 2px solid $color-pink;
+						border-radius: 100px;
+						transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+						font-family: inherit;
+						font-size: 0.9rem;
+						font-weight: 700;
+						appearance: none;
+						-webkit-appearance: none;
+						line-height: 1;
+						text-align: center;
+						cursor: pointer;
+						text-transform: uppercase;
+						background-color: $color-pink;
+						svg {
+							path {
+								all: revert-layer;
+							}
+						}
+						&:hover,
+						&:focus {
+							background-color: #913BB7;
+							border-color: #913BB7;
+						}
 					}
 				}
 			}

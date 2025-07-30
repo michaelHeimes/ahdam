@@ -17,7 +17,7 @@
 	</h3>
 	<?php if( $author_name ):?>
 		<div class="author">
-			<b><?=esc_html( $author_name );?></b>
+			<b>By <?=esc_html( $author_name );?></b>
 		</div>
 	<?php endif;?>
 </div>	

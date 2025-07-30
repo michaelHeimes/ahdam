@@ -72,7 +72,7 @@ header.site-header {
 					}
 				}
 				&.menu-item-has-children {
-					a {
+					> a {
 						&:after {
 							position: static;
 							border: 0;
@@ -136,16 +136,24 @@ header.site-header {
 			&.menu-item-has-children {
 				
 				ul.submenu {
+					background-color: $white;
+					@extend .box-shadow-5-15-10;
+					@extend .br-10;
+					padding: 1.1rem 1.2rem;
 					li {
+						text-align: left;
+						&:not(:last-child):not(:only-child) {
+							margin-bottom: 1rem;
+						}
 						a {
-
-							
-						&:hover {
-
+							color: $black;
+							border-radius: 4px;
+							padding: 0.45em 0.55em;
+							&:hover {
+								color: $black;
+								background-color: $light-gray;
+							}	
 						}
-							
-						}
-						
 					}
 				}
 	

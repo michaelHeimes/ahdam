@@ -38,6 +38,7 @@ footer#colophon {
 		.gform_wrapper {
 			form {
 				@extend .grid-x;
+				align-items: flex-end;
 				margin-right: -1rem;
 				margin-left: -1rem;
 				display: flex !important;
@@ -74,6 +75,7 @@ footer#colophon {
 					@extend .shrink;
 					padding-left: 1rem;
 					padding-right: 1rem;
+					padding-bottom: 3px;
 					margin: 0;
 					@include breakpoint(small down) {
 						display: flex;

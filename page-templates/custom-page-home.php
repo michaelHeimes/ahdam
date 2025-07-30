@@ -326,8 +326,8 @@ $first_name = explode(' ', $current_user_name)[0];
 									</div>
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 large-3">
-												<div class="grid-x grid-padding-x card-grid">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3">
+												<div class="grid-x card-grid">
 													<div class="cell small-12">
 														<div class="title h6 uppercase">
 															Upcoming
@@ -376,11 +376,11 @@ $first_name = explode(' ', $current_user_name)[0];
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 large-9">
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
-												<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-2 tablet-up-3 xlarge-up-4 pad-right">
+												<div class="card-grid grid-x small-up-1 medium-up-2 tablet-up-3 xlarge-up-4 pad-right">
 													<?php $i = 1; while ( $latest_webinar_query->have_posts() ) : $latest_webinar_query->the_post(); 
 														$webinar_date = get_field('webinar_date') ?? null;	
 														if( $webinar_date  ) {
@@ -399,7 +399,7 @@ $first_name = explode(' ', $current_user_name)[0];
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_webinars_page);?>">
 															View <span class="inline-icon-wrap">Webinars
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
@@ -415,7 +415,7 @@ $first_name = explode(' ', $current_user_name)[0];
 								<div class="grid-container">
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $events_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 large-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">Events</h2>
@@ -424,7 +424,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														<hr>
 													</div>
 												</div>
-												<div class="grid-x grid-padding-x card-grid">
+												<div class="grid-x card-grid">
 													<?php while ( $events_query->have_posts() ) : $events_query->the_post(); 
 														$event_date = get_field('cpt_event_date') ?? null;	
 														if( $event_date ) {
@@ -479,14 +479,14 @@ $first_name = explode(' ', $current_user_name)[0];
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_events_page);?>">
 															View <span class="inline-icon-wrap">Events
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
 											</div>
 										<?php endif;?>
 										<?php if ( $news_query->have_posts() ) :?>
-											<div class="home-cpt-main news-row cell small-12 medium-11 medium-7 tablet-8 large-9">
+											<div class="home-cpt-main news-row cell small-12 medium-11 medium-7 tablet-8 xlarge-9">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">News</h2>
@@ -504,7 +504,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																
 															<?php if( $i == 1 ):?>
 																<article id="post-<?php the_ID(); ?>" <?php post_class('featured relative h-100'); ?> role="article">
-																	<div class="card-grid grid-x grid-padding-x h-100">
+																	<div class="card-grid grid-x h-100">
 																		<?php if( $thumbnail_id ):?>
 																			<div class="cell small-12 large-6">
 																				<div class="thumb-wrap has-object-fit-img bg-black h-100">
@@ -549,7 +549,7 @@ $first_name = explode(' ', $current_user_name)[0];
 															
 																<?php if( $i == 1 ):?>
 																	<article id="post-<?php the_ID(); ?>" <?php post_class('stacked relative hide-for-xlarge cell small-6 medium-12 large-6 xlarge-12'); ?> role="article">
-																		<div class="card-grid grid-x grid-padding-x">
+																		<div class="card-grid grid-x">
 																			<?php if( $thumbnail_id ):?>
 																				<div class="cell small-12 medium-4">
 																					<div class="thumb-wrap relative bg-black has-object-fit-img">
@@ -580,7 +580,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														
 																<?php if( $i >= 2 ):?>
 																	<article id="post-<?php the_ID(); ?>" <?php post_class('stacked relative cell small-6 medium-12 large-6 xlarge-12'); ?> role="article">
-																		<div class="card-grid grid-x grid-padding-x">
+																		<div class="card-grid grid-x">
 																			<?php if( $thumbnail_id ):?>
 																				<div class="cell small-12 medium-4">
 																					<div class="thumb-wrap relative bg-black has-object-fit-img">
@@ -617,7 +617,7 @@ $first_name = explode(' ', $current_user_name)[0];
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_news_page);?>">
 															View <span class="inline-icon-wrap">News
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
@@ -630,7 +630,7 @@ $first_name = explode(' ', $current_user_name)[0];
 						
 						
 						<?php if ( $upcoming_podcast_query->have_posts() || $latest_podcast_query->have_posts() ) :?>
-							<section class="webinars home-cpt-row">
+							<section class="podcasts home-cpt-row">
 								<div class="grid-container">
 									<div class="section-header grid-x grid-padding-x">
 										<div class="cell shrink title-wrap">
@@ -642,11 +642,11 @@ $first_name = explode(' ', $current_user_name)[0];
 									</div>
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 large-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3">
 												<div class="title h6 uppercase">
 													Upcoming
 												</div>
-												<div class="grid-x grid-padding-x card-grid">
+												<div class="grid-x card-grid">
 													<?php while ( $upcoming_podcast_query->have_posts() ) : $upcoming_podcast_query->the_post(); 
 														$podcast_date = get_field('podcast_date') ?? null;	
 														if( $podcast_date  ) {
@@ -690,59 +690,21 @@ $first_name = explode(' ', $current_user_name)[0];
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 large-9">
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
-												<div class="card-grid grid-x grid-padding-x small-up-2 medium-up-2 large-up-4 pad-right">
+												<div class="card-grid grid-x small-up-2 medium-up-2 large-up-4 pad-right">
 													<?php while ( $latest_podcast_query->have_posts() ) : $latest_podcast_query->the_post(); 
-														$podcast_date = get_field('webinar_date') ?? null;	
-														if( $podcast_date  ) {
-															$date = DateTime::createFromFormat( 'Ymd', $podcast_date );
-														}
-														$thumbnail_id = get_post_thumbnail_id();
-														$gated = get_field('gated');
+														get_template_part('template-parts/loop', 'podcast');
 													?>
-														<div class="cell">
-															<article id="post-<?php the_ID(); ?>" <?php post_class('relative'); ?> role="article">
-																<?php if( $thumbnail_id || $webinar_date ):?>
-																	<div class="thumb-icon-wrap has-object-fit-img bg-black">
-																		<?php if( $thumbnail_id ) {
-																			echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
-																		};?>
-																		<div class="date-live-wrap grid-x z-1 align-right">
-																			<div class="pod-icon uppercase cell auto text-right">
-																				<svg viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><circle cx="15.5" cy="15.5" r="15.5" fill="#C84DFF"/><g clip-path="url(#a)"><path fill="#fff" d="M16.15 18.57c1.62-.07 2.86-1.5 2.86-3.15v-5.26c0-1.65-1.24-3.08-2.86-3.15-1.72-.08-3.14 1.32-3.14 3.06v5.45c0 1.74 1.42 3.14 3.14 3.06zM22 15.3v-1.92a.55.55 0 0 0-.54-.55h-.56a.57.57 0 0 0-.56.58v1.78c0 2.4-1.82 4.45-4.17 4.54-2.46.09-4.49-1.93-4.49-4.42v-2.05a.57.57 0 0 0-.56-.58h-.52a.59.59 0 0 0-.58.6v2.03c0 3.09 2.25 5.64 5.16 6.06v1.93h-3.39c-.29 0-.52.24-.52.53v.65c0 .29.23.52.51.52h8.27c.3 0 .55-.25.55-.56v-.63a.5.5 0 0 0-.5-.51h-3.24v-1.93c2.91-.42 5.16-2.97 5.16-6.06z"/></g><defs><clipPath id="a"><path fill="#fff" d="M10 7h12v18H10z"/></clipPath></defs></svg>
-																			</div>
-																		</div>
-																		<?php if( $gated && !is_user_logged_in() ) {
-																			get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
-																		};?>
-																	</div>
-																	<div class="title">
-																		<h3 class="h6 m-0">
-																			<?php the_title();?>
-																		</h3>
-																	</div>
-																<?php endif;?>
-																<?php if( $gated && !is_user_logged_in() ):?>
-																	<button class="reveal-trigger absolute-link-trigger z-1" data-open="gated-content-alert">
-																		<span class="show-for-sr">
-																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																		</span>
-																	</button>
-																<?php else:?>
-																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-																<?php endif;?>
-															</article>
-														</div>
 													<?php endwhile;?>
 												</div>
 												<?php if( $global_podcasts_page ):?>
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_podcasts_page);?>">
 															View <span class="inline-icon-wrap">Podcasts
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/></mask><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>
 												<?php endif;?>
