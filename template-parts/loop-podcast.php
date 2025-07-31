@@ -8,7 +8,7 @@ $gated = get_field('gated');
 			<?php if( $thumbnail_id ) {
 				echo wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );
 			};?>
-			<div class="date-live-wrap grid-x z-1 align-right">
+			<div class="date-live-wrap grid-x relative z-1 align-right">
 				<div class="pod-icon uppercase cell auto text-right">
 					<svg width="31" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><circle cx="15.5" cy="15.5" r="15.5" fill="#C84DFF"/><path fill="#fff" d="M16.15 18.57c1.62-.07 2.86-1.5 2.86-3.15v-5.26c0-1.65-1.24-3.08-2.86-3.15-1.72-.08-3.14 1.32-3.14 3.06v5.45c0 1.74 1.42 3.14 3.14 3.06zM22 15.3v-1.92a.55.55 0 0 0-.54-.55h-.56a.57.57 0 0 0-.56.58v1.78c0 2.4-1.82 4.45-4.17 4.54-2.46.09-4.49-1.93-4.49-4.42v-2.05a.57.57 0 0 0-.56-.58h-.52a.59.59 0 0 0-.58.6v2.03c0 3.09 2.25 5.64 5.16 6.06v1.93h-3.39c-.29 0-.52.24-.52.53v.65c0 .29.23.52.51.52h8.27c.3 0 .55-.25.55-.56v-.63a.5.5 0 0 0-.5-.51h-3.24v-1.93c2.91-.42 5.16-2.97 5.16-6.06z"/></svg>
 				</div>

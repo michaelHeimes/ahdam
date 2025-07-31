@@ -5,7 +5,6 @@ if( $post_type == 'news' ) {
 	get_template_part('template-parts/loop', 'news');
 } else if( $post_type == 'podcast' ) {
 	get_template_part('template-parts/loop', 'podcast');
-}
 } else if( $post_type == 'webinar' ) {
 	get_template_part('template-parts/loop', 'webinar');
 } else if( $post_type == 'tip-sheet' ) {

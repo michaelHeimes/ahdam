@@ -314,7 +314,7 @@ $first_name = explode(' ', $current_user_name)[0];
 
 					<section class="body" itemprop="text">
 						<?php if ( $upcoming_webinar_query->have_posts() || $latest_webinar_query->have_posts() ) :?>
-							<section class="webinars home-cpt-row">
+							<section class="webinars home-cpt-row" id="webinars">
 								<div class="grid-container">
 									<div class="section-header grid-x grid-padding-x">
 										<div class="cell shrink title-wrap">
@@ -326,7 +326,7 @@ $first_name = explode(' ', $current_user_name)[0];
 									</div>
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3" id="upcoming-webinars">
 												<div class="grid-x card-grid">
 													<div class="cell small-12">
 														<div class="title h6 uppercase">
@@ -376,7 +376,7 @@ $first_name = explode(' ', $current_user_name)[0];
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9">
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9" id="latest-webinars">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
@@ -411,11 +411,11 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php endif;?>
 						
 						<?php if ( $events_query->have_posts() || $news_query->have_posts() ) :?>
-							<section class="events-news home-cpt-row">
+							<section class="events-news home-cpt-row" id="events-news">
 								<div class="grid-container">
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $events_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3" id="events">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">Events</h2>
@@ -486,7 +486,7 @@ $first_name = explode(' ', $current_user_name)[0];
 											</div>
 										<?php endif;?>
 										<?php if ( $news_query->have_posts() ) :?>
-											<div class="home-cpt-main news-row cell small-12 medium-11 medium-7 tablet-8 xlarge-9">
+											<div class="home-cpt-main news-row cell small-12 medium-11 medium-7 tablet-8 xlarge-9" id="news">
 												<div class="section-header grid-x grid-padding-x">
 													<div class="cell shrink title-wrap">
 														<h2 class="m-0 h5">News</h2>
@@ -628,9 +628,8 @@ $first_name = explode(' ', $current_user_name)[0];
 							</section>
 						<?php endif;?>
 						
-						
 						<?php if ( $upcoming_podcast_query->have_posts() || $latest_podcast_query->have_posts() ) :?>
-							<section class="podcasts home-cpt-row">
+							<section class="podcasts home-cpt-row" id="podcasts">
 								<div class="grid-container">
 									<div class="section-header grid-x grid-padding-x">
 										<div class="cell shrink title-wrap">
@@ -642,7 +641,7 @@ $first_name = explode(' ', $current_user_name)[0];
 									</div>
 									<div class="body grid-x grid-padding-x align-center">
 										<?php if ( $upcoming_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3">
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3" id="upcoming-podcasts">
 												<div class="title h6 uppercase">
 													Upcoming
 												</div>
@@ -690,7 +689,7 @@ $first_name = explode(' ', $current_user_name)[0];
 											</div>
 										<?php endif;?>
 										<?php if ( $latest_podcast_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9">
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9" id="latest-podcasts">
 												<div class="title h6 uppercase">
 													Latest
 												</div>
@@ -716,7 +715,7 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php endif;?>
 						
 						<?php if( $testimonials_title || $testimonials ):?>
-							<section class="testimonials bg-light-gray">
+							<section class="testimonials bg-light-gray"id="testimonials">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
 										<div class="cell small-12 medium-11 tablet-10 large-9">
@@ -778,7 +777,7 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php endif;?>
 						
 						<?php if($member_spotlight_posts):?>
-							<section class="member-spotlights color-white relative">
+							<section class="member-spotlights color-white relative" id="member-spotlights">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
 										<div class="cell small-12 xlarge-10">
@@ -875,7 +874,7 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php endif;?>
 						
 						<?php if( $partnerships || $partnerships_page_link ):?>
-							<section class="partnerships">
+							<section class="partnerships" id="partnerships">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
 										<div class="cell small-12 xlarge-10">

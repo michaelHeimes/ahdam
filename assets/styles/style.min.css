@@ -10980,6 +10980,8 @@ article.type-tip-sheet.archive-card .bg-light-gray {
   padding: clamp(1.099rem, -2.99rem + 5.233vw, 1.57rem) clamp(0.959rem, -2.609rem + 4.567vw, 1.37rem);
 }
 
+article.type-podcast.archive-card .thumb-date-wrap:before,
+article.type-podcast.archive-card .thumb-wrap:before,
 article.type-webinar.archive-card .thumb-date-wrap:before,
 article.type-webinar.archive-card .thumb-wrap:before {
   content: "";
@@ -10993,49 +10995,79 @@ article.type-webinar.archive-card .thumb-wrap:before {
   background: linear-gradient(0deg, #C84DFF 0%, rgba(200, 77, 255, 0) 100%);
   mix-blend-mode: hard-light;
 }
+article.type-podcast.archive-card .thumb-date-wrap .date-wrap,
+article.type-podcast.archive-card .thumb-wrap .date-wrap,
 article.type-webinar.archive-card .thumb-date-wrap .date-wrap,
 article.type-webinar.archive-card .thumb-wrap .date-wrap {
   padding: clamp(0.438rem, 0.371rem + 0.282vw, 0.625rem) clamp(0.438rem, 0.371rem + 0.282vw, 0.625rem) 0 clamp(0.787rem, 0.669rem + 0.507vw, 1.125rem);
 }
+article.type-podcast.archive-card .thumb-date-wrap .date-wrap .date,
+article.type-podcast.archive-card .thumb-wrap .date-wrap .date,
 article.type-webinar.archive-card .thumb-date-wrap .date-wrap .date,
 article.type-webinar.archive-card .thumb-wrap .date-wrap .date {
   padding-top: 2px;
 }
+article.type-podcast.archive-card .date-live-wrap,
+article.type-webinar.archive-card .date-live-wrap {
+  padding: 9px 6px;
+}
 @media screen and (max-width: 460px) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: clamp(10.438rem, -1.42rem + 59.286vw, 15.625rem);
   }
 }
 @media screen and (min-width: 461px) and (max-width: 639px) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: 15.625rem;
   }
 }
 @media print, screen and (min-width: 40em) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: clamp(11.063rem, -1.293rem + 30.888vw, 16.063rem);
   }
 }
 @media print, screen and (min-width: 56.25em) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: clamp(11.063rem, 4.203rem + 12.195vw, 12rem);
   }
 }
 @media print, screen and (min-width: 64em) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: clamp(8.813rem, -0.806rem + 15.044vw, 10.938rem);
   }
 }
 @media screen and (min-width: 78.125em) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: clamp(8.625rem, 0.487rem + 10.417vw, 9.563rem);
   }
 }
 @media screen and (min-width: 1394px) {
-  article.type-webinar.archive-card .thumb-date-wrap {
+  article.type-podcast.archive-card .thumb-date-wrap,
+  article.type-podcast.archive-card .thumb-icon-wrap,
+  article.type-webinar.archive-card .thumb-date-wrap,
+  article.type-webinar.archive-card .thumb-icon-wrap {
     min-height: 9.5625rem;
   }
 }
+article.type-podcast.archive-card .host-images,
 article.type-webinar.archive-card .host-images {
   max-width: 40%;
   padding: clamp(0.7rem, 0.594rem + 0.451vw, 1rem);
@@ -11052,15 +11084,18 @@ article.type-webinar.archive-card .host-images {
   padding: 13px 16px;
 }
 @media print, screen and (min-width: 56.25em) {
+  article.type-podcast.archive-card .host-images,
   article.type-webinar.archive-card .host-images {
     max-width: 50%;
   }
 }
+article.type-podcast.archive-card .host-images .image-wrap,
 article.type-webinar.archive-card .host-images .image-wrap {
   aspect-ratio: 1/1;
   border: clamp(0.188rem, 0.165rem + 0.094vw, 0.25rem) solid #fff;
   border-radius: 100%;
 }
+article.type-podcast.archive-card .host-images .image-wrap img,
 article.type-webinar.archive-card .host-images .image-wrap img {
   width: 100%;
   height: 100%;
@@ -11068,6 +11103,7 @@ article.type-webinar.archive-card .host-images .image-wrap img {
      object-fit: cover;
   display: block;
 }
+article.type-podcast.archive-card .host-images.grid,
 article.type-webinar.archive-card .host-images.grid {
   max-width: 60%;
   display: -ms-grid;
@@ -11081,15 +11117,16 @@ article.type-webinar.archive-card .host-images.grid {
           column-gap: 16px;
   row-gap: 10px;
 }
-article.type-webinar.archive-card .host-images.grid > *:nth-child(1) {
+article.type-podcast.archive-card .host-images.grid > *:nth-child(1), article.type-webinar.archive-card .host-images.grid > *:nth-child(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
 }
-article.type-webinar.archive-card .host-images.grid > *:nth-child(2) {
+article.type-podcast.archive-card .host-images.grid > *:nth-child(2), article.type-webinar.archive-card .host-images.grid > *:nth-child(2) {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
 }
 @media print, screen and (min-width: 40em) {
+  article.type-podcast.archive-card .host-images.grid,
   article.type-webinar.archive-card .host-images.grid {
     -webkit-column-gap: 8px;
        -moz-column-gap: 8px;
@@ -11097,12 +11134,15 @@ article.type-webinar.archive-card .host-images.grid > *:nth-child(2) {
     row-gap: 5px;
   }
 }
+article.type-podcast.archive-card .host-images.grid .image-wrap,
 article.type-webinar.archive-card .host-images.grid .image-wrap {
   max-width: none;
 }
+article.type-podcast.archive-card .title,
 article.type-webinar.archive-card .title {
   padding-right: 1.5rem;
 }
+article.type-podcast.archive-card .title h3.h6,
 article.type-webinar.archive-card .title h3.h6 {
   line-height: 1.3846;
 }

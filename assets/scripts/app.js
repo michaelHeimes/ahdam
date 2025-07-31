@@ -126,6 +126,46 @@
         $('.display-on-load').css('visibility', 'visible');
     }
     
+    _app.scroll_to_anchor = function() {
+        
+        const offset = 100;
+        
+        const hash = window.location.hash;
+        if (hash) {
+            const target = document.querySelector(hash);
+            if (target) {
+                const offset = 100;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Smooth scroll on hash link clicks
+        document.querySelectorAll('a[href*="#"]:not([href="#"])').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.hash.slice(1);
+                const target = document.getElementById(targetId);
+          
+             if (target) {
+                    e.preventDefault();
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+            
+                    history.pushState(null, null, `#${targetId}`);
+                }
+            });
+        });
+        
+    }
+    
     _app.member_spotlight_slider = function() {
         const slider = document.querySelector('.member-spotlights .member-spotlight-slider');
         
@@ -238,7 +278,7 @@
         _app.emptyParentLinks();
         _app.fixed_nav_hack();
         _app.display_on_load();
-        
+        _app.scroll_to_anchor();
         // Custom Functions
         _app.mobile_takover_nav();
         _app.member_spotlight_slider();

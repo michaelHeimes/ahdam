@@ -93,6 +93,7 @@ article.type-tip-sheet.archive-card {
 	}
 }
 
+article.type-podcast.archive-card,
 article.type-webinar.archive-card {
 	.thumb-date-wrap,
 	.thumb-wrap {
@@ -114,7 +115,11 @@ article.type-webinar.archive-card {
 			}
 		}
 	}
-	.thumb-date-wrap {
+	.date-live-wrap {
+		padding: 9px 6px;
+	}
+	.thumb-date-wrap,
+	.thumb-icon-wrap {
 		@media screen and (max-width: 460px) {
 			min-height: clamp(10.438rem, -1.42rem + 59.286vw, 15.625rem);
 		}

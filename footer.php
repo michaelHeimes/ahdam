@@ -41,7 +41,7 @@
 									<?php endif;?>
 									
 									<?php if( $mailing_list_heading || $mailing_list_text || $mailing_list_form_id ):?>
-										<div class="form">
+										<div class="form" id="mailing-list-signup">
 											<?php if( $mailing_list_heading ):?>
 												<h2><?=wp_kses_post($mailing_list_heading);?></h2>
 											<?php endif;?>

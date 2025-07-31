@@ -43,14 +43,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "knowledge-center"
+                "value": "newsletter"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "member-spotlight"
+                "value": "whitepaper"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "webinar"
             }
         ],
         [
@@ -64,7 +71,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "newsletter"
+                "value": "post"
             }
         ],
         [
@@ -80,27 +87,6 @@
                 "operator": "==",
                 "value": "tip-sheet"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "webinar"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "whitepaper"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
         ]
     ],
     "menu_order": 0,
@@ -108,9 +94,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753473628
+    "modified": 1753904699
 }
