@@ -3,20 +3,22 @@ $thumbnail_id = get_post_thumbnail_id();
 $gated = get_field('gated');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('relative cell archive-card'); ?> role="article">
-	<div class="thumb-wrap br-10 overflow-hidden grid-x align-justify bg-black relative z-1">
-		<?=wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );?>
-		<div class="date-wrap cell shrink grid-x relative z-1">
-			<div class="date text-center">
-				<div class="month h6 uppercase">
-				</div>
-				<div class="day h2">
+	<?php if( $thumbnail_id ):?>
+		<div class="thumb-wrap br-10 overflow-hidden grid-x align-justify bg-black relative z-1">
+			<?=wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );?>
+			<div class="date-wrap cell shrink grid-x relative z-1">
+				<div class="date text-center">
+					<div class="month h6 uppercase">
+					</div>
+					<div class="day h2">
+					</div>
 				</div>
 			</div>
+			<?php if( $gated && !is_user_logged_in() ) {
+				get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
+			};?>
 		</div>
-		<?php if( $gated && !is_user_logged_in() ) {
-			get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');
-		};?>
-	</div>
+	<?php endif;?>
 	<div class="title">
 		<?php get_template_part('template-parts/content', 'byline-title');?>
 	</div>

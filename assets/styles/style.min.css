@@ -9067,6 +9067,11 @@ h5,
   color: #fff;
 }
 
+.bg-sky-blue {
+  background-color: #02A9EC;
+  color: #fff;
+}
+
 .bg-violet {
   background-color: #6357FD;
   color: #fff;
@@ -9792,8 +9797,20 @@ footer#colophon .copyright {
 .page-template-custom-page-post-archive .alm-btn-wrap .pink.alm-load-more-btn:focus,
 .wp-block-ask-experts-form .left form.search-form button.pink.search-submit:focus,
 .entry-content .pink.wp-block-button__link:focus {
+  color: #fff;
   background-color: #913BB7;
   border-color: #913BB7;
+}
+.gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).pink:hover svg path, .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).pink:focus svg path,
+.button.pink:hover svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap .pink.alm-load-more-btn:hover svg path,
+.wp-block-ask-experts-form .left form.search-form button.pink.search-submit:hover svg path,
+.entry-content .pink.wp-block-button__link:hover svg path,
+.button.pink:focus svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap .pink.alm-load-more-btn:focus svg path,
+.wp-block-ask-experts-form .left form.search-form button.pink.search-submit:focus svg path,
+.entry-content .pink.wp-block-button__link:focus svg path {
+  fill: #fff;
 }
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).seafoam,
 .button.seafoam,
@@ -10929,12 +10946,16 @@ article.archive-card {
 }
 
 @media print, screen and (max-width: 39.99875em) {
+  article.default.archive-card,
   article.type-news.archive-card,
   article.type-webinar.archive-card,
   article.type-podcast.archive-card {
     max-width: 419px;
   }
 }
+article.default.archive-card .thumb-date-wrap,
+article.default.archive-card .thumb-wrap,
+article.default.archive-card .thumb-icon-wrap,
 article.type-news.archive-card .thumb-date-wrap,
 article.type-news.archive-card .thumb-wrap,
 article.type-news.archive-card .thumb-icon-wrap,
@@ -10947,10 +10968,12 @@ article.type-podcast.archive-card .thumb-icon-wrap {
   margin-bottom: 1rem;
 }
 
-article.type-news.archive-card .thumb-wrap {
+article.type-news.archive-card .thumb-wrap,
+article.default.archive-card .thumb-wrap {
   padding-top: 61.105%;
 }
-article.type-news.archive-card .thumb-wrap > img {
+article.type-news.archive-card .thumb-wrap > img,
+article.default.archive-card .thumb-wrap > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -10959,24 +10982,27 @@ article.type-news.archive-card .thumb-wrap > img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-article.type-news.archive-card .date {
+article.type-news.archive-card .date,
+article.default.archive-card .date {
   color: #C0BFBF;
   margin-bottom: 0.36rem;
 }
-article.type-news.archive-card h3 {
+article.type-news.archive-card h3,
+article.default.archive-card h3 {
   margin-bottom: 0;
 }
-article.type-news.archive-card .author {
+article.type-news.archive-card .author,
+article.default.archive-card .author {
   line-height: 1.3846;
 }
 
-article.type-tip-sheet.archive-card h3 {
+article.icon-card.archive-card h3 {
   margin-bottom: 0;
 }
-article.type-tip-sheet.archive-card .icon-wrap img {
+article.icon-card.archive-card .icon-wrap img {
   max-width: 25px;
 }
-article.type-tip-sheet.archive-card .bg-light-gray {
+article.icon-card.archive-card .bg-light-gray {
   padding: clamp(1.099rem, -2.99rem + 5.233vw, 1.57rem) clamp(0.959rem, -2.609rem + 4.567vw, 1.37rem);
 }
 
@@ -11256,17 +11282,17 @@ article.type-webinar.archive-card .title h3.h6 {
   padding: 3.65rem;
   max-width: 100%;
 }
-.single .entry-content .ec-inner > *:first-child {
-  margin-top: clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
-}
-.single.single-tip-sheet .entry-header .thumb-wrap {
+.single .entry-header.icon-banner .thumb-wrap {
   padding: 3rem;
 }
-.single.single-tip-sheet .entry-header .thumb-wrap img {
+.single .entry-header.icon-banner .thumb-wrap img {
   position: static;
   width: auto;
   height: auto;
   max-width: 150px;
+}
+.single .entry-content .ec-inner > *:first-child {
+  margin-top: clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
 }
 
 .search-results .page-header {

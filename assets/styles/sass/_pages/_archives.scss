@@ -42,6 +42,7 @@ article.archive-card {
 	}
 }
 
+article.default.archive-card,
 article.type-news.archive-card,
 article.type-webinar.archive-card,
 article.type-podcast.archive-card {
@@ -55,7 +56,8 @@ article.type-podcast.archive-card {
 	}
 }
 
-article.type-news.archive-card {
+article.type-news.archive-card,
+article.default.archive-card {
 	.thumb-wrap {
 		padding-top: 61.105%;
 		> img {
@@ -79,7 +81,7 @@ article.type-news.archive-card {
 	}
 }
 
-article.type-tip-sheet.archive-card {
+article.icon-card.archive-card {
 	h3 {
 		margin-bottom: 0;
 	}

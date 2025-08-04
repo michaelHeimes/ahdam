@@ -43,21 +43,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "newsletter"
+                "value": "knowledge-center"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "whitepaper"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "webinar"
+                "value": "member-spotlight"
             }
         ],
         [
@@ -71,13 +64,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "podcast"
             }
         ],
@@ -85,7 +71,40 @@
             {
                 "param": "post_type",
                 "operator": "==",
+                "value": "policy-and-procedure"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "template"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
                 "value": "tip-sheet"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/custom-page-home.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "webinar"
             }
         ]
     ],
@@ -100,5 +119,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753904699
+    "modified": 1754342962
 }

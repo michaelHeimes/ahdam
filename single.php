@@ -9,8 +9,11 @@
 
 get_header();
 
-$tip_sheet_icon = get_field('tip_sheet_icon', 'option') ?? null;
 $post_type = get_post_type();
+
+$policy_procedures_icon = get_field('policy_procedures_icon', 'option') ?? null;
+$template_icon = get_field('template_icon', 'option') ?? null;
+$tip_sheet_icon = get_field('tip_sheet_icon', 'option') ?? null;
 
 $date = '';
 $post_type_tag  = '';
@@ -50,10 +53,20 @@ if( $post_type === 'webinar' ) {
 
 $newsletter_post_disclaimer = get_field('newsletter_post_disclaimer', 'option') ?? null;
 
+$banner_img_type = '';
 $thumbnail_id = '';
 $bg_class = 'bg-black';
 
-if( $post_type === 'tip-sheet' ) {
+if( $post_type === 'policy-and-procedure' ) {
+	$banner_img_type = 'icon-banner';
+	$thumbnail_id = $policy_procedures_icon['id'] ?? null;
+	$bg_class = 'bg-sky-blue';
+} else if( $post_type === 'template' ){
+	$banner_img_type = 'icon-banner';
+	$thumbnail_id = $template_icon['id'] ?? null;
+	$bg_class = 'bg-pink';
+} else if( $post_type === 'tip-sheet' ){
+	$banner_img_type = 'icon-banner';
 	$thumbnail_id = $tip_sheet_icon['id'] ?? null;
 	$bg_class = 'bg-violet';
 } else {
@@ -69,7 +82,7 @@ if( $post_type === 'tip-sheet' ) {
 				the_post();?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('grid-x grid-padding-x align-center'); ?>>
-					<header class="entry-header cell small-12<?php if( !$thumbnail_id ) { echo ' no-thumb'; };?>">
+					<header class="entry-header cell small-12<?php if( !$thumbnail_id ) { echo ' no-thumb'; };?>  <?=$banner_img_type;?>">
 						<div class="bg-light-gray">
 							<div class="grid-x grid-padding-x align-center">
 								<?php if( $thumbnail_id ):?>

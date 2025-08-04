@@ -7,8 +7,12 @@ if( $post_type == 'news' ) {
 	get_template_part('template-parts/loop', 'podcast');
 } else if( $post_type == 'webinar' ) {
 	get_template_part('template-parts/loop', 'webinar');
+} else if( $post_type == 'policy-and-procedure' ) {
+	get_template_part('template-parts/loop', 'icon-card');
+} else if( $post_type == 'template' ) {
+	get_template_part('template-parts/loop', 'icon-card');
 } else if( $post_type == 'tip-sheet' ) {
-	get_template_part('template-parts/loop', 'tip-sheet');
+	get_template_part('template-parts/loop', 'icon-card');
 } else {
 	get_template_part('template-parts/loop', 'default');
 }

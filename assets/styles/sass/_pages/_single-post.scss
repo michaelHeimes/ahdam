@@ -36,16 +36,7 @@
 				max-width: 100%;
 			}
 		}
-	}
-	.entry-content {
-		.ec-inner {
-			> *:first-child {
-				margin-top:clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
-			}
-		}
-	}
-	&.single-tip-sheet {
-		.entry-header {
+		&.icon-banner {
 			.thumb-wrap {
 				padding: 3rem;
 				img {
@@ -54,6 +45,13 @@
 					height: auto;
 					max-width: 150px;
 				}
+			}
+		}
+	}
+	.entry-content {
+		.ec-inner {
+			> *:first-child {
+				margin-top:clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
 			}
 		}
 	}

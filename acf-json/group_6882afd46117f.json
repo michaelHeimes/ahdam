@@ -23,6 +23,8 @@
                 "news": "News",
                 "newsletter": "Newsletter",
                 "podcast": "Podcasts",
+                "policy-and-procedure": "Policies and Procedures",
+                "template": "Templates",
                 "tip-sheet": "Tip-sheets",
                 "webinar": "Webinars",
                 "whitepaper": "Whitepaper"
@@ -54,5 +56,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753473913
+    "modified": 1754342965
 }

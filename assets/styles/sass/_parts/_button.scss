@@ -94,8 +94,14 @@
 		border-color: $color-pink;
 		&:hover,
 		&:focus {
+			color: $white;
 			background-color: #913BB7;
 			border-color: #913BB7;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
 		}
 	}
 	&.seafoam {

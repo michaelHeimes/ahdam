@@ -182,6 +182,58 @@
             "selected": 0
         },
         {
+            "key": "field_68911d6e34d75",
+            "label": "Policy & Procedures Icon",
+            "name": "policy_procedures_icon",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6890d92fd94d7",
+            "label": "Template Icon",
+            "name": "template_icon",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
             "key": "field_68896d0374e6b",
             "label": "Tip Sheet Icon",
             "name": "tip_sheet_icon",
@@ -226,5 +278,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753898589
+    "modified": 1754340827
 }
