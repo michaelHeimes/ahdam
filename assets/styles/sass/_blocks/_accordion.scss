@@ -1,13 +1,13 @@
 .wp-block-accordion-drawers {
 	.accordion {
-		padding: clamp(1.75rem, 1.486rem + 1.127vw, 2.5rem) clamp(1.625rem, 1.383rem + 1.033vw, 2.313rem);
+		padding: clamp(1.75rem, 1.486rem + 1.127vw, 2.5rem) clamp(1.625rem, 1.383rem + 1.033vw, 2.313rem) clamp(0.656rem, 0.557rem + 0.423vw, 0.938rem);
 		.grid-x {
 			flex-wrap: nowrap;
 			column-gap: 20px;
 		}
 		.accordion-item {
 			border-top: 1px solid $medium-gray;
-			a {
+			a.p {
 				&:before,
 				&:after {
 					position: absolute;

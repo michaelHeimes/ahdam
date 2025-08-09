@@ -88,6 +88,7 @@ if( $rows ):
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <ul class="accordion bg-white box-shadow-5-15-10 br-10" 
+        data-deep-link-smudge-offset="12"
     <?php
         if($allow_multiple_expand) {
             echo 'data-multi-expand="true"';
@@ -98,7 +99,6 @@ if( $rows ):
             echo 'data-deep-link="true"';
             echo 'data-deep-link-smudge="true"';
             echo 'data-update-history="true"';
-            echo 'data-deep-link-smudge-offset="10"';
         }
     ?>
     data-accordion>

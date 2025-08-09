@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "settings": {
+	"color": {
+	  "defaultPalette": false,
+	  "custom": false,
+	  "palette": [
+		{
+		  "slug": "brand-navy",
+		  "color": "#050D57",
+		  "name": "Brand Navy"
+		},
+		{
+		  "slug": "brand-pink",
+		  "color": "#C84DFF",
+		  "name": "Brand Pink"
+		},
+		{
+		  "slug": "brand-violet",
+		  "color": "#6357FD",
+		  "name": "Brand Violet"
+		},
+		{
+		  "slug": "brand-seafoam",
+		  "color": "#00C5C1",
+		  "name": "Brand Seafoam"
+		},
+		{
+		  "slug": "brand-sky-blue",
+		  "color": "#02A9EC",
+		  "name": "Brand Sky Blue"
+		},
+		{
+		  "slug": "black",
+		  "color": "#252242",
+		  "name": "Black"
+		},
+		{
+		  "slug": "dark-gray",
+		  "color": "#8a8a8a",
+		  "name": "Dark Gray"
+		},
+		{
+		  "slug": "medium-gray",
+		  "color": "#B7B1B1",
+		  "name": "Medium Gray"
+		},
+		{
+		  "slug": "light-gray",
+		  "color": "#EFEFEF",
+		  "name": "Light Gray"
+		},
+		{
+		  "slug": "white",
+		  "color": "#ffffff",
+		  "name": "White"
+		}
+	  ]
+	}
+  }
+}

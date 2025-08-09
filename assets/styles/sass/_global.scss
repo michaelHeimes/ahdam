@@ -89,6 +89,15 @@ POSTS & CONTENT STYLES
 	ol {
 		font-size: rem-calc(16);
 	}
+	ul,
+	ol {
+		&:not(.tabs):not(.accordion):not(.menu) {
+		margin-bottom: 1rem;
+			li {
+				margin-bottom: .7em;
+			}
+		}
+	}
 	img {
 		max-width: 100%;
 		height: auto;
@@ -131,7 +140,7 @@ POSTS & CONTENT STYLES
 			gap: calc($mediumGutter * .5);
 		}
 	}
-	[class^="wp-block-"]:not(.wp-block-image):not(.wp-block-column):not(.wp-block-heading):not(.wp-block-embed__wrapper):not(.wp-block-buttons > .wp-block-button):not(.wp-block-button__link),
+	[class^="wp-block-"]:not(.wp-block-image):not(.wp-block-column):not(.wp-block-heading):not(.wp-block-embed__wrapper):not(.wp-block-buttons > .wp-block-button):not(.wp-block-button__link):not(.wp-block-list),
 	.module.block,
 	blockquote {
 		margin-top: clamp(2.375rem, 2.023rem + 1.502vw, 3.375rem);
@@ -195,14 +204,28 @@ POSTS & CONTENT STYLES
 			}
 		}
 	}
-	.wp-block-button__link {
-		@extend .button;
-		font-size: 0.9rem !important;
-		font-weight: 700 !important;
-		border: 0px;
-		border-radius: 100px !important;
-		padding: calc(0.85em + 2px) calc(1em + 2px);
-		transition: background-color 0.25s ease, color 0.25s ease !important;
+	.wp-block-button {
+		&.download {
+			> a {
+				background-image: url('data:image/svg+xml,<svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23a)" fill="%23fff"><path d="M4.5 0c-.277 0-.504.206-.504.457v7.084L.86 4.68a.541.541 0 0 0-.712 0 .429.429 0 0 0 0 .646l3.997 3.629c.023.02.048.039.075.057h.02l.066.032h.03a.353.353 0 0 0 .164.016.738.738 0 0 0 .1 0c.023-.002.043-.01.063-.016h.03l.066-.032h.02l.078-.057 3.994-3.629a.429.429 0 0 0 0-.646.541.541 0 0 0-.712 0L5.003 7.53V.456C5.003.206 4.777 0 4.5 0ZM.503 11h7.994c.276 0 .503-.206.503-.457s-.227-.457-.503-.457H.503c-.276 0-.503.206-.503.457S.227 11 .503 11Z"/></g><defs><clipPath id="a"><path fill="%23fff" d="M0 0h9v11H0z"/></clipPath></defs></svg>');
+				background-repeat: no-repeat;
+				background-position: 1.5em 50%;
+				padding-left: 3em;
+				padding-right: 2em;
+			}
+		}
+		&__link {
+			@extend .button;
+			font-size: 0.9rem !important;
+			font-weight: 700 !important;
+			border: 0px;
+			border-radius: 100px !important;
+			padding: calc(0.85em + 2px) calc(1em + 2px);
+			transition: background-color 0.25s ease, color 0.25s ease !important;
+			&:hover {
+				color: $white;
+			}
+		}
 	}
 } 
 

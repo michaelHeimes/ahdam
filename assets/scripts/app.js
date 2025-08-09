@@ -128,13 +128,13 @@
     
     _app.scroll_to_anchor = function() {
         
-        const offset = 100;
+        const offset = 180;
         
         const hash = window.location.hash;
         if (hash) {
             const target = document.querySelector(hash);
             if (target) {
-                const offset = 100;
+                const offset = 180;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
         
                 window.scrollTo({

@@ -13,7 +13,7 @@ if( $banner_image ) {
 ?>
 <header class="entry-header page-banner">
 	<div class="grid-container">
-		<div class="grid-x grid-padding-x align-bottom">
+		<div class="grid-x grid-padding-x align-middle">
 			<div class="left cell small-12 medium-7">
 				<div class="inner">
 					<?php if( $banner_alt_title ):?>

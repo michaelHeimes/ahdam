@@ -3,7 +3,8 @@
 }
 
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
-.button {
+.button,
+.wp-block-button__link {
 	text-transform: uppercase;
 	transition: all .25s ease;
 	display: inline-block;
@@ -74,6 +75,7 @@
 			
 		}
 	}
+	&.has-brand-violet-background-color,
 	&.violet {
 		background-color: $color-violet !important;
 		border-color: $color-violet !important;
@@ -89,13 +91,14 @@
 			}
 		}
 	}
+	&.has-brand-pink-background-color,
 	&.pink {
 		background-color: $color-pink;
 		border-color: $color-pink;
 		&:hover,
 		&:focus {
 			color: $white;
-			background-color: #913BB7;
+			background-color: #913BB7 !important;
 			border-color: #913BB7;
 			svg {
 				path {
@@ -104,13 +107,14 @@
 			}
 		}
 	}
+	&.has-brand-seafoam-background-color,
 	&.seafoam {
 		background-color: $color-seafoam;
 		border-color: $color-seafoam;
 		&:hover,
 		&:focus {
 			color: $white;
-			background-color: #00827F;
+			background-color: #00827F !important;
 			border-color: #00827F;
 			svg {
 				path {
@@ -119,12 +123,13 @@
 			}
 		}
 	}
+	&.has-brand-sky-blue-background-color,
 	&.sky-blue {
 		background-color: $color-skyblue;
 		border-color: $color-skyblue;
 		&:hover,
 		&:focus {
-			background-color: #057DAE;
+			background-color: #057DAE !important;
 			border-color: #057DAE;
 		}
 	}

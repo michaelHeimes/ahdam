@@ -155,14 +155,47 @@
 								circle {
 									fill: $white;
 								}
-								path {
-									fill: $color-violet;
-								}
 							}
 							.learn-more {
 								transform: translateY(-30px);
 								opacity: 1 !important;
 								transition: opacity .25s ease, transform .3s ease;
+							}
+						}
+					}
+					&:nth-child(1) {
+						a.inner {
+							&:hover,
+							&:focus {
+								svg {
+									path {
+										fill: $color-seafoam;
+									}
+								}
+							}
+						}
+					}
+					&:nth-child(2) {
+						a.inner {
+							&:hover,
+							&:focus {
+								svg {
+									path {
+										fill: $color-violet;
+									}
+								}
+							}
+						}
+					}
+					&:nth-child(3) {
+						a.inner {
+							&:hover,
+							&:focus {
+								svg {
+									path {
+										fill: $color-pink;
+									}
+								}
 							}
 						}
 					}
