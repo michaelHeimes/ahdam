@@ -68,7 +68,7 @@ if( $post_type === 'policy-and-procedure' ) {
 } else if( $post_type === 'tip-sheet' ){
 	$banner_img_type = 'icon-banner';
 	$thumbnail_id = $tip_sheet_icon['id'] ?? null;
-	$bg_class = 'bg-violet';
+	$bg_class = 'bg-blue';
 } else {
 	$thumbnail_id = get_post_thumbnail_id() ?? null;
 }

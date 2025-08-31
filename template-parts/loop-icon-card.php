@@ -19,7 +19,7 @@ if( $post_type == 'template' ) {
 
 if( $post_type == 'tip-sheet' ) {
 	$icon = $tip_sheet_icon;
-	$bg_class = 'bg-violet';
+	$bg_class = 'bg-blue';
 }
 
 $gated = get_field('gated');
