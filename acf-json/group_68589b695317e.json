@@ -97,32 +97,6 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_68589c4f32ab5",
-            "label": "Graphic",
-            "name": "nm_banner_graphic",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
             "key": "field_68589c8232ab7",
             "label": "CTA Rows",
             "name": "nm_banner_cta_rows",
@@ -231,28 +205,6 @@
                     },
                     "return_format": "array",
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_68589c8232ab7"
-                },
-                {
-                    "key": "field_6859efaf6fe9a",
-                    "label": "Button Class",
-                    "name": "button_class",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "parent_repeater": "field_68589c8232ab7"
                 }
             ]
@@ -729,5 +681,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753898372
+    "modified": 1756670298
 }

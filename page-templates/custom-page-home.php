@@ -133,7 +133,6 @@ $partnerships_page_link = $fields['partnerships_page_link'] ?? null;
 $current_user_name = wp_get_current_user()->display_name;
 $first_name = explode(' ', $current_user_name)[0];
 
-
 ?>
 	<div class="content">
 		<div class="inner-content">
@@ -218,11 +217,12 @@ $first_name = explode(' ', $current_user_name)[0];
 											
 						<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_graphic || $nm_banner_cta_rows ):?>
 							<header class="entry-header home-banner non-member">
-								<div class="grid-container">
+								<div class="grid-container relative">
+									<div class="accent"></div>
 									<div class="grid-x grid-padding-x align-center">
 										<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_button_link_1 || $nm_banner_button_link_2 ):?>
-											<div class="left cell small-12 medium-6 large-auto grid-x align-middle">
-												<div>
+											<div class="left cell small-12 medium-10 tablet-8 large-6 xlarge-7 grid-x relative">
+												<div class="relative">
 													<div class="grid-x align-center">
 														<?php if( $nm_banner_heading ):?>
 															<h1 class="color-white small-12 medium-11 medium-12">
@@ -239,7 +239,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														get_template_part('template-parts/part', 'btn-group',
 															array(
 																'btn1' => $nm_banner_button_link_1,
-																'btn1-classes' => '',
+																'btn1-classes' => 'yellow',
 																'btn2' => $nm_banner_button_link_2,
 																'btn2-classes' => 'white-outline',
 															),
@@ -248,13 +248,8 @@ $first_name = explode(' ', $current_user_name)[0];
 												</div>
 											</div>
 										<?php endif;?>
-										<?php if( $nm_banner_graphic ):?>
-											<div class="middle cell small-12 medium-6 large-auto grid-x align-middle">
-												<?=wp_get_attachment_image( $nm_banner_graphic['id'], 'full' );?>
-											</div>
-										<?php endif;?>
 										<?php if( $nm_banner_cta_rows ):?>
-											<div class="right cell small-12 medium-8 large-auto grid-x align-bottom relative">
+											<div class="right cell small-12 medium-10 tablet-8 large-6 xlarge-5 grid-x align-bottom relative" data-equal-width>
 												<nav class="small-12">
 													<ul class="menu vertical">
 														<?php $count = count($nm_banner_cta_rows); $i = 1; foreach($nm_banner_cta_rows as $row):
@@ -273,7 +268,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																	</div>
 																<?php endif;?>
 																<?php if( $title || $text ):?>
-																	<div class="cell auto">
+																	<div class="text-wrap cell auto">
 																		<?php if( $title ):?>
 																			<h2 class="h5">
 																				<?=wp_kses_post($title );?>
@@ -287,11 +282,11 @@ $first_name = explode(' ', $current_user_name)[0];
 																	</div>
 																<?php endif;?>
 																<?php if( $button_link ):?>
-																	<div class="cell auto">
+																	<div class="cell shrink">
 																		<?php get_template_part('template-parts/part', 'btn-link',
 																			array(
 																				'link' => $button_link, 
-																				'classes' => $button_class . ' small-12',
+																				'classes' => $button_class . ' equal-width',
 																			),
 																		);?>	
 																	</div>															
@@ -344,7 +339,7 @@ $first_name = explode(' ', $current_user_name)[0];
 															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
 																	<?php if( $webinar_date ):?>
-																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
+																		<div class="cell shrink date bg-blue color-white text-center grid-x flex-dir-column align-middle align-center">
 																			<div class="month h6 uppercase">
 																				<?=$date->format( 'M' ); ?>
 																			</div>
@@ -436,7 +431,7 @@ $first_name = explode(' ', $current_user_name)[0];
 															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
 																	<?php if( $webinar_date ):?>
-																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
+																		<div class="cell shrink date bg-blue color-white text-center grid-x flex-dir-column align-middle align-center">
 																			<div class="month h6 uppercase">
 																				<?=$date->format( 'M' ); ?>
 																			</div>
@@ -657,7 +652,7 @@ $first_name = explode(' ', $current_user_name)[0];
 															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
 																	<?php if( $webinar_date ):?>
-																		<div class="cell shrink date bg-violet color-white text-center grid-x flex-dir-column align-middle align-center">
+																		<div class="cell shrink date bg-blue color-white text-center grid-x flex-dir-column align-middle align-center">
 																			<div class="month h6 uppercase">
 																				<?=$date->format( 'M' ); ?>
 																			</div>
@@ -715,7 +710,7 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php endif;?>
 						
 						<?php if( $testimonials_title || $testimonials ):?>
-							<section class="testimonials bg-light-gray"id="testimonials">
+							<section class="testimonials bg-blue"id="testimonials">
 								<div class="grid-container">
 									<div class="grid-x grid-padding-x align-center">
 										<div class="cell small-12 medium-11 tablet-10 large-9">
@@ -734,7 +729,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																	$quote = get_field('quote') ?? null;
 																	$company = get_field('company') ?? null;
 																?>
-																	<div class="swiper-slide">
+																	<div class="swiper-slide color-black grid-x flex-dir-column align-center h-auto">
 																		<?php if( $quote ):?>
 																			<div class="p p-3">
 																				<?=wp_kses_post($quote);?>
@@ -756,12 +751,12 @@ $first_name = explode(' ', $current_user_name)[0];
 																<div class="btns-wrap grid-x align-center">
 																	<div class="cell shrink">
 																		<div class="swiper-btn swiper-button-prev">
-																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.34 10.45h6.25c.22 0 .41-.2.41-.45s-.19-.45-.41-.45H8.34l2.52-2.79a.48.48 0 0 0 0-.63.38.38 0 0 0-.57 0l-3.2 3.55a.5.5 0 0 0 0 .64l3.2 3.55a.38.38 0 0 0 .57 0 .48.48 0 0 0 0-.63l-2.52-2.79Z" fill="#6357FD"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#6357FD"/></svg>
+																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.34 10.45h6.25c.22 0 .41-.2.41-.45s-.19-.45-.41-.45H8.34l2.52-2.79a.48.48 0 0 0 0-.63.38.38 0 0 0-.57 0l-3.2 3.55a.5.5 0 0 0 0 .64l3.2 3.55a.38.38 0 0 0 .57 0 .48.48 0 0 0 0-.63l-2.52-2.79Z" fill="#211CD1"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#211CD1"/></svg>
 																		</div>
 																	</div>
 																	<div class="cell shrink">
 																		<div class="swiper-btn swiper-button-next">
-																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10c0 .25.18.45.4.45h6.25l-2.53 2.79a.48.48 0 0 0 0 .63.38.38 0 0 0 .57 0l3.2-3.55c.04-.05.06-.1.08-.15v-.02l.03-.06v-.03a.3.3 0 0 0 0-.24l-.03-.06v-.02a.45.45 0 0 0-.08-.14L11.2 6.13a.38.38 0 0 0-.57 0 .48.48 0 0 0 0 .63l2.51 2.79H6.4A.45.45 0 0 0 6 10Z" fill="#6357FD"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#6357FD"/></svg>
+																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10c0 .25.18.45.4.45h6.25l-2.53 2.79a.48.48 0 0 0 0 .63.38.38 0 0 0 .57 0l3.2-3.55c.04-.05.06-.1.08-.15v-.02l.03-.06v-.03a.3.3 0 0 0 0-.24l-.03-.06v-.02a.45.45 0 0 0-.08-.14L11.2 6.13a.38.38 0 0 0-.57 0 .48.48 0 0 0 0 .63l2.51 2.79H6.4A.45.45 0 0 0 6 10Z" fill="#211CD1"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#211CD1"/></svg>
 																		</div>
 																	</div>
 																</div>
@@ -939,7 +934,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																		$light_logo = $partnership['light_logo'] ?? null;	
 																	?>
 																		<div class="cell small-6 h-100">
-																			<div class="swiper-page br-10 overflow-hidden bg-black relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
+																			<div class="swiper-page br-10 overflow-hidden bg-navy relative grid-x align-middle align-center text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
 																				<div class="show-for-sr">
 																					Slides to <?=esc_html($partner_name);?>
 																				</div>

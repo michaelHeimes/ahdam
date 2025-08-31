@@ -21,11 +21,12 @@
 	}
 	&:hover,
 	&:focus {
-		border-color: $white;
-		color: $black;
+		background-color: $color-navy;
+		border-color: $color-navy;
+		color: $white;
 		svg {
 			path {
-				fill: $black;
+				fill: $white;
 			}
 		}
 	}
@@ -64,6 +65,20 @@
 		}
 	}
 	&.color-black {
+		color: $black;
+		svg {
+			path {
+				fill: $black;
+			}
+		}
+		&:hover,
+		&:focus {
+			
+		}
+	}
+	&.yellow {
+		background-color: $color-yellow;
+		border-color: $color-yellow;
 		color: $black;
 		svg {
 			path {

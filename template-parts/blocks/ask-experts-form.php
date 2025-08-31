@@ -48,7 +48,7 @@ if( $title || $copy || $form_cta_text || $form_disclaimer_text || $form_id ):
                         <?php endif;?>
                         <div>
                             <?php if( $copy ):?>
-                                <div class="copy-wrap p p-3 color-navy">
+                                <div class="copy-wrap p p-3">
                                     <?=wp_kses_post( $copy );?>
                                 </div>
                             <?php endif;?>

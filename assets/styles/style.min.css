@@ -4825,7 +4825,7 @@ ul.no-bullet, ol.no-bullet {
   vertical-align: middle;
   margin: 0;
   padding: 0.85em 1em;
-  border: 2px solid #252242;
+  border: 2px solid #211CD1;
   border-radius: 100px;
   -webkit-transition: background-color 0.25s ease, color 0.25s ease;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -4856,7 +4856,7 @@ ul.no-bullet, ol.no-bullet {
   margin-left: 0;
 }
 .button, .page-template-custom-page-post-archive .alm-btn-wrap .alm-load-more-btn, .wp-block-ask-experts-form .left form.search-form button.search-submit, .entry-content .wp-block-button__link, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
-  background-color: #252242;
+  background-color: #211CD1;
   color: #fff;
 }
 .button:hover, .page-template-custom-page-post-archive .alm-btn-wrap .alm-load-more-btn:hover, .wp-block-ask-experts-form .left form.search-form button.search-submit:hover, .entry-content .wp-block-button__link:hover, .button:focus, .page-template-custom-page-post-archive .alm-btn-wrap .alm-load-more-btn:focus, .wp-block-ask-experts-form .left form.search-form button.search-submit:focus, .entry-content .wp-block-button__link:focus {
@@ -4907,12 +4907,12 @@ ul.no-bullet, ol.no-bullet {
   background-color: transparent;
 }
 .button.hollow, .page-template-custom-page-post-archive .alm-btn-wrap .hollow.alm-load-more-btn, .wp-block-ask-experts-form .left form.search-form button.hollow.search-submit, .entry-content .hollow.wp-block-button__link, .button.hollow.disabled, .button.hollow[disabled], .button.hollow.disabled:hover, .button.hollow[disabled]:hover, .button.hollow.disabled:focus, .button.hollow[disabled]:focus {
-  border: 1px solid #252242;
-  color: #252242;
+  border: 1px solid #211CD1;
+  color: #211CD1;
 }
 .button.hollow:hover, .page-template-custom-page-post-archive .alm-btn-wrap .hollow.alm-load-more-btn:hover, .wp-block-ask-experts-form .left form.search-form button.hollow.search-submit:hover, .entry-content .hollow.wp-block-button__link:hover, .button.hollow:focus, .page-template-custom-page-post-archive .alm-btn-wrap .hollow.alm-load-more-btn:focus, .wp-block-ask-experts-form .left form.search-form button.hollow.search-submit:focus, .entry-content .hollow.wp-block-button__link:focus {
-  border-color: #131121;
-  color: #131121;
+  border-color: #110e69;
+  color: #110e69;
 }
 .button.hollow.primary, .page-template-custom-page-post-archive .alm-btn-wrap .hollow.primary.alm-load-more-btn, .wp-block-ask-experts-form .left form.search-form button.hollow.primary.search-submit, .entry-content .hollow.primary.wp-block-button__link, .button.hollow.primary.disabled, .button.hollow.primary[disabled], .button.hollow.primary.disabled:hover, .button.hollow.primary[disabled]:hover, .button.hollow.primary.disabled:focus, .button.hollow.primary[disabled]:focus {
   border: 1px solid #C84DFF;
@@ -4959,10 +4959,10 @@ ul.no-bullet, ol.no-bullet {
   background-color: transparent;
 }
 .button.clear, .page-template-custom-page-post-archive .alm-btn-wrap .clear.alm-load-more-btn, .wp-block-ask-experts-form .left form.search-form button.clear.search-submit, .entry-content .clear.wp-block-button__link, .button.clear.disabled, .button.clear[disabled], .button.clear.disabled:hover, .button.clear[disabled]:hover, .button.clear.disabled:focus, .button.clear[disabled]:focus {
-  color: #252242;
+  color: #211CD1;
 }
 .button.clear:hover, .page-template-custom-page-post-archive .alm-btn-wrap .clear.alm-load-more-btn:hover, .wp-block-ask-experts-form .left form.search-form button.clear.search-submit:hover, .entry-content .clear.wp-block-button__link:hover, .button.clear:focus, .page-template-custom-page-post-archive .alm-btn-wrap .clear.alm-load-more-btn:focus, .wp-block-ask-experts-form .left form.search-form button.clear.search-submit:focus, .entry-content .clear.wp-block-button__link:focus {
-  color: #131121;
+  color: #110e69;
 }
 .button.clear.primary, .page-template-custom-page-post-archive .alm-btn-wrap .clear.primary.alm-load-more-btn, .wp-block-ask-experts-form .left form.search-form button.clear.primary.search-submit, .entry-content .clear.primary.wp-block-button__link, .button.clear.primary.disabled, .button.clear.primary[disabled], .button.clear.primary.disabled:hover, .button.clear.primary[disabled]:hover, .button.clear.primary.disabled:focus, .button.clear.primary[disabled]:focus {
   color: #C84DFF;
@@ -5014,7 +5014,7 @@ ul.no-bullet, ol.no-bullet {
   margin-left: 1em;
 }
 .button.dropdown.hollow::after, .page-template-custom-page-post-archive .alm-btn-wrap .dropdown.hollow.alm-load-more-btn::after, .wp-block-ask-experts-form .left form.search-form button.dropdown.hollow.search-submit::after, .entry-content .dropdown.hollow.wp-block-button__link::after, .button.dropdown.clear::after, .page-template-custom-page-post-archive .alm-btn-wrap .dropdown.clear.alm-load-more-btn::after, .wp-block-ask-experts-form .left form.search-form button.dropdown.clear.search-submit::after, .entry-content .dropdown.clear.wp-block-button__link::after {
-  border-top-color: #252242;
+  border-top-color: #211CD1;
 }
 .button.dropdown.hollow.primary::after, .page-template-custom-page-post-archive .alm-btn-wrap .dropdown.hollow.primary.alm-load-more-btn::after, .wp-block-ask-experts-form .left form.search-form button.dropdown.hollow.primary.search-submit::after, .entry-content .dropdown.hollow.primary.wp-block-button__link::after, .button.dropdown.clear.primary::after, .page-template-custom-page-post-archive .alm-btn-wrap .dropdown.clear.primary.alm-load-more-btn::after, .wp-block-ask-experts-form .left form.search-form button.dropdown.clear.primary.search-submit::after, .entry-content .dropdown.clear.primary.wp-block-button__link::after {
   border-top-color: #C84DFF;
@@ -5308,7 +5308,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   color: #ba1fff;
 }
 .tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
-  background: #6357FD;
+  background: #211CD1;
   color: #fff;
 }
 
@@ -8468,7 +8468,7 @@ POSTS & CONTENT STYLES
   vertical-align: middle;
   margin: 0;
   padding: 0.85em 1em;
-  border: 2px solid #252242;
+  border: 2px solid #211CD1;
   border-radius: 100px;
   -webkit-transition: background-color 0.25s ease, color 0.25s ease;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -8484,7 +8484,7 @@ POSTS & CONTENT STYLES
   outline: 0;
 }
 .post-password-form input[type=submit], .post-password-form input[type=submit].disabled, .post-password-form input[type=submit][disabled], .post-password-form input[type=submit].disabled:hover, .post-password-form input[type=submit][disabled]:hover, .post-password-form input[type=submit].disabled:focus, .post-password-form input[type=submit][disabled]:focus {
-  background-color: #252242;
+  background-color: #211CD1;
   color: #fff;
 }
 .post-password-form input[type=submit]:hover, .post-password-form input[type=submit]:focus {
@@ -9080,6 +9080,15 @@ h5,
   color: #fff;
 }
 
+.bg-blue {
+  background-color: #211CD1;
+  color: #fff;
+}
+
+.bg-yellow {
+  background-color: #FFD834;
+}
+
 .bg-navy {
   background-color: #050D57;
   color: #fff;
@@ -9087,11 +9096,6 @@ h5,
 
 .bg-sky-blue {
   background-color: #02A9EC;
-  color: #fff;
-}
-
-.bg-violet {
-  background-color: #6357FD;
   color: #fff;
 }
 
@@ -9110,6 +9114,10 @@ h5,
 
 .h-100 {
   height: 100%;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .overflow-hidden {
@@ -9184,7 +9192,7 @@ header.site-header #top-bar-menu .top-bar-right .login-join-wrap a.button.no-arr
   margin: 0;
 }
 header.site-header #top-bar-menu li.logo {
-  max-width: 210px;
+  max-width: 250px;
 }
 header.site-header #top-bar-menu li.logo a {
   padding: 0;
@@ -9455,7 +9463,7 @@ footer#colophon {
 }
 footer#colophon .footer-border {
   height: clamp(0.938rem, 0.805rem + 0.563vw, 1.313rem);
-  background: linear-gradient(5deg, #C84DFF 0%, #5354B5 38.9%, #2891D2 75%, #05B1C5 100%);
+  background: linear-gradient(25deg, #050D57 3.77488%, #2B1FC9 47.2877%);
 }
 footer#colophon .menu .logo {
   margin-bottom: 2.625rem;
@@ -9596,7 +9604,7 @@ footer#colophon .link-cell .menu li a {
   }
 }
 footer#colophon ul#footer-navigation li a {
-  color: #C84DFF;
+  color: #fff;
   font-weight: bold;
   text-transform: uppercase;
   padding: 0;
@@ -9671,8 +9679,9 @@ footer#colophon .copyright {
 .wp-block-ask-experts-form .left form.search-form button.search-submit:focus,
 .wp-block-button__link:hover,
 .wp-block-button__link:focus {
-  border-color: #fff;
-  color: #252242;
+  background-color: #050D57;
+  border-color: #050D57;
+  color: #fff;
 }
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover svg path, .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):focus svg path,
 .button:hover svg path,
@@ -9683,7 +9692,7 @@ footer#colophon .copyright {
 .wp-block-ask-experts-form .left form.search-form button.search-submit:focus svg path,
 .wp-block-button__link:hover svg path,
 .wp-block-button__link:focus svg path {
-  fill: #252242;
+  fill: #fff;
 }
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).black-outline,
 .button.black-outline,
@@ -9767,6 +9776,84 @@ footer#colophon .copyright {
 .page-template-custom-page-post-archive .alm-btn-wrap .color-black.alm-load-more-btn svg path,
 .wp-block-ask-experts-form .left form.search-form button.color-black.search-submit svg path,
 .wp-block-button__link.color-black svg path {
+  fill: #252242;
+}
+.gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).yellow,
+.button.yellow,
+.page-template-custom-page-post-archive .alm-btn-wrap .yellow.alm-load-more-btn,
+.wp-block-ask-experts-form .left form.search-form button.yellow.search-submit,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.wp-block-ask-experts-form .left body .form-wrap .gform-theme--framework.gform_wrapper form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.wp-block-ask-experts-form .left body .form-wrap .gform-theme--framework.gform_wrapper form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.wp-block-button__link.yellow,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.wp-block-button__link:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .entry-content button.wp-block-button__link[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.wp-block-button__link:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
+  background-color: #FFD834;
+  border-color: #FFD834;
+  color: #252242;
+}
+.gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).yellow svg path,
+.button.yellow svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap .yellow.alm-load-more-btn svg path,
+.wp-block-ask-experts-form .left form.search-form button.yellow.search-submit svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.wp-block-ask-experts-form .left body .form-wrap .gform-theme--framework.gform_wrapper form.search-form .gform-footer button[type=submit].search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.alm-load-more-btn:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.wp-block-ask-experts-form .left body .form-wrap .gform-theme--framework.gform_wrapper form.search-form .gform-footer :where(:not(.mce-splitbtn)) > button.search-submit:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button[type=submit].alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.wp-block-button__link.yellow svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.wp-block-button__link:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .entry-content button.wp-block-button__link[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+.entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link[type=submit]:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button.wp-block-button__link:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path {
   fill: #252242;
 }
 .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).has-brand-violet-background-color, .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)).violet,
@@ -10052,7 +10139,7 @@ body .form-wrap .gform-theme--framework.gform_wrapper form input[type]:where(:no
   min-height: 50px;
 }
 body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], .page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], .wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
-body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)), body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)), body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit], .page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
 .page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
@@ -10061,12 +10148,13 @@ body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .entry-content button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
 .entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] {
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit],
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
   padding: 0.85em 1.5em;
-  border: 2px solid #C84DFF;
   border-radius: 100px;
   -webkit-transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
@@ -10080,10 +10168,9 @@ body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: #C84DFF;
 }
 body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, .page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, .wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
-body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
+body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, .page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
 .page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
@@ -10092,32 +10179,13 @@ body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .entry-content button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
 .entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
 body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) svg path,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path {
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
+.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
+body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper .entry-content button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path,
+.entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit] svg path {
   all: revert-layer;
-}
-body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, .page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, .wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus, .page-template-custom-page-post-archive .alm-btn-wrap body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus, body .entry-content .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus, .wp-block-ask-experts-form .left body .entry-content .gform-theme--framework.gform_wrapper form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
-body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):focus, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover, body .entry-content .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-.wp-block-ask-experts-form .left body .form-wrap .gform-theme--framework.gform_wrapper form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .entry-content button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-.entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .page-template-custom-page-post-archive .alm-btn-wrap button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-.page-template-custom-page-post-archive .alm-btn-wrap body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.alm-load-more-btn:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-body .form-wrap .gform-theme--framework.gform_wrapper .wp-block-ask-experts-form .left form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-.wp-block-ask-experts-form .left body .form-wrap .gform-theme--framework.gform_wrapper form.search-form .gform-footer button.search-submit:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .entry-content button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-.entry-content body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer button.wp-block-button__link:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer :where(:not(.mce-splitbtn)) > button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):focus,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:hover,
-body .form-wrap .gform-theme--framework.gform_wrapper form .gform-footer .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type=submit]:focus {
-  background-color: #913BB7;
-  border-color: #913BB7;
+  fill: #252242;
 }
 body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form textarea:where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
 body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
@@ -10189,7 +10257,7 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 .wp-block-ask-experts-form .left form.search-form input.search-field {
   color: #252242;
   margin: 0;
-  border: 2px solid #050D57;
+  border: 2px solid #211CD1;
   border-radius: 20px;
   padding: 3px 14px 6px 34px;
   height: 34px;
@@ -10200,7 +10268,7 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 .wp-block-ask-experts-form .left form.search-form input.search-field:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-color: #6357FD;
+  border-color: #211CD1;
 }
 .wp-block-ask-experts-form .left form.search-form input.search-field::-webkit-input-placeholder {
   font-weight: 700;
@@ -10411,19 +10479,29 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 }
 .page-template-custom-page-home .home-banner.non-member {
   padding-top: clamp(2.313rem, 2.07rem + 1.036vw, 3.313rem);
-  background-image: linear-gradient(34.61deg, #5354B5 38.9%, #2891D2 75%, #05B1C5 100%);
-  background-image: linear-gradient(34.61deg, #5354B5 9%, #2891D2 75%, #05B1C5 100%);
+  background-image: linear-gradient(34.23deg, #12058F 54.5491%, #211CD1 85.5605%);
   overflow: hidden;
   margin-bottom: clamp(3.5rem, 2.972rem + 2.254vw, 5rem);
+}
+.page-template-custom-page-home .home-banner.non-member .accent {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: -50px;
+  bottom: -50px;
+  height: calc(100% + 50px);
+  background-image: url("../images/a-accent.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 50%;
+}
+.page-template-custom-page-home .home-banner.non-member .left,
+.page-template-custom-page-home .home-banner.non-member .right {
+  padding-top: 50px;
 }
 @media print, screen and (max-width: 39.99875em) {
   .page-template-custom-page-home .home-banner.non-member .left {
     margin-bottom: 3rem;
-  }
-}
-@media print, screen and (min-width: 56.25em) {
-  .page-template-custom-page-home .home-banner.non-member .left {
-    max-width: 388px;
   }
 }
 .page-template-custom-page-home .home-banner.non-member .left h1 {
@@ -10431,19 +10509,6 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 }
 .page-template-custom-page-home .home-banner.non-member .left .btn-group {
   margin-top: clamp(1.4rem, 1.254rem + 0.621vw, 2rem);
-}
-@media print, screen and (max-width: 56.24875em) {
-  .page-template-custom-page-home .home-banner.non-member .middle {
-    max-width: 450px;
-  }
-}
-.page-template-custom-page-home .home-banner.non-member .right {
-  padding-top: 50px;
-}
-@media print, screen and (min-width: 40em) {
-  .page-template-custom-page-home .home-banner.non-member .right {
-    padding-top: 92px;
-  }
 }
 .page-template-custom-page-home .home-banner.non-member .right:before {
   content: "";
@@ -10463,7 +10528,6 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 @media print, screen and (min-width: 64em) {
   .page-template-custom-page-home .home-banner.non-member .right:before {
     width: calc(100% + 12px);
-    top: 92px;
     left: 20px;
   }
 }
@@ -10500,6 +10564,14 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 .page-template-custom-page-home .home-banner.non-member .right nav .icon-wrap .inner {
   width: 27px;
   margin-right: 9px;
+}
+.page-template-custom-page-home .home-banner.non-member .right nav .text-wrap {
+  padding-right: 40px;
+}
+@media print, screen and (min-width: 40em) {
+  .page-template-custom-page-home .home-banner.non-member .right nav .text-wrap {
+    padding-right: 40px;
+  }
 }
 .page-template-custom-page-home .home-banner.non-member .right nav h2 {
   margin-bottom: -1px;
@@ -10605,6 +10677,9 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 }
 .page-template-custom-page-home .home-cpt-row .section-header .hr-wrap {
   padding-left: 0;
+}
+.page-template-custom-page-home .home-cpt-row .body {
+  padding-bottom: clamp(1.269rem, 1.077rem + 0.817vw, 1.813rem);
 }
 .page-template-custom-page-home .home-cpt-row .body footer#colophon .form-wrap .gform_wrapper form .gform-body input.title::-webkit-input-placeholder, footer#colophon .form-wrap .gform_wrapper form .gform-body .page-template-custom-page-home .home-cpt-row .body input.title::-webkit-input-placeholder {
   margin-bottom: 19px;
@@ -10730,9 +10805,6 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
     max-width: 150px;
   }
 }
-.page-template-custom-page-home .home-cpt-row.webinars, .page-template-custom-page-home .home-cpt-row.podcasts {
-  padding-bottom: clamp(1.269rem, 1.077rem + 0.817vw, 1.813rem);
-}
 .page-template-custom-page-home .home-cpt-row.webinars article.type-webinar.archive-card,
 .page-template-custom-page-home .home-cpt-row.webinars article.type-podcast, .page-template-custom-page-home .home-cpt-row.podcasts article.type-webinar.archive-card,
 .page-template-custom-page-home .home-cpt-row.podcasts article.type-podcast {
@@ -10784,6 +10856,9 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 }
 .page-template-custom-page-home .home-cpt-row.webinars .body .archive-link-wrap, .page-template-custom-page-home .home-cpt-row.podcasts .body .archive-link-wrap {
   padding-top: 0;
+}
+.page-template-custom-page-home .home-cpt-row.webinars {
+  padding-bottom: clamp(1.269rem, 1.077rem + 0.817vw, 1.813rem);
 }
 .page-template-custom-page-home .testimonials {
   padding-top: clamp(2.756rem, 2.34rem + 1.775vw, 3.938rem);
@@ -10856,8 +10931,8 @@ body .form-wrap .gform-theme--framework.gform_wrapper form .page-template-custom
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #C84DFF 0%, #5354B5 38.88%, #2891D2 75%, #05B1C5 100%);
-  mix-blend-mode: overlay;
+  background: linear-gradient(34.23deg, #12058F 54.5491%, #211CD1 85.5605%);
+  mix-blend-mode: darken;
 }
 .page-template-custom-page-home .member-spotlights .section-header {
   padding-bottom: clamp(1.619rem, 1.374rem + 1.042vw, 2.313rem);
@@ -10895,7 +10970,7 @@ body .form-wrap .gform-theme--framework.gform_wrapper form .page-template-custom
   cursor: pointer;
 }
 .page-template-custom-page-home .member-spotlights .section-body .swiper-page:hover, .page-template-custom-page-home .member-spotlights .section-body .swiper-page.active {
-  background-color: #252242;
+  background-color: #050D57;
 }
 .page-template-custom-page-home .member-spotlights .section-body .swiper-page.active {
   cursor: default;
@@ -11106,8 +11181,8 @@ article.type-webinar.archive-card .thumb-wrap:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#C84DFF), to(rgba(200, 77, 255, 0)));
-  background: linear-gradient(0deg, #C84DFF 0%, rgba(200, 77, 255, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#211CD1), to(rgba(200, 77, 255, 0)));
+  background: linear-gradient(0deg, #211CD1 0%, rgba(200, 77, 255, 0) 100%);
   mix-blend-mode: hard-light;
 }
 article.type-podcast.archive-card .thumb-date-wrap .date-wrap,

@@ -84,7 +84,7 @@ if( $tabs ):
                                                     <?php endif;?>
                                                     <div class="cell shrink">
                                                         <?php if($arrow_text):?>
-                                                            <span class="uppercase color-navy">
+                                                            <span class="uppercase">
                                                                 <b><?=esc_html($arrow_text);?></b>
                                                             </span>
                                                         <?php endif;?>

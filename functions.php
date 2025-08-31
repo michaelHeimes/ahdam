@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 /**
@@ -290,7 +290,7 @@ require_once(get_template_directory().'/inc/disable-gutenberg.php');
 // require_once(get_template_directory().'/inc/custom-post-type.php');
 
 // Customize the WordPress login menu
-// require_once(get_template_directory().'/inc/login.php'); 
+require_once(get_template_directory().'/inc/login.php'); 
 
 // Customize the WordPress admin
 require_once(get_template_directory().'/inc/admin.php'); 

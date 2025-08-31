@@ -71,7 +71,7 @@
 												<?php if( $footer_about_heading || $footer_about_text ):?>
 													<div class="footer-about">
 														<?php if( $footer_about_heading ):?>
-															<h2 class="h6 color-pink uppercase"><?=wp_kses_post($footer_about_heading);?></h2>
+															<h2 class="h6 color-white uppercase"><?=wp_kses_post($footer_about_heading);?></h2>
 														<?php endif;?>
 														<?php if( $footer_about_text ):?>
 															<div class="text-wrap">
@@ -86,7 +86,7 @@
 											<div class="grid-x grid-padding-x">
 												<?php if( $footer_address || $footer_directions ):?>
 													<div class="link-cell cell small-12 large-4">
-														<h3 class="h6 uppercase color-pink">Location</h3>
+														<h3 class="h6 uppercase color-white">Location</h3>
 														<?php if( $footer_directions ):?>
 															<a class="color-white" href="<?=esc_url($footer_directions);?>" aria-label="Links to directions" target="_blank">
 														<?php endif;?>
@@ -106,7 +106,7 @@
 												<div class="grid-x grid-padding-x">
 													<?php if( $footer_information_links ):?>
 														<div class="link-cell cell small-12 large-4">
-															<h3 class="h6 uppercase color-pink">Information</h3>
+															<h3 class="h6 uppercase color-white">Information</h3>
 															
 															<ul class="menu vertical">
 																<?php foreach( $footer_information_links as $footer_information_link ):
