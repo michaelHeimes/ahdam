@@ -21,46 +21,103 @@
             "endpoint": 0
         },
         {
-            "key": "field_68589bea32ab1",
-            "label": "Heading",
-            "name": "nm_banner_heading",
+            "key": "field_68bf1fa905a64",
+            "label": "Auto-slide Delay (in seconds)",
+            "name": "auto-slide_delay",
             "aria-label": "",
-            "type": "textarea",
+            "type": "number",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68bf1bd8f257f",
+                        "operator": ">",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": "br"
-        },
-        {
-            "key": "field_68589bfe32ab2",
-            "label": "Text",
-            "name": "nm_banner_text",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
+            "default_value": 5,
+            "min": "",
+            "max": "",
             "allow_in_bindings": 0,
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_68bf1bd8f257f",
+            "label": "Banner Slides",
+            "name": "nm_banner_slides",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Slide",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68589bea32ab1",
+                    "label": "Heading",
+                    "name": "nm_banner_heading",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_68bf1bd8f257f"
+                },
+                {
+                    "key": "field_68589bfe32ab2",
+                    "label": "Text",
+                    "name": "nm_banner_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68bf1bd8f257f"
+                }
+            ]
         },
         {
             "key": "field_68589c0832ab3",
@@ -534,5 +591,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757354700
+    "modified": 1757356005
 }

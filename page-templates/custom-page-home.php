@@ -13,11 +13,9 @@ if(!defined('ABSPATH')) {
 get_header();
 $fields = get_fields();
 
-$nm_banner_heading = $fields['nm_banner_heading'] ?? null;
-$nm_banner_text = $fields['nm_banner_text'] ?? null;
+$nm_banner_slides = $fields['nm_banner_slides'] ?? null;
 $nm_banner_button_link_1 = $fields['nm_banner_button_link_1'] ?? null;
 $nm_banner_button_link_2 = $fields['nm_banner_button_link_2'] ?? null;
-$nm_banner_graphic = $fields['nm_banner_graphic'] ?? null;
 $nm_banner_cta_rows = $fields['nm_banner_cta_rows'] ?? null;
 
 $m_banner_text = $fields['m_banner_text'] ?? null;
@@ -133,6 +131,8 @@ $partnerships_page_link = $fields['partnerships_page_link'] ?? null;
 $current_user_name = wp_get_current_user()->display_name;
 $first_name = explode(' ', $current_user_name)[0];
 
+$slide_delay = $fields['auto-slide_delay'] ?? null;
+
 ?>
 	<div class="content">
 		<div class="inner-content">
@@ -141,26 +141,42 @@ $first_name = explode(' ', $current_user_name)[0];
 				
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>			
 												
-					<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_graphic || $nm_banner_cta_rows ):?>
+					<?php if( $nm_banner_slides || $nm_banner_cta_rows || $nm_banner_button_link_1 || $nm_banner_button_link_2 ):?>
 						<header class="entry-header home-banner non-member">
 							<div class="grid-container relative">
 								<div class="accent"></div>
 								<div class="grid-x grid-padding-x align-center">
-									<?php if( $nm_banner_heading || $nm_banner_text || $nm_banner_button_link_1 || $nm_banner_button_link_2 ):?>
-										<div class="left cell small-12 medium-10 tablet-8 large-6 xlarge-7 grid-x relative">
+									<?php if( $nm_banner_slides ):?>
+										<div class="left cell small-12 medium-10 tablet-8 large-auto grid-x relative">
 											<div class="relative">
-												<div class="grid-x align-center">
-													<?php if( $nm_banner_heading ):?>
-														<h1 class="color-white small-12 medium-11 medium-12">
-															<?=wp_kses_post($nm_banner_heading);?>
-														</h1>
-													<?php endif;?>
-													<?php if( $nm_banner_text ):?>
-														<p class="p-3 color-white small-12 medium-11 medium-12">
-															<?=wp_kses_post($nm_banner_text);?>
-														</p>
-													<?php endif;?>
-												</div>
+												<?php if( $nm_banner_slides ):?>
+													<div class="grid-x align-center">
+														<div class="nm-banner-slider" data-delay="<?=$slide_delay;?>000">
+															<div class="swiper-wrapper">
+																<?php foreach($nm_banner_slides as $nm_banner_slide):
+																	$nm_banner_heading = $nm_banner_slide['nm_banner_heading'] ?? null;
+																	$nm_banner_text = $nm_banner_slide['nm_banner_text'] ?? null;
+																?>
+																	<div class="swiper-slide">
+																		<?php if( $nm_banner_heading ):?>
+																			<h1 class="color-white small-12 medium-11 medium-12">
+																				<?=wp_kses_post($nm_banner_heading);?>
+																			</h1>
+																		<?php endif;?>
+																		<?php if( $nm_banner_text ):?>
+																			<p class="p-3 color-white small-12 medium-11 medium-12">
+																				<?=wp_kses_post($nm_banner_text);?>
+																			</p>
+																		<?php endif;?>
+																	</div>
+																<?php endforeach;?>
+															</div>
+														</div>
+													</div>
+												<?php endif;?>
+												
+												
+												
 												<?php if( $nm_banner_button_link_1 || $nm_banner_button_link_2 ) {
 													get_template_part('template-parts/part', 'btn-group',
 														array(
@@ -175,7 +191,7 @@ $first_name = explode(' ', $current_user_name)[0];
 										</div>
 									<?php endif;?>
 									<?php if( $nm_banner_cta_rows ):?>
-										<div class="right cell small-12 medium-10 tablet-8 large-6 xlarge-5 grid-x align-bottom relative" data-equal-width>
+										<div class="right cell small-12 medium-10 tablet-8 large-shrink grid-x align-bottom relative" data-equal-width>
 											<nav class="small-12">
 												<ul class="menu vertical">
 													<?php $count = count($nm_banner_cta_rows); $i = 1; foreach($nm_banner_cta_rows as $row):
@@ -232,102 +248,6 @@ $first_name = explode(' ', $current_user_name)[0];
 					<?php endif;?>
 
 					<section class="body" itemprop="text">
-						<?php if ( $upcoming_webinar_query->have_posts() || $latest_webinar_query->have_posts() ) :?>
-							<section class="webinars home-cpt-row" id="webinars">
-								<div class="grid-container">
-									<div class="section-header grid-x grid-padding-x">
-										<div class="cell shrink title-wrap">
-											<h2 class="m-0 h5">Webinars</h2>
-										</div>
-										<div class="cell auto hr-wrap">
-											<hr>
-										</div>
-									</div>
-									<div class="body grid-x grid-padding-x align-center">
-										<?php if ( $upcoming_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3" id="upcoming-webinars">
-												<div class="grid-x card-grid">
-													<div class="cell small-12">
-														<div class="title h6 uppercase">
-															Upcoming
-														</div>
-													</div>
-													<?php while ( $upcoming_webinar_query->have_posts() ) : $upcoming_webinar_query->the_post(); 
-														$webinar_date = get_field('webinar_date') ?? null;	
-														if( $webinar_date  ) {
-															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
-														}
-														$gated = get_field('gated');
-													?>
-														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
-															<div class="bg-light-gray relative h-100 br-10">
-																<div class="grid-x color-black h-100">
-																	<?php if( $webinar_date ):?>
-																		<div class="cell shrink date bg-blue color-white text-center grid-x flex-dir-column align-middle align-center">
-																			<div class="month h6 uppercase">
-																				<?=$date->format( 'M' ); ?>
-																			</div>
-																			<div class="day h2 m-0">
-																				<?=$date->format( 'd' ); ?>
-																			</div>
-																		</div>
-																		<div class="cell auto title grid-x align-middle">
-																			<h3 class="h6 weight-400 m-0">
-																				<?php the_title();?>
-																			</h3>
-																		</div>
-																	<?php endif;?>
-																</div>
-																<?php if( $gated && !is_user_logged_in() ):?>
-																	<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
-																		<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
-																		<span class="show-for-sr">
-																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-																		</span>
-																	</button>
-																<?php else:?>
-																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
-																<?php endif;?>
-															</div>
-														</article>
-													<?php endwhile;?>
-												</div>
-											</div>
-										<?php endif;?>
-										<?php if ( $latest_webinar_query->have_posts() ) :?>
-											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9" id="latest-webinars">
-												<div class="title h6 uppercase">
-													Latest
-												</div>
-												<div class="card-grid grid-x small-up-1 medium-up-2 tablet-up-3 xlarge-up-4 pad-right">
-													<?php $i = 1; while ( $latest_webinar_query->have_posts() ) : $latest_webinar_query->the_post(); 
-														$webinar_date = get_field('webinar_date') ?? null;	
-														if( $webinar_date  ) {
-															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
-														}
-														$thumbnail_id = get_post_thumbnail_id();
-														$host_images = get_field('host_images') ?? null;
-														$gated = get_field('gated');
-													?>
-														<div class="cell<?php if( $i > 1 ):?> show-for-medium<?php endif;?><?php if( $i > 2 ):?> show-for-tablet<?php endif;?><?php if( $i > 3 ):?> show-for-xlarge<?php endif;?>">
-															<?php get_template_part('template-parts/loop', 'webinar');?>
-														</div>
-													<?php $i++; endwhile;?>
-												</div>
-												<?php if( $global_webinars_page ):?>
-													<div class="archive-link-wrap grid-x align-right">
-														<a class="h6 uppercase m-0" href="<?=esc_url($global_webinars_page);?>">
-															View <span class="inline-icon-wrap">Webinars
-															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
-														</a>
-													</div>
-												<?php endif;?>
-											</div>
-										<?php endif;?>
-									</div>
-								</div>
-							</section>
-						<?php endif;?>
 						
 						<?php if ( $events_query->have_posts() || $news_query->have_posts() ) :?>
 							<section class="events-news home-cpt-row" id="events-news">
@@ -354,7 +274,7 @@ $first_name = explode(' ', $current_user_name)[0];
 														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
 															<div class="bg-light-gray relative h-100 br-10">
 																<div class="grid-x color-black h-100">
-																	<?php if( $webinar_date ):?>
+																	<?php if( $event_date ):?>
 																		<div class="cell shrink date bg-blue color-white text-center grid-x flex-dir-column align-middle align-center">
 																			<div class="month h6 uppercase">
 																				<?=$date->format( 'M' ); ?>
@@ -536,6 +456,103 @@ $first_name = explode(' ', $current_user_name)[0];
 													<div class="archive-link-wrap grid-x align-right">
 														<a class="h6 uppercase m-0" href="<?=esc_url($global_news_page);?>">
 															View <span class="inline-icon-wrap">News
+															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
+														</a>
+													</div>
+												<?php endif;?>
+											</div>
+										<?php endif;?>
+									</div>
+								</div>
+							</section>
+						<?php endif;?>
+						
+						<?php if ( $upcoming_webinar_query->have_posts() || $latest_webinar_query->have_posts() ) :?>
+							<section class="webinars home-cpt-row" id="webinars">
+								<div class="grid-container">
+									<div class="section-header grid-x grid-padding-x">
+										<div class="cell shrink title-wrap">
+											<h2 class="m-0 h5">Appeal Webinars</h2>
+										</div>
+										<div class="cell auto hr-wrap">
+											<hr>
+										</div>
+									</div>
+									<div class="body grid-x grid-padding-x align-center">
+										<?php if ( $upcoming_webinar_query->have_posts() ) :?>
+											<div class="home-cpt-sidebar cell small-12 medium-11 medium-5 tablet-4 xlarge-3" id="upcoming-webinars">
+												<div class="grid-x card-grid">
+													<div class="cell small-12">
+														<div class="title h6 uppercase">
+															Upcoming
+														</div>
+													</div>
+													<?php while ( $upcoming_webinar_query->have_posts() ) : $upcoming_webinar_query->the_post(); 
+														$webinar_date = get_field('webinar_date') ?? null;	
+														if( $webinar_date  ) {
+															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
+														}
+														$gated = get_field('gated');
+													?>
+														<article id="post-<?php the_ID(); ?>" <?php post_class('cell small-12 medium-6 tablet-12'); ?> role="article">
+															<div class="bg-light-gray relative h-100 br-10">
+																<div class="grid-x color-black h-100">
+																	<?php if( $webinar_date ):?>
+																		<div class="cell shrink date bg-blue color-white text-center grid-x flex-dir-column align-middle align-center">
+																			<div class="month h6 uppercase">
+																				<?=$date->format( 'M' ); ?>
+																			</div>
+																			<div class="day h2 m-0">
+																				<?=$date->format( 'd' ); ?>
+																			</div>
+																		</div>
+																		<div class="cell auto title grid-x align-middle">
+																			<h3 class="h6 weight-400 m-0">
+																				<?php the_title();?>
+																			</h3>
+																		</div>
+																	<?php endif;?>
+																</div>
+																<?php if( $gated && !is_user_logged_in() ):?>
+																	<button class="reveal-trigger z-1 absolute-link-trigger" data-open="gated-content-alert">
+																		<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
+																		<span class="show-for-sr">
+																			This triggers a modal that informs the user that the content is gated and how to Join and gain access.
+																		</span>
+																	</button>
+																<?php else:?>
+																	<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
+																<?php endif;?>
+															</div>
+														</article>
+													<?php endwhile;?>
+												</div>
+											</div>
+										<?php endif;?>
+										<?php if ( $latest_webinar_query->have_posts() ) :?>
+											<div class="home-cpt-main cell small-12 medium-11 medium-7 tablet-8 xlarge-9" id="latest-webinars">
+												<div class="title h6 uppercase">
+													Latest
+												</div>
+												<div class="card-grid grid-x small-up-1 medium-up-2 tablet-up-3 xlarge-up-4 pad-right">
+													<?php $i = 1; while ( $latest_webinar_query->have_posts() ) : $latest_webinar_query->the_post(); 
+														$webinar_date = get_field('webinar_date') ?? null;	
+														if( $webinar_date  ) {
+															$date = DateTime::createFromFormat( 'Ymd', $webinar_date );
+														}
+														$thumbnail_id = get_post_thumbnail_id();
+														$host_images = get_field('host_images') ?? null;
+														$gated = get_field('gated');
+													?>
+														<div class="cell grid-x <?php if( $i > 1 ):?> show-for-medium<?php endif;?><?php if( $i > 2 ):?> show-for-tablet<?php endif;?><?php if( $i > 3 ):?> show-for-xlarge<?php endif;?>">
+															<?php get_template_part('template-parts/loop', 'webinar');?>
+														</div>
+													<?php $i++; endwhile;?>
+												</div>
+												<?php if( $global_webinars_page ):?>
+													<div class="archive-link-wrap grid-x align-right">
+														<a class="h6 uppercase m-0" href="<?=esc_url($global_webinars_page);?>">
+															View <span class="inline-icon-wrap">Webinars
 															<svg width="11" height="11" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z"/><path d="M0 3.999c0 .246.182.447.403.447h6.254L4.13 7.235a.484.484 0 0 0 0 .633.377.377 0 0 0 .571 0l3.203-3.554a.545.545 0 0 0 .05-.067V4.23l.029-.058v-.027A.316.316 0 0 0 7.998 4a.662.662 0 0 0 0-.09c-.002-.02-.008-.038-.014-.056v-.027l-.028-.058V3.75l-.05-.069L4.701.13a.377.377 0 0 0-.57 0 .484.484 0 0 0 0 .633l2.514 2.788H.403C.182 3.551 0 3.753 0 4Z" fill="#201F1F"/></svg></span>
 														</a>
 													</div>

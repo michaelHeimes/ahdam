@@ -35,8 +35,9 @@
 			padding-top: 50px;
 		}
 		.left {
-			@include breakpoint(small down) {
-				margin-bottom: 3rem;
+			margin-bottom: 3rem;
+			.swiper-slide {
+				
 			}
 			h1 {
 				margin-bottom: 0.3em;

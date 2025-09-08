@@ -10832,10 +10832,8 @@ body .bg-black .form-wrap .gform-theme--framework.gform_wrapper form input[type]
 .page-template-custom-page-home .home-banner.non-member .right {
   padding-top: 50px;
 }
-@media print, screen and (max-width: 39.99875em) {
-  .page-template-custom-page-home .home-banner.non-member .left {
-    margin-bottom: 3rem;
-  }
+.page-template-custom-page-home .home-banner.non-member .left {
+  margin-bottom: 3rem;
 }
 .page-template-custom-page-home .home-banner.non-member .left h1 {
   margin-bottom: 0.3em;
@@ -11690,6 +11688,13 @@ article.type-webinar.archive-card .title {
 article.type-podcast.archive-card .title h3.h6,
 article.type-webinar.archive-card .title h3.h6 {
   line-height: 1.3846;
+}
+
+article.type-webinar.archive-card .thumb-date-wrap .date-wrap {
+  padding: clamp(0.438rem, 0.371rem + 0.282vw, 0.625rem) clamp(0.787rem, 0.669rem + 0.507vw, 1.125rem) 0 clamp(0.787rem, 0.669rem + 0.507vw, 1.125rem);
+}
+article.type-webinar.archive-card .thumb-date-wrap .date-wrap .date {
+  padding-bottom: 1rem;
 }
 
 .page-template-custom-page-post-archive .content.archive-news article.type-news.archive-card .thumb-wrap {

@@ -202,6 +202,15 @@ article.type-webinar.archive-card {
 	}
 }
 
+article.type-webinar.archive-card .thumb-date-wrap {
+	.date-wrap {
+		.date {
+			padding-bottom: 1rem;
+		}
+		padding: clamp(0.438rem, 0.371rem + 0.282vw, 0.625rem) clamp(0.787rem, 0.669rem + 0.507vw, 1.125rem) 0 clamp(0.787rem, 0.669rem + 0.507vw, 1.125rem);
+	}
+}
+
 .page-template-custom-page-post-archive {
 	.content {
 		&.archive-news {
