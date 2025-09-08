@@ -59,7 +59,7 @@ if( $title || $copy || $form_cta_text || $form_disclaimer_text || $form_id ):
                                     <input type="search" class="search-field" placeholder="Search questions from our members" value="<?php echo get_search_query(); ?>" name="s" />
                                 </label>
                                 <input type="hidden" name="post_type" value="expert-qa" />
-                                <button type="submit" class="search-submit"><?php _e( 'Search', 'your-textdomain' ); ?></button>
+                                <button type="submit" class="search-submit blue"><?php _e( 'Search', 'your-textdomain' ); ?></button>
                             </form>
                         </div>
                     </div>

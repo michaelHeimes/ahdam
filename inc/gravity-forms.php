@@ -27,7 +27,7 @@ function input_to_button( $button, $form ) {
 		$value = $fragment->get_attribute( $attribute );
 
 		if ( $attribute === 'class' ) {
-			$value .= ' pink'; // Append class
+			$value .= ' yellow hover-blue'; // Append class
 		}
 
 		if ( ! empty( $value ) ) {

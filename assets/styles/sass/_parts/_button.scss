@@ -50,6 +50,27 @@
 			}
 		}
 	}
+	&.navy-outline {
+		background-color: transparent;
+		border-color: $color-navy;
+		color: $color-navy;
+		svg {
+			path {
+				fill: $color-navy;
+			}
+		}
+		&:hover,
+		&:focus {
+			background-color: $color-navy;
+			border-color: $color-navy;
+			color: $white;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
+		}
+	}
 	&.white-outline {
 		background-color: transparent;
 		border-color: $white;
@@ -79,15 +100,35 @@
 	&.yellow {
 		background-color: $color-yellow;
 		border-color: $color-yellow;
-		color: $black;
+		color: $color-navy;
 		svg {
 			path {
-				fill: $black;
+				fill: $color-navy;
 			}
 		}
 		&:hover,
 		&:focus {
-			
+			background-color: $black;
+			border-color: $black;
+			color: $white;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
+		}
+		&.hover-blue {
+			&:hover,
+			&:focus {
+				background-color: $color-blue;
+				border-color: $color-blue;
+				color: $white;
+				svg {
+					path {
+						fill: $white;
+					}
+				}
+			}
 		}
 	}
 	&.has-brand-violet-background-color,

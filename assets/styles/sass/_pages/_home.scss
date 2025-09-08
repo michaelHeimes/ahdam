@@ -105,7 +105,7 @@
 	.home-banner.member {
 		margin-top: clamp(2.494rem, 2.234rem + 1.107vw, 3.563rem);
 		margin-bottom: clamp(3.544rem, 3.175rem + 1.573vw, 5.063rem);
-		.inner.bg-light-gray {
+		.inner.bg-blue {
 			padding: clamp(1.925rem, 1.725rem + 0.854vw, 2.75rem) clamp(2.45rem, 2.195rem + 1.087vw, 3.5rem) 0;
 			@include breakpoint(medium down) {
 				padding-left: 1rem;
@@ -154,56 +154,14 @@
 						}
 						&:hover,
 						&:focus {
-							color: $white;
-							background-color: $color-violet;
+							color: $color-blue;
 							transform: scale(1.05);
 							height: calc(100% + 30px);
 							transform: translateY(-15px);
-							svg {
-								circle {
-									fill: $white;
-								}
-							}
 							.learn-more {
 								transform: translateY(-30px);
 								opacity: 1 !important;
 								transition: opacity .25s ease, transform .3s ease;
-							}
-						}
-					}
-					&:nth-child(1) {
-						a.inner {
-							&:hover,
-							&:focus {
-								svg {
-									path {
-										fill: $color-seafoam;
-									}
-								}
-							}
-						}
-					}
-					&:nth-child(2) {
-						a.inner {
-							&:hover,
-							&:focus {
-								svg {
-									path {
-										fill: $color-violet;
-									}
-								}
-							}
-						}
-					}
-					&:nth-child(3) {
-						a.inner {
-							&:hover,
-							&:focus {
-								svg {
-									path {
-										fill: $color-pink;
-									}
-								}
 							}
 						}
 					}
@@ -380,6 +338,23 @@
 			&:after {
 				display: none;
 			}
+			svg {
+				path,
+				rect {
+					transition: all .25s ease;
+				}
+			}
+			&:hover,
+			&:focus {
+				svg {
+					path {
+						fill: $white;
+					}
+					rect {
+						fill: $color-blue;
+					}	
+				}
+			}
 		}
 	}
 	.member-spotlights {
@@ -431,12 +406,18 @@
 			}
 			.swiper-page {
 				cursor: pointer;
+				transition: color .25s ease, background-color .25s ease;
 				&:hover,
 				&.active {
-					background-color: $color-navy; 
+					background-color: $light-gray; 
+					color: $color-navy;
 				}
 				&.active {
 					cursor: default;
+				}
+				.h6
+				.h5 {
+					text-transform: none;
 				}
 			}
 			.nav {

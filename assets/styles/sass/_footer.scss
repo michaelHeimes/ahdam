@@ -8,10 +8,22 @@ footer#colophon {
 		background: linear-gradient(25deg, #050D57 3.77488%, #2B1FC9 47.2877%);
 		
 	}
+	a u {
+		text-decoration-thickness: 1px;
+		transition: text-decoration-thickness .25s ease;
+		&:hover,
+		&:focus {
+			text-decoration-thickness: 0px;
+			color: $color-yellow;
+		}
+	}
 	.menu .logo {
 		margin-bottom: rem-calc(42);
 		a {
 			padding: 0;
+			img {
+				filter: brightness(5);
+			}
 		}
 	}
 	.site-info {
@@ -116,6 +128,10 @@ footer#colophon {
 				font-weight: bold;
 				text-transform: uppercase;
 				padding: 0;
+				&:hover,
+				&:focus {
+					color: $color-yellow;
+				}
 			}
 		}
 	}

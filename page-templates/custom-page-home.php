@@ -145,12 +145,12 @@ $first_name = explode(' ', $current_user_name)[0];
 						<?php if( $m_banner_text || $m_banner_button_link || $m_banner_featured_ctas || $first_name ):?>
 							<header class="entry-header home-banner member">
 								<div class="grid-container">
-									<div class="inner bg-light-gray br-10 overflow-hidden">
+									<div class="inner bg-blue br-10 overflow-hidden">
 										<div class="grid-x grid-padding-x align-middle">
 											<div class="left cell small-12 large-5">
 												<div class="h1">Welcome <?=esc_html($first_name);?></div>
 												<?php if( $m_banner_text ):?>
-													<div class="h3"><?=wp_kses_post($m_banner_text);?></div>
+													<div class="h3 color-white"><?=wp_kses_post($m_banner_text);?></div>
 												<?php endif;?>
 												<?php if( $m_banner_button_link ) :?>
 													<div class="btn-wrap">
@@ -180,7 +180,7 @@ $first_name = explode(' ', $current_user_name)[0];
 															?>
 															
 															<<?= $is_link ? 'a' : 'div'; ?>
-																class="inner relative h-100 bg-white box-shadow-5-15-10 br-10 color-black grid-x flex-dir-column align-middle align-justify"
+																class="inner relative h-100 bg-white box-shadow-5-15-10 br-10 color-blue grid-x flex-dir-column align-middle align-justify"
 																<?= $is_link ? ' href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '"' : ''; ?>
 															>
 																<div class="top">
@@ -751,12 +751,12 @@ $first_name = explode(' ', $current_user_name)[0];
 																<div class="btns-wrap grid-x align-center">
 																	<div class="cell shrink">
 																		<div class="swiper-btn swiper-button-prev">
-																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.34 10.45h6.25c.22 0 .41-.2.41-.45s-.19-.45-.41-.45H8.34l2.52-2.79a.48.48 0 0 0 0-.63.38.38 0 0 0-.57 0l-3.2 3.55a.5.5 0 0 0 0 .64l3.2 3.55a.38.38 0 0 0 .57 0 .48.48 0 0 0 0-.63l-2.52-2.79Z" fill="#211CD1"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#211CD1"/></svg>
+																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#211CD1"/><path d="M8.34 10.45h6.25c.22 0 .41-.2.41-.45s-.19-.45-.41-.45H8.34l2.52-2.79a.48.48 0 0 0 0-.63.38.38 0 0 0-.57 0l-3.2 3.55a.5.5 0 0 0 0 .64l3.2 3.55a.38.38 0 0 0 .57 0 .48.48 0 0 0 0-.63l-2.52-2.79Z" fill="#211CD1"/></svg>
 																		</div>
 																	</div>
 																	<div class="cell shrink">
 																		<div class="swiper-btn swiper-button-next">
-																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10c0 .25.18.45.4.45h6.25l-2.53 2.79a.48.48 0 0 0 0 .63.38.38 0 0 0 .57 0l3.2-3.55c.04-.05.06-.1.08-.15v-.02l.03-.06v-.03a.3.3 0 0 0 0-.24l-.03-.06v-.02a.45.45 0 0 0-.08-.14L11.2 6.13a.38.38 0 0 0-.57 0 .48.48 0 0 0 0 .63l2.51 2.79H6.4A.45.45 0 0 0 6 10Z" fill="#211CD1"/><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#211CD1"/></svg>
+																			<svg width="31" height="31" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x=".5" y=".5" width="20" height="20" rx="10" stroke="#211CD1"/><path d="M6 10c0 .25.18.45.4.45h6.25l-2.53 2.79a.48.48 0 0 0 0 .63.38.38 0 0 0 .57 0l3.2-3.55c.04-.05.06-.1.08-.15v-.02l.03-.06v-.03a.3.3 0 0 0 0-.24l-.03-.06v-.02a.45.45 0 0 0-.08-.14L11.2 6.13a.38.38 0 0 0-.57 0 .48.48 0 0 0 0 .63l2.51 2.79H6.4A.45.45 0 0 0 6 10Z" fill="#211CD1"/></svg>
 																		</div>
 																	</div>
 																</div>
@@ -825,7 +825,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																				<?php get_template_part('template-parts/part', 'btn-link',
 																					array(
 																						'link' => get_the_permalink(),
-																						'classes' => 'black',
+																						'classes' => 'yellow',
 																						'attrs' => 'rel="bookmark"',
 																						'is-permalink' => 'true',
 																						'link-title' => 'Read More',
@@ -851,7 +851,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																	<div class="swiper-page br-10 relative text-center<?php if( $i == 0 ):?> active<?php endif;?>" data-slide="<?=$i;?>">
 																		<?php if($member_detail):?>
 																			<div class="title h6">
-																				<?=wp_kses_post($member_detail);?>
+																				<small><?=wp_kses_post($member_detail);?></small>
 																			</div>
 																		<?php endif;?>
 																		<div class="h5"><b><?php the_title();?></b></div>
@@ -916,7 +916,7 @@ $first_name = explode(' ', $current_user_name)[0];
 																					<?php get_template_part('template-parts/part', 'btn-link',
 																						array(
 																							'link' => $partnerships_page_link ,
-																							'classes' => 'violet',
+																							'classes' => '',
 																						),
 																					);?>
 																				</div>

@@ -21,9 +21,9 @@ $join = get_field('header_join', 'option') ?? null;
 										array(
 											'flex-classes' => 'align-center',
 											'btn1' => $login,
-											'btn1-classes' => 'black-outline',
+											'btn1-classes' => 'navy-outline',
 											'btn2' => $join,
-											'btn2-classes' => 'violet',
+											'btn2-classes' => '',
 										),
 									);?>
 								</div>
@@ -38,9 +38,9 @@ $join = get_field('header_join', 'option') ?? null;
 										array(
 											'flex-classes' => 'align-center',
 											'btn1' => $login,
-											'btn1-classes' => 'black-outline',
+											'btn1-classes' => 'navy-outline',
 											'btn2' => $join,
-											'btn2-classes' => 'violet',
+											'btn2-classes' => '',
 										),
 									);?>
 								</div>

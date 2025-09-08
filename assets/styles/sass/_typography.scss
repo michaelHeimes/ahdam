@@ -1,3 +1,16 @@
+a:not(.color-white):not(.button) {
+	color: $color-blue;
+	&:hover,
+	&:focus {
+		color: $color-navy;
+	}
+	&.color-white {
+		&:hover,
+		&:focus {
+			color: $color-yellow;
+		}
+	}
+}
 p,
 .p,
 .p-1 p {

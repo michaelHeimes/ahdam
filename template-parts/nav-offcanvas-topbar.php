@@ -81,7 +81,7 @@
 										get_template_part('template-parts/part', 'btn-group',
 											array(
 												'btn1' => $login,
-												'btn1-classes' => 'black-outline no-arrow',
+												'btn1-classes' => 'navy-outline no-arrow',
 												'btn2' => $join,
 												'btn2-classes' => 'yellow',
 											),

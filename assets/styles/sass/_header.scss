@@ -89,7 +89,7 @@ header.site-header {
 					a {
 						padding: .6831em 1em;
 					}
-					&.black-outline a {
+					&.navy-outline a {
 						color: $black;
 						&:hover,
 						&:focus {
@@ -244,7 +244,7 @@ header.site-header {
 	// 	display: block;
 	// 	opacity: 1;
 	// }
-	a.button.black-outline:focus {
+	a.button.navy-outline:focus {
 		// background-color: $white;
 		// border-color: $black;
 		// color: $black;

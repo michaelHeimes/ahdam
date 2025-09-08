@@ -40,7 +40,7 @@
 							array(
 								'flex-classes' => 'non-member',
 								'btn1' => $login,
-								'btn1-classes' => 'black-outline',
+								'btn1-classes' => 'navy-outline',
 								'btn2' => $join,
 								'btn2-classes' => 'yellow',
 							),

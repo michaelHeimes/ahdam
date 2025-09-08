@@ -14,7 +14,7 @@ body {
 					border: 2px solid $black;
 					@extend .p;
 					&:focus {
-						border-color: $color-pink !important;
+						border-color: $color-blue !important;
 					}
 					&::placeholder {
 						font-weight: 700;
