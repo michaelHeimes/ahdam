@@ -225,28 +225,6 @@
                     "parent_repeater": "field_68589c8232ab7"
                 },
                 {
-                    "key": "field_68589ca332aba",
-                    "label": "Text",
-                    "name": "text",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_68589c8232ab7"
-                },
-                {
                     "key": "field_68589ca832abb",
                     "label": "Button Link",
                     "name": "button_link",
@@ -591,5 +569,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757356005
+    "modified": 1757447966
 }

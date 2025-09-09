@@ -151,7 +151,7 @@ $slide_delay = $fields['auto-slide_delay'] ?? null;
 											<div class="relative">
 												<?php if( $nm_banner_slides ):?>
 													<div class="grid-x align-center">
-														<div class="nm-banner-slider" data-delay="<?=$slide_delay;?>000">
+														<div class="nm-banner-slider overflow-hidden" data-delay="<?=$slide_delay;?>000">
 															<div class="swiper-wrapper">
 																<?php foreach($nm_banner_slides as $nm_banner_slide):
 																	$nm_banner_heading = $nm_banner_slide['nm_banner_heading'] ?? null;
@@ -174,9 +174,7 @@ $slide_delay = $fields['auto-slide_delay'] ?? null;
 														</div>
 													</div>
 												<?php endif;?>
-												
-												
-												
+																								
 												<?php if( $nm_banner_button_link_1 || $nm_banner_button_link_2 ) {
 													get_template_part('template-parts/part', 'btn-group',
 														array(
