@@ -116,9 +116,10 @@ header.site-header {
 				> a {
 					display: inline-flex;
 					color: $black;
-					font-size: rem-calc(15);
+					font-size: rem-calc(16);
 					text-transform: uppercase;
 					font-weight: 700;
+					text-align: center;
 					padding: .2em;
 					position: relative;
 					

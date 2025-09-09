@@ -9250,9 +9250,10 @@ header.site-header #top-bar-menu .main-nav > li > a {
   display: -ms-inline-flexbox;
   display: inline-flex;
   color: #252242;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
+  text-align: center;
   padding: 0.2em;
   position: relative;
 }

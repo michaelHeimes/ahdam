@@ -75,15 +75,15 @@
 							<div class="cell auto">
 								<?php trailhead_top_nav_non_member();?>
 							</div>
-							<?php if( $login || $join ):?>
+							<?php if( $login ):?>
 								<div class="login-join-wrap cell shrink">
 									<?php if( $login  || $join ) {
 										get_template_part('template-parts/part', 'btn-group',
 											array(
 												'btn1' => $login,
 												'btn1-classes' => 'navy-outline no-arrow',
-												'btn2' => $join,
-												'btn2-classes' => 'yellow',
+												'btn2' => '',
+												'btn2-classes' => '',
 											),
 										);
 									};?>
