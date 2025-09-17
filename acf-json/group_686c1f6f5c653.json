@@ -19,7 +19,8 @@
             "display_format": "F j, Y",
             "return_format": "Ymd",
             "first_day": 1,
-            "allow_in_bindings": 0
+            "allow_in_bindings": 0,
+            "default_to_current_date": 0
         }
     ],
     "location": [
@@ -40,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752695261
+    "modified": 1758144328
 }

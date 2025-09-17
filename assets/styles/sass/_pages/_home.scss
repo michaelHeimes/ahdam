@@ -47,6 +47,8 @@
 			}
 		}
 		.right {
+			position: relative;
+			z-index: 1;
 			&:before {
 				content: '';
 				display: block;
@@ -79,8 +81,8 @@
 					padding: 43px 0px 58px 36px;
 				}
 				hr {
-					margin-top: 17px;
-					margin-bottom: 25px;
+					margin-top: 26px;
+					margin-bottom: 18px;
 				}
 				a.button {
 					justify-content: space-between;
@@ -88,8 +90,8 @@
 				.icon-wrap {
 					.inner {
 						width: 27px;
-						margin-right: 9px;
 					}
+					margin-bottom: rem-calc(10);
 				}
 				.text-wrap {
 					padding-right: $smallGutter;

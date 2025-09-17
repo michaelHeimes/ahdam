@@ -88,6 +88,7 @@
                     "collapsed": "",
                     "button_label": "Add Link",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_6887b1faacdcd",
                     "sub_fields": [
                         {
                             "key": "field_6887b296acdd1",
@@ -104,6 +105,7 @@
                                 "id": ""
                             },
                             "layout": "block",
+                            "parent_repeater": "field_6887b28aacdd0",
                             "sub_fields": [
                                 {
                                     "key": "field_6887b2c0acdd2",
@@ -143,11 +145,9 @@
                                     "prepend": "",
                                     "append": ""
                                 }
-                            ],
-                            "parent_repeater": "field_6887b28aacdd0"
+                            ]
                         }
-                    ],
-                    "parent_repeater": "field_6887b1faacdcd"
+                    ]
                 }
             ]
         }
@@ -170,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753736244
+    "modified": 1758144328
 }

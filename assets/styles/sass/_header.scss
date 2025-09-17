@@ -54,7 +54,7 @@ header.site-header {
 
 			}
 			@include breakpoint(tablet) {
-
+				max-width: 300px;
 			}
 			a {
 				padding: 0;
@@ -372,6 +372,14 @@ header.site-header {
 		width: 100%;
 		padding: 1rem 20px;
 		display: block;
+		a {
+			transition: .25s ease;
+			&:hover,
+			&:focus {
+				color: $white;
+				text-decoration: underline;
+			}
+		}
 	}
 	
 }

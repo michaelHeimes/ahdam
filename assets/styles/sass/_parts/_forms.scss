@@ -6,8 +6,10 @@ body .gform-theme--foundation {
 body {
 	.entry-content,
 	.form-wrap {
-		.gform-theme--framework.gform_wrapper {
-			form {
+		.gform-theme--framework.gform_wrapper,
+		.mp_wrapper {
+			form,
+			.mp-form-row {
 				textarea:where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
 				input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 					border-radius: 10px;
@@ -25,7 +27,9 @@ body {
 				input[type]:where(:not(.gform-text-input-reset):not([type=hidden])):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 					min-height: 50px;
 				}	
-				.gform-footer {
+				.gform-footer,
+				.mp-form-submit {
+					input[type="submit"],
 					button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type="submit"],
 					:where(:not(.mce-splitbtn))>button:not([id*=mceu_]):not(.mce-open):where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)), .gform-theme.gform-theme--framework.gform_wrapper button.button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))[type="submit"] {
 						display: inline-block;

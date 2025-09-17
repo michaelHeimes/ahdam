@@ -28,11 +28,7 @@ $gated = get_field('gated');
 		</div>
 	<?php endif;?>
 	<?php if( $gated && !is_user_logged_in() ):?>
-		<button class="reveal-trigger absolute-link-trigger z-1" data-open="gated-content-alert">
-			<span class="show-for-sr">
-				This triggers a modal that informs the user that the content is gated and how to Join and gain access.
-			</span>
-		</button>
+		<?php get_template_part('template-parts/part', 'gated-reveal-trigger-overlay');?>
 	<?php else:?>
 		<a class="color-black z-1 absolute-link-trigger" href="<?=esc_url(get_the_permalink());?>" aria-label="Read the article: <?php the_title();?>"></a>
 	<?php endif;?>
