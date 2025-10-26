@@ -65,7 +65,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -76,7 +76,7 @@
                 {
                     "key": "field_68589bea32ab1",
                     "label": "Heading",
-                    "name": "nm_banner_heading",
+                    "name": "heading",
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
@@ -98,9 +98,9 @@
                 {
                     "key": "field_68589bfe32ab2",
                     "label": "Text",
-                    "name": "nm_banner_text",
+                    "name": "text",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -110,48 +110,50 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_68bf1bd8f257f"
+                },
+                {
+                    "key": "field_68589c0832ab3",
+                    "label": "Button Link 1",
+                    "name": "button_link_1",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_68bf1bd8f257f"
+                },
+                {
+                    "key": "field_68589c4c32ab4",
+                    "label": "Button Link 2",
+                    "name": "button_link_2",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
                     "parent_repeater": "field_68bf1bd8f257f"
                 }
             ]
-        },
-        {
-            "key": "field_68589c0832ab3",
-            "label": "Button Link 1",
-            "name": "nm_banner_button_link_1",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_68589c4c32ab4",
-            "label": "Button Link 2",
-            "name": "nm_banner_button_link_2",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
         },
         {
             "key": "field_68589c8232ab7",
@@ -569,5 +571,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758144329
+    "modified": 1759193334
 }

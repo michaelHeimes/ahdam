@@ -82,37 +82,41 @@ if( $post_type === 'policy-and-procedure' ) {
 				the_post();?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('grid-x grid-padding-x align-center'); ?>>
-					<header class="entry-header cell small-12<?php if( !$thumbnail_id ) { echo ' no-thumb'; };?>  <?=$banner_img_type;?>">
-						<div class="bg-light-gray">
-							<div class="grid-x grid-padding-x align-center">
-								<?php if( $thumbnail_id ):?>
-									<div class="cell small-12 medium-4">
-										<div class="thumb-wrap has-object-fit-img <?=$bg_class;?> h-100 grid-x align-middle align-center">
-											<?=wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );?>
-											<?php if( $post_type === 'news' || $post_type === 'webinar' || $post_type === 'podcast' ):?>
-												<div class="tag h6 color-white">
-													<b><?=esc_html($post_type_tag);?></b>
+					<?php if ( is_singular( 'memberpressproduct' ) ):?>
+						<?php get_template_part('template-parts/part', 'page-banner');?>
+					<?php else:?>
+						<header class="entry-header cell small-12<?php if( !$thumbnail_id ) { echo ' no-thumb'; };?>  <?=$banner_img_type;?>">
+							<div class="bg-light-gray">
+								<div class="grid-x grid-padding-x align-center">
+									<?php if( $thumbnail_id ):?>
+										<div class="cell small-12 medium-4">
+											<div class="thumb-wrap has-object-fit-img <?=$bg_class;?> h-100 grid-x align-middle align-center">
+												<?=wp_get_attachment_image( $thumbnail_id, 'large', false, [ 'class' => 'img-fill' ] );?>
+												<?php if( $post_type === 'news' || $post_type === 'webinar' || $post_type === 'podcast' ):?>
+													<div class="tag h6 color-white">
+														<b><?=esc_html($post_type_tag);?></b>
+													</div>
+												<?php endif;?>
+											</div>
+										</div>
+									<?php endif;?>
+									<div class="cell medium-8">
+										<div class="text-wrap">
+											<div class="date">
+												<?=$date;?>
+											</div>
+											<h1><?php the_title();?></h1>
+											<?php if( $post_type === 'news' && $author_name ):?>
+												<div class="h3">
+													<?=wp_kses_post($author_name);?>
 												</div>
 											<?php endif;?>
 										</div>
 									</div>
-								<?php endif;?>
-								<div class="cell medium-8">
-									<div class="text-wrap">
-										<div class="date">
-											<?=$date;?>
-										</div>
-										<h1><?php the_title();?></h1>
-										<?php if( $post_type === 'news' && $author_name ):?>
-											<div class="h3">
-												<?=wp_kses_post($author_name);?>
-											</div>
-										<?php endif;?>
-									</div>
 								</div>
 							</div>
-						</div>
-					</header><!-- .entry-header -->
+						</header><!-- .entry-header -->
+					<?php endif;?>
 								
 					<div class="entry-content cell small-12">
 						<div class="grid-x grid-padding-x align-center">

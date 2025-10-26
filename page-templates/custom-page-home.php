@@ -14,8 +14,7 @@ get_header();
 $fields = get_fields();
 
 $nm_banner_slides = $fields['nm_banner_slides'] ?? null;
-$nm_banner_button_link_1 = $fields['nm_banner_button_link_1'] ?? null;
-$nm_banner_button_link_2 = $fields['nm_banner_button_link_2'] ?? null;
+
 $nm_banner_cta_rows = $fields['nm_banner_cta_rows'] ?? null;
 
 $m_banner_text = $fields['m_banner_text'] ?? null;
@@ -147,45 +146,42 @@ $slide_delay = $fields['auto-slide_delay'] ?? null;
 								<div class="accent"></div>
 								<div class="grid-x grid-padding-x align-center">
 									<?php if( $nm_banner_slides ):?>
-										<div class="left cell small-12 medium-10 tablet-8 large-auto grid-x relative">
-											<div class="relative">
-												<?php if( $nm_banner_slides ):?>
-													<div class="grid-x align-center">
-														<div class="nm-banner-slider overflow-hidden" data-delay="<?=$slide_delay;?>000">
-															<div class="swiper-wrapper">
-																<?php foreach($nm_banner_slides as $nm_banner_slide):
-																	$nm_banner_heading = $nm_banner_slide['nm_banner_heading'] ?? null;
-																	$nm_banner_text = $nm_banner_slide['nm_banner_text'] ?? null;
-																?>
-																	<div class="swiper-slide">
-																		<?php if( $nm_banner_heading ):?>
-																			<h1 class="color-white small-12 medium-11 medium-12">
-																				<?=wp_kses_post($nm_banner_heading);?>
-																			</h1>
-																		<?php endif;?>
-																		<?php if( $nm_banner_text ):?>
-																			<p class="p-3 color-white small-12 medium-11 medium-12">
-																				<?=wp_kses_post($nm_banner_text);?>
-																			</p>
-																		<?php endif;?>
+										<div class="left cell small-12 medium-10 tablet-8 large-auto grid-x align-middle relative">
+											<?php if( $nm_banner_slides ):?>
+												<div class="nm-banner-slider overflow-hidden" data-delay="<?=$slide_delay;?>000">
+													<div class="swiper-wrapper">
+														<?php foreach($nm_banner_slides as $nm_banner_slide):
+															$heading = $nm_banner_slide['heading'] ?? null;
+															$text = $nm_banner_slide['text'] ?? null;
+															$button_link_1 = $nm_banner_slide['button_link_1'] ?? null;
+															$button_link_2 = $nm_banner_slide['button_link_2'] ?? null;
+														?>
+															<div class="swiper-slide">
+																<?php if( $heading ):?>
+																	<h1 class="color-white small-12 medium-11 medium-12">
+																		<?=wp_kses_post($heading);?>
+																	</h1>
+																<?php endif;?>
+																<?php if( $text ):?>
+																	<div class="p-3 color-white small-12 medium-11 medium-12">
+																		<?=wp_kses_post($text);?>
 																	</div>
-																<?php endforeach;?>
+																<?php endif;?>
+																<?php if( $button_link_1 || $button_link_2 ) {
+																	get_template_part('template-parts/part', 'btn-group',
+																		array(
+																			'btn1' => $button_link_1,
+																			'btn1-classes' => 'yellow',
+																			'btn2' => $button_link_2,
+																			'btn2-classes' => 'white-outline',
+																		),
+																	);
+																};?>
 															</div>
-														</div>
+														<?php endforeach;?>
 													</div>
-												<?php endif;?>
-																								
-												<?php if( $nm_banner_button_link_1 || $nm_banner_button_link_2 ) {
-													get_template_part('template-parts/part', 'btn-group',
-														array(
-															'btn1' => $nm_banner_button_link_1,
-															'btn1-classes' => 'yellow',
-															'btn2' => $nm_banner_button_link_2,
-															'btn2-classes' => 'white-outline',
-														),
-													);
-												};?>
-											</div>
+												</div>
+											<?php endif;?>
 										</div>
 									<?php endif;?>
 									<?php if( $nm_banner_cta_rows ):?>
